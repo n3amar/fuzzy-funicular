@@ -6,76 +6,67 @@
 <title>Hockey Picks — Mar 29, 2026</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#141c2b;padding:16px;color:#c8d6e8;font-size:16px}
-.page-header{text-align:center;margin-bottom:24px;padding:8px 0}
-.page-header h1{font-size:1.7rem;color:#7eb8f7;margin-bottom:4px;letter-spacing:.5px}
-.page-header .subtitle{color:#6b7f99;font-size:.9rem}
-.games-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:1400px;margin:0 auto 24px}
-@media(min-width:640px){.games-grid{grid-template-columns:repeat(auto-fill,minmax(560px,1fr))}}
-.game-card{background:#1c2640;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.4);overflow:hidden;border:1px solid #26334d}
-.game-header{background:linear-gradient(135deg,#0d1b4b,#1a2f7a);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px}
-.game-matchup{font-size:1.15rem;font-weight:700;letter-spacing:.5px}
-.game-line{background:rgba(255,255,255,.15);padding:3px 10px;border-radius:10px;font-size:.85rem;font-weight:600;white-space:nowrap}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#e8edf2;padding:24px;color:#2c3e50}
+.page-header{text-align:center;margin-bottom:28px}
+.page-header h1{font-size:2rem;color:#1a237e;margin-bottom:4px}
+.page-header .subtitle{color:#666;font-size:.95rem}
+.games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(560px,1fr));gap:20px;max-width:1400px;margin:0 auto 30px}
+.game-card{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1);overflow:hidden}
+.game-header{background:linear-gradient(135deg,#1a237e,#283593);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.game-matchup{font-size:1.2rem;font-weight:700;letter-spacing:.5px}
+.game-line{background:rgba(255,255,255,.2);padding:3px 10px;border-radius:12px;font-size:.85rem;font-weight:600}
 .picks-table{width:100%;border-collapse:collapse}
-.picks-table thead th{background:#131b2e;color:#5b7499;font-size:.68rem;text-transform:uppercase;letter-spacing:.5px;padding:8px 12px;text-align:center;border-bottom:1px solid #26334d}
+.picks-table thead th{background:#f8f9fa;color:#6c757d;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;padding:8px 14px;text-align:center;border-bottom:2px solid #e9ecef}
 .picks-table thead th:first-child{text-align:left}
-.picks-table tbody td{padding:10px 12px;border-top:1px solid #1e2d45;text-align:center;vertical-align:middle}
-.picks-table tbody td small{display:block;color:#4e6480;font-size:.73rem;margin-top:2px}
-.market-label{text-align:left!important;font-weight:600;color:#8da8c8;font-size:.85rem;white-space:nowrap}
-.badge{display:inline-block;padding:4px 10px;border-radius:6px;font-size:.8rem;font-weight:700;white-space:nowrap}
-.diff-warn{color:#f87171;font-size:.75rem;margin-left:3px}
-.badge.over{background:#14432a;color:#4ade80;border:1px solid #166534}
-.badge.lean-over{background:#0f2e1c;color:#34d399;border:1px solid #065f46}
-.badge.under{background:#450a0a;color:#f87171;border:1px solid #7f1d1d}
-.badge.lean-under{background:#431407;color:#fb923c;border:1px solid #7c2d12}
-.badge.home{background:#0c2050;color:#60a5fa;border:1px solid #1e3a8a}
-.badge.lean-home{background:#0a1a3d;color:#93c5fd;border:1px solid #1e3a8a}
-.badge.away{background:#2e1065;color:#c084fc;border:1px solid #4c1d95}
-.badge.lean-away{background:#200e47;color:#d8b4fe;border:1px solid #4c1d95}
-.badge.bet-ot{background:#431407;color:#fb923c;border:2px solid #c2410c;font-weight:800}
-.badge.lean-ot{background:#2d1a07;color:#fbbf24;border:1px solid #92400e}
-.badge.pass{background:#1a2235;color:#3d5070;border:1px solid #26334d}
-.forecast-panel{background:#131b2e;border-top:1px solid #26334d;padding:14px 16px}
-.fp-title{font-size:.68rem;text-transform:uppercase;letter-spacing:.5px;color:#7eb8f7;font-weight:700;margin-bottom:10px}
-.fp-row{display:flex;gap:8px;margin-bottom:8px;font-size:.82rem;line-height:1.5;align-items:flex-start;flex-wrap:wrap}
-.fp-label{font-weight:700;color:#5b7499;min-width:86px;flex-shrink:0;padding-top:1px}
-.fp-value{color:#a8bdd6;flex:1;min-width:0}
-.trend-detail{font-size:.75rem;color:#4e6480;margin-top:4px;line-height:1.5}
-.conv-strong{color:#4ade80;font-weight:600}
-.conv-moderate{color:#fbbf24;font-weight:600}
-.conv-mixed{color:#f87171}
-.trend-over{color:#4ade80;font-weight:600}
-.trend-under{color:#f87171;font-weight:600}
-.trend-neutral{color:#4e6480}
-.align-agrees{color:#4ade80;font-weight:600}
-.align-conflicts{color:#f87171;font-weight:600}
-.align-neutral{color:#3d5070}
-.bets-section{padding:12px 16px;border-top:1px solid #3d2a00;background:#1c1600;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.bets-label{font-weight:700;color:#f59e0b;font-size:.72rem;text-transform:uppercase;flex-shrink:0}
-.bet-chip{background:#1d3461;color:#93c5fd;padding:6px 12px;border-radius:16px;font-size:.82rem;font-weight:600;border:1px solid #2d4f8a}
-.bet-chip .bet-detail{opacity:.7;font-weight:400;font-size:.76rem}
-.slate-container{background:#1c2640;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.4);padding:18px 16px;max-width:1400px;margin:0 auto 24px;border:1px solid #26334d}
-.slate-container h2{color:#7eb8f7;margin-bottom:14px;font-size:1.1rem}
-.slate-table{width:100%;border-collapse:collapse;font-size:.85rem}
-.slate-table thead th{background:#0d1b4b;color:#7eb8f7;padding:10px 12px;text-align:left;font-size:.75rem;border-bottom:1px solid #26334d}
-.slate-table tbody td{padding:10px 12px;border-top:1px solid #1e2d45;color:#a8bdd6}
-.slate-table tbody tr:hover td{background:#1a2540}
-.slate-total td{font-weight:700;background:#131b2e;color:#7eb8f7;padding:10px 12px;border-top:1px solid #26334d}
-.no-bets{color:#3d5070;font-style:italic;padding:8px 0}
-@media(max-width:480px){
-  body{padding:10px}
-  .game-matchup{font-size:1rem}
-  .picks-table thead th,.picks-table tbody td{padding:8px 8px}
-  .fp-row{flex-direction:column;gap:3px}
-  .fp-label{min-width:unset}
-  .slate-table thead th,.slate-table tbody td{padding:8px 8px;font-size:.78rem}
-}
+.picks-table tbody td{padding:10px 14px;border-top:1px solid #f0f0f0;text-align:center;vertical-align:middle}
+.picks-table tbody td small{display:block;color:#aaa;font-size:.75rem;margin-top:2px}
+.market-label{text-align:left!important;font-weight:600;color:#495057;font-size:.88rem}
+.badge{display:inline-block;padding:3px 9px;border-radius:6px;font-size:.8rem;font-weight:600;white-space:nowrap}
+.diff-warn{color:#dc3545;font-size:.75rem;margin-left:3px}
+.badge.over{background:#d4edda;color:#155724;border:1px solid #c3e6cb}
+.badge.lean-over{background:#e8f5e9;color:#2e7d32;border:1px solid #c8e6c9}
+.badge.under{background:#f8d7da;color:#721c24;border:1px solid #f5c6cb}
+.badge.lean-under{background:#fff3e0;color:#bf360c;border:1px solid #ffe0b2}
+.badge.home{background:#dbeafe;color:#1e40af;border:1px solid #bfdbfe}
+.badge.lean-home{background:#eff6ff;color:#2563eb;border:1px solid #dbeafe}
+.badge.away{background:#ede9fe;color:#5b21b6;border:1px solid #ddd6fe}
+.badge.lean-away{background:#f5f3ff;color:#7c3aed;border:1px solid #ede9fe}
+.badge.bet-ot{background:#fff3e0;color:#e65100;border:1px solid #ffcc80;font-weight:700}
+.badge.lean-ot{background:#fff8e1;color:#f57f17;border:1px solid #fff3e0}
+.badge.pass{background:#f5f5f5;color:#9e9e9e;border:1px solid #e0e0e0}
+.forecast-panel{background:#fafafa;border-top:2px solid #e9ecef;padding:14px 18px}
+.fp-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:#1a237e;font-weight:700;margin-bottom:10px}
+.fp-row{display:flex;gap:8px;margin-bottom:7px;font-size:.83rem;line-height:1.45;align-items:flex-start}
+.fp-label{font-weight:700;color:#555;min-width:90px;flex-shrink:0;padding-top:1px}
+.fp-value{color:#333;flex:1}
+.trend-detail{font-size:.78rem;color:#666;margin-top:4px}
+.conv-strong{color:#155724;font-weight:600}
+.conv-moderate{color:#856404;font-weight:600}
+.conv-mixed{color:#721c24}
+.trend-over{color:#155724;font-weight:600}
+.trend-under{color:#721c24;font-weight:600}
+.trend-neutral{color:#6c757d}
+.align-agrees{color:#28a745;font-weight:600}
+.align-conflicts{color:#dc3545;font-weight:600}
+.align-neutral{color:#aaa}
+.bets-section{padding:12px 18px;border-top:2px solid #fff3cd;background:#fffbf0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bets-label{font-weight:700;color:#856404;font-size:.78rem;text-transform:uppercase;flex-shrink:0}
+.bet-chip{background:#1a237e;color:#fff;padding:5px 12px;border-radius:16px;font-size:.82rem;font-weight:600}
+.bet-chip .bet-detail{opacity:.75;font-weight:400;font-size:.78rem}
+.slate-container{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1);padding:20px 24px;max-width:1400px;margin:0 auto 30px}
+.slate-container h2{color:#1a237e;margin-bottom:16px;font-size:1.2rem}
+.slate-table{width:100%;border-collapse:collapse}
+.slate-table thead th{background:#1a237e;color:#fff;padding:10px 14px;text-align:left;font-size:.82rem}
+.slate-table tbody td{padding:10px 14px;border-top:1px solid #f0f0f0;font-size:.88rem}
+.slate-table tbody tr:hover td{background:#f8f9fa}
+.slate-total td{font-weight:700;background:#f8f9fa;color:#1a237e;padding:10px 14px;border-top:2px solid #e9ecef}
+.no-bets{color:#6c757d;font-style:italic;padding:8px 0}
 </style>
 </head>
 <body>
 <div class="page-header">
   <h1>🏒 Hockey Picks</h1>
-  <div class="subtitle">March 29, 2026 &nbsp;·&nbsp; Generated 2:54 PM</div>
+  <div class="subtitle">March 29, 2026 &nbsp;·&nbsp; Generated 10:24 AM</div>
 </div>
 <div class="games-grid">
 
