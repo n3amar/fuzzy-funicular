@@ -1,1 +1,499 @@
-<h1>Coming soon</h1>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hockey Picks — Mar 29, 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#e8edf2;padding:24px;color:#2c3e50}
+.page-header{text-align:center;margin-bottom:28px}
+.page-header h1{font-size:2rem;color:#1a237e;margin-bottom:4px}
+.page-header .subtitle{color:#666;font-size:.95rem}
+.games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(560px,1fr));gap:20px;max-width:1400px;margin:0 auto 30px}
+.game-card{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1);overflow:hidden}
+.game-header{background:linear-gradient(135deg,#1a237e,#283593);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.game-matchup{font-size:1.2rem;font-weight:700;letter-spacing:.5px}
+.game-line{background:rgba(255,255,255,.2);padding:3px 10px;border-radius:12px;font-size:.85rem;font-weight:600}
+.picks-table{width:100%;border-collapse:collapse}
+.picks-table thead th{background:#f8f9fa;color:#6c757d;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;padding:8px 14px;text-align:center;border-bottom:2px solid #e9ecef}
+.picks-table thead th:first-child{text-align:left}
+.picks-table tbody td{padding:10px 14px;border-top:1px solid #f0f0f0;text-align:center;vertical-align:middle}
+.picks-table tbody td small{display:block;color:#aaa;font-size:.75rem;margin-top:2px}
+.market-label{text-align:left!important;font-weight:600;color:#495057;font-size:.88rem}
+.badge{display:inline-block;padding:3px 9px;border-radius:6px;font-size:.8rem;font-weight:600;white-space:nowrap}
+.diff-warn{color:#dc3545;font-size:.75rem;margin-left:3px}
+.badge.over{background:#d4edda;color:#155724;border:1px solid #c3e6cb}
+.badge.lean-over{background:#e8f5e9;color:#2e7d32;border:1px solid #c8e6c9}
+.badge.under{background:#f8d7da;color:#721c24;border:1px solid #f5c6cb}
+.badge.lean-under{background:#fff3e0;color:#bf360c;border:1px solid #ffe0b2}
+.badge.home{background:#dbeafe;color:#1e40af;border:1px solid #bfdbfe}
+.badge.lean-home{background:#eff6ff;color:#2563eb;border:1px solid #dbeafe}
+.badge.away{background:#ede9fe;color:#5b21b6;border:1px solid #ddd6fe}
+.badge.lean-away{background:#f5f3ff;color:#7c3aed;border:1px solid #ede9fe}
+.badge.bet-ot{background:#fff3e0;color:#e65100;border:1px solid #ffcc80;font-weight:700}
+.badge.lean-ot{background:#fff8e1;color:#f57f17;border:1px solid #fff3e0}
+.badge.pass{background:#f5f5f5;color:#9e9e9e;border:1px solid #e0e0e0}
+.forecast-panel{background:#fafafa;border-top:2px solid #e9ecef;padding:14px 18px}
+.fp-title{font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:#1a237e;font-weight:700;margin-bottom:10px}
+.fp-row{display:flex;gap:8px;margin-bottom:7px;font-size:.83rem;line-height:1.45;align-items:flex-start}
+.fp-label{font-weight:700;color:#555;min-width:90px;flex-shrink:0;padding-top:1px}
+.fp-value{color:#333;flex:1}
+.trend-detail{font-size:.78rem;color:#666;margin-top:4px}
+.conv-strong{color:#155724;font-weight:600}
+.conv-moderate{color:#856404;font-weight:600}
+.conv-mixed{color:#721c24}
+.trend-over{color:#155724;font-weight:600}
+.trend-under{color:#721c24;font-weight:600}
+.trend-neutral{color:#6c757d}
+.align-agrees{color:#28a745;font-weight:600}
+.align-conflicts{color:#dc3545;font-weight:600}
+.align-neutral{color:#aaa}
+.bets-section{padding:12px 18px;border-top:2px solid #fff3cd;background:#fffbf0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bets-label{font-weight:700;color:#856404;font-size:.78rem;text-transform:uppercase;flex-shrink:0}
+.bet-chip{background:#1a237e;color:#fff;padding:5px 12px;border-radius:16px;font-size:.82rem;font-weight:600}
+.bet-chip .bet-detail{opacity:.75;font-weight:400;font-size:.78rem}
+.slate-container{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1);padding:20px 24px;max-width:1400px;margin:0 auto 30px}
+.slate-container h2{color:#1a237e;margin-bottom:16px;font-size:1.2rem}
+.slate-table{width:100%;border-collapse:collapse}
+.slate-table thead th{background:#1a237e;color:#fff;padding:10px 14px;text-align:left;font-size:.82rem}
+.slate-table tbody td{padding:10px 14px;border-top:1px solid #f0f0f0;font-size:.88rem}
+.slate-table tbody tr:hover td{background:#f8f9fa}
+.slate-total td{font-weight:700;background:#f8f9fa;color:#1a237e;padding:10px 14px;border-top:2px solid #e9ecef}
+.no-bets{color:#6c757d;font-style:italic;padding:8px 0}
+</style>
+</head>
+<body>
+<div class="page-header">
+  <h1>🏒 Hockey Picks</h1>
+  <div class="subtitle">March 29, 2026 &nbsp;·&nbsp; Generated 10:24 AM</div>
+</div>
+<div class="games-grid">
+
+<div class="game-card">
+  <div class="game-header">
+    <span class="game-matchup">FLA @ NYR</span>
+    <span class="game-line">o/u 5.5</span>
+  </div>
+  <table class="picks-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>V1 <small>Control</small></th>
+        <th>V2 <small>Kelly</small></th>
+        <th>V3 <small>Enhanced</small></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="market-label">Total (5.5)</td>
+        <td><span class="badge over">OVER</span> <small>70% over</small></td>
+        <td><span class="badge lean-over">LN OVER</span> <small>61% over</small></td>
+        <td><span class="badge lean-over">LN OVER</span> <small>61% over</small> </td>
+      </tr>
+      <tr>
+        <td class="market-label">Winner</td>
+        <td><span class="badge pass">PASS</span> <small>53% home</small></td>
+        <td><span class="badge lean-home">LN HOME</span> <small>62% home</small></td>
+        <td><span class="badge lean-home">LN HOME</span> <small>62% home</small> <span class="diff-warn">⚠</span></td>
+      </tr>
+      <tr>
+        <td class="market-label">Overtime</td>
+        <td><span class="badge lean-ot">LN OT</span> <small>45%</small></td>
+        <td><span class="badge lean-ot">LN OT</span> <small>45%</small></td>
+        <td><span class="badge lean-ot">LN OT</span> <small>45%</small> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="forecast-panel">
+    <div class="fp-title">Forecast Panel</div>
+    <div class="fp-row">
+      <span class="fp-label">Conviction</span>
+      <span class="fp-value">V2 → <span class="conv-mixed">MIXED (2/4)</span> &nbsp;&nbsp; V3 → <span class="conv-mixed">MIXED (3/6)</span></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Consensus</span>
+      <span class="fp-value">Totals: ✓ ALL OVER &nbsp;&nbsp; Winner: V1=PASS V2=HOME V3=HOME</span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Form Trend</span>
+      <span class="fp-value"><span class="trend-neutral">→ Neutral (+5.1%)</span>
+                  &nbsp;<span class="align-neutral">[TREND NEUTRAL]</span>
+                  <div class="trend-detail">
+                    <span>FLA offense ↓ -12.5% (L7 2.57 vs avg 2.94)</span> &nbsp;·&nbsp;
+                    <span>FLA defense ↑ +11.5% allowing (L7 3.86 vs avg 3.46)</span><br>
+                    <span>NYR offense → +4.6% (L7 2.71 vs avg 2.60)</span> &nbsp;·&nbsp;
+                    <span>NYR defense ↑ +16.8% allowing (L7 3.71 vs avg 3.18)</span>
+                  </div></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Historical</span>
+      <span class="fp-value"><strong>FLA</strong> (away): <span style="color:#999">insufficient sample</span></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label"></span>
+      <span class="fp-value"><strong>NYR</strong> (home): <span style="color:#999">insufficient sample</span></span>
+    </div>
+  </div>
+
+  
+</div>
+<div class="game-card">
+  <div class="game-header">
+    <span class="game-matchup">NSH @ TBL</span>
+    <span class="game-line">o/u 6.5</span>
+  </div>
+  <table class="picks-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>V1 <small>Control</small></th>
+        <th>V2 <small>Kelly</small></th>
+        <th>V3 <small>Enhanced</small></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="market-label">Total (6.5)</td>
+        <td><span class="badge pass">PASS</span> <small>48% over</small></td>
+        <td><span class="badge pass">PASS</span> <small>44% over</small></td>
+        <td><span class="badge pass">PASS</span> <small>56% over</small> </td>
+      </tr>
+      <tr>
+        <td class="market-label">Winner</td>
+        <td><span class="badge home">HOME</span> <small>89% home</small></td>
+        <td><span class="badge home">HOME</span> <small>90% home</small></td>
+        <td><span class="badge home">HOME</span> <small>90% home</small> </td>
+      </tr>
+      <tr>
+        <td class="market-label">Overtime</td>
+        <td><span class="badge lean-ot">LN OT</span> <small>30%</small></td>
+        <td><span class="badge pass">PASS</span> <small>25%</small></td>
+        <td><span class="badge pass">PASS</span> <small>25%</small> <span class="diff-warn">⚠</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="forecast-panel">
+    <div class="fp-title">Forecast Panel</div>
+    <div class="fp-row">
+      <span class="fp-label">Conviction</span>
+      <span class="fp-value">V2 → <span class="conv-mixed">MIXED (1/3)</span> &nbsp;&nbsp; V3 → <span class="conv-mixed">MIXED (2/6)</span></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Consensus</span>
+      <span class="fp-value">Totals: ✓ ALL PASS &nbsp;&nbsp; Winner: ✓ ALL HOME</span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Form Trend</span>
+      <span class="fp-value"><span class="trend-neutral">→ Neutral (+5.0%)</span>
+                  &nbsp;<span class="align-neutral">[TREND NEUTRAL]</span>
+                  <div class="trend-detail">
+                    <span>NSH offense ↑ +12.9% (L7 3.29 vs avg 2.91)</span> &nbsp;·&nbsp;
+                    <span>NSH defense ↓ -23.9% allowing (L7 2.57 vs avg 3.38)</span><br>
+                    <span>TBL offense ↑ +33.9% (L7 4.71 vs avg 3.52)</span> &nbsp;·&nbsp;
+                    <span>TBL defense → -2.9% allowing (L7 2.71 vs avg 2.80)</span>
+                  </div></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Historical</span>
+      <span class="fp-value"><strong>NSH</strong> (away): <span style="color:#999">insufficient sample</span></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label"></span>
+      <span class="fp-value"><strong>TBL</strong> (home): <span style="color:#999">insufficient sample</span></span>
+    </div>
+  </div>
+
+  <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 TBL Reg Win <span class="bet-detail">-130 · $2.90</span></span></div>
+</div>
+<div class="game-card">
+  <div class="game-header">
+    <span class="game-matchup">MTL @ CAR</span>
+    <span class="game-line">o/u 6.5</span>
+  </div>
+  <table class="picks-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>V1 <small>Control</small></th>
+        <th>V2 <small>Kelly</small></th>
+        <th>V3 <small>Enhanced</small></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="market-label">Total (6.5)</td>
+        <td><span class="badge over">OVER</span> <small>66% over</small></td>
+        <td><span class="badge pass">PASS</span> <small>50% over</small></td>
+        <td><span class="badge lean-over">LN OVER</span> <small>61% over</small> <span class="diff-warn">⚠</span></td>
+      </tr>
+      <tr>
+        <td class="market-label">Winner</td>
+        <td><span class="badge home">HOME</span> <small>82% home</small></td>
+        <td><span class="badge home">HOME</span> <small>84% home</small></td>
+        <td><span class="badge home">HOME</span> <small>84% home</small> </td>
+      </tr>
+      <tr>
+        <td class="market-label">Overtime</td>
+        <td><span class="badge lean-ot">LN OT</span> <small>70%</small></td>
+        <td><span class="badge lean-ot">LN OT</span> <small>70%</small></td>
+        <td><span class="badge lean-ot">LN OT</span> <small>70%</small> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="forecast-panel">
+    <div class="fp-title">Forecast Panel</div>
+    <div class="fp-row">
+      <span class="fp-label">Conviction</span>
+      <span class="fp-value">V2 → <span class="conv-mixed">MIXED (1/5)</span> &nbsp;&nbsp; V3 → <span class="conv-strong">STRONG (6/7)</span></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Consensus</span>
+      <span class="fp-value">Totals: V1=OVER V2=PASS V3=OVER &nbsp;&nbsp; Winner: ✓ ALL HOME</span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Form Trend</span>
+      <span class="fp-value"><span class="trend-neutral">→ Neutral (-4.6%)</span>
+                  &nbsp;<span class="align-neutral">[TREND NEUTRAL]</span>
+                  <div class="trend-detail">
+                    <span>MTL offense → +0.0% (L7 3.57 vs avg 3.57)</span> &nbsp;·&nbsp;
+                    <span>MTL defense ↓ -30.3% allowing (L7 2.29 vs avg 3.28)</span><br>
+                    <span>CAR offense → +3.0% (L7 3.86 vs avg 3.75)</span> &nbsp;·&nbsp;
+                    <span>CAR defense ↑ +8.8% allowing (L7 3.29 vs avg 3.02)</span>
+                  </div></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Historical</span>
+      <span class="fp-value"><strong>MTL</strong> (away): <span style="color:#999">insufficient sample</span></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label"></span>
+      <span class="fp-value"><strong>CAR</strong> (home): <span style="color:#999">insufficient sample</span></span>
+    </div>
+  </div>
+
+  
+</div>
+<div class="game-card">
+  <div class="game-header">
+    <span class="game-matchup">BOS @ CBJ</span>
+    <span class="game-line">o/u 6.5</span>
+  </div>
+  <table class="picks-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>V1 <small>Control</small></th>
+        <th>V2 <small>Kelly</small></th>
+        <th>V3 <small>Enhanced</small></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="market-label">Total (6.5)</td>
+        <td><span class="badge under">UNDER</span> <small>30% over</small></td>
+        <td><span class="badge under">UNDER</span> <small>26% over</small></td>
+        <td><span class="badge under">UNDER</span> <small>23% over</small> </td>
+      </tr>
+      <tr>
+        <td class="market-label">Winner</td>
+        <td><span class="badge lean-home">LN HOME</span> <small>63% home</small></td>
+        <td><span class="badge home">HOME</span> <small>69% home</small></td>
+        <td><span class="badge home">HOME</span> <small>69% home</small> </td>
+      </tr>
+      <tr>
+        <td class="market-label">Overtime</td>
+        <td><span class="badge bet-ot">BET OT</span> <small>55%</small></td>
+        <td><span class="badge lean-ot">LN OT</span> <small>40%</small></td>
+        <td><span class="badge lean-ot">LN OT</span> <small>40%</small> <span class="diff-warn">⚠</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="forecast-panel">
+    <div class="fp-title">Forecast Panel</div>
+    <div class="fp-row">
+      <span class="fp-label">Conviction</span>
+      <span class="fp-value">V2 → <span class="conv-strong">STRONG (4/5)</span> &nbsp;&nbsp; V3 → <span class="conv-strong">STRONG (5/6)</span></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Consensus</span>
+      <span class="fp-value">Totals: ✓ ALL UNDER &nbsp;&nbsp; Winner: ✓ ALL HOME</span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Form Trend</span>
+      <span class="fp-value"><span class="trend-under">↓ UNDER momentum (-9.6%)</span>
+                  &nbsp;<span class="align-agrees">[TREND AGREES]</span>
+                  <div class="trend-detail">
+                    <span>BOS offense ↑ +17.4% (L7 3.86 vs avg 3.29)</span> &nbsp;·&nbsp;
+                    <span>BOS defense ↓ -15.2% allowing (L7 2.86 vs avg 3.37)</span><br>
+                    <span>CBJ offense → -6.3% (L7 3.14 vs avg 3.36)</span> &nbsp;·&nbsp;
+                    <span>CBJ defense ↓ -34.4% allowing (L7 2.00 vs avg 3.05)</span>
+                  </div></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Historical</span>
+      <span class="fp-value"><strong>BOS</strong> (away): <span style="color:#999">insufficient sample</span></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label"></span>
+      <span class="fp-value"><strong>CBJ</strong> (home): <span style="color:#999">insufficient sample</span></span>
+    </div>
+  </div>
+
+  <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 UNDER Total <span class="bet-detail">-128 · $2.37</span></span></div>
+</div>
+<div class="game-card">
+  <div class="game-header">
+    <span class="game-matchup">CHI @ NJD</span>
+    <span class="game-line">o/u 5.5</span>
+  </div>
+  <table class="picks-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>V1 <small>Control</small></th>
+        <th>V2 <small>Kelly</small></th>
+        <th>V3 <small>Enhanced</small></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="market-label">Total (5.5)</td>
+        <td><span class="badge over">OVER</span> <small>71% over</small></td>
+        <td><span class="badge over">OVER</span> <small>75% over</small></td>
+        <td><span class="badge lean-over">LN OVER</span> <small>73% over</small> </td>
+      </tr>
+      <tr>
+        <td class="market-label">Winner</td>
+        <td><span class="badge home">HOME</span> <small>69% home</small></td>
+        <td><span class="badge lean-home">LN HOME</span> <small>65% home</small></td>
+        <td><span class="badge lean-home">LN HOME</span> <small>65% home</small> </td>
+      </tr>
+      <tr>
+        <td class="market-label">Overtime</td>
+        <td><span class="badge bet-ot">BET OT</span> <small>65%</small></td>
+        <td><span class="badge bet-ot">BET OT</span> <small>65%</small></td>
+        <td><span class="badge bet-ot">BET OT</span> <small>65%</small> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="forecast-panel">
+    <div class="fp-title">Forecast Panel</div>
+    <div class="fp-row">
+      <span class="fp-label">Conviction</span>
+      <span class="fp-value">V2 → <span class="conv-strong">STRONG (4/5)</span> &nbsp;&nbsp; V3 → <span class="conv-moderate">MODERATE (4/6)</span></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Consensus</span>
+      <span class="fp-value">Totals: ✓ ALL OVER &nbsp;&nbsp; Winner: ✓ ALL HOME</span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Form Trend</span>
+      <span class="fp-value"><span class="trend-over">↑ OVER momentum (+11.7%)</span>
+                  &nbsp;<span class="align-agrees">[TREND AGREES]</span>
+                  <div class="trend-detail">
+                    <span>CHI offense ↓ -22.8% (L7 2.00 vs avg 2.59)</span> &nbsp;·&nbsp;
+                    <span>CHI defense ↑ +10.9% allowing (L7 3.71 vs avg 3.35)</span><br>
+                    <span>NJD offense ↑ +48.2% (L7 4.14 vs avg 2.80)</span> &nbsp;·&nbsp;
+                    <span>NJD defense ↑ +10.4% allowing (L7 3.29 vs avg 2.98)</span>
+                  </div></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Historical</span>
+      <span class="fp-value"><strong>CHI</strong> (away): Totals 2W-3L (40%)<sup>*</sup> ⚠</span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label"></span>
+      <span class="fp-value"><strong>NJD</strong> (home): <span style="color:#999">insufficient sample</span></span>
+    </div>
+  </div>
+
+  <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 OVER Total <span class="bet-detail">-134 · $2.35</span></span> <span class="bet-chip">💰 BET OT <span class="bet-detail">+290 · $2.50</span></span></div>
+</div>
+<div class="game-card">
+  <div class="game-header">
+    <span class="game-matchup">DAL @ PHI</span>
+    <span class="game-line">o/u 5.5</span>
+  </div>
+  <table class="picks-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>V1 <small>Control</small></th>
+        <th>V2 <small>Kelly</small></th>
+        <th>V3 <small>Enhanced</small></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="market-label">Total (5.5)</td>
+        <td><span class="badge pass">PASS</span> <small>44% over</small></td>
+        <td><span class="badge lean-under">LN UNDER</span> <small>32% over</small></td>
+        <td><span class="badge under">UNDER</span> <small>29% over</small> <span class="diff-warn">⚠</span></td>
+      </tr>
+      <tr>
+        <td class="market-label">Winner</td>
+        <td><span class="badge lean-away">LN AWAY</span> <small>40% home</small></td>
+        <td><span class="badge pass">PASS</span> <small>42% home</small></td>
+        <td><span class="badge pass">PASS</span> <small>42% home</small> <span class="diff-warn">⚠</span></td>
+      </tr>
+      <tr>
+        <td class="market-label">Overtime</td>
+        <td><span class="badge lean-ot">LN OT</span> <small>80%</small></td>
+        <td><span class="badge lean-ot">LN OT</span> <small>80%</small></td>
+        <td><span class="badge lean-ot">LN OT</span> <small>80%</small> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="forecast-panel">
+    <div class="fp-title">Forecast Panel</div>
+    <div class="fp-row">
+      <span class="fp-label">Conviction</span>
+      <span class="fp-value">V2 → <span class="conv-strong">STRONG (3/3)</span> &nbsp;&nbsp; V3 → <span class="conv-strong">STRONG (4/5)</span></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Consensus</span>
+      <span class="fp-value">Totals: V2+V3 = UNDER &nbsp;/&nbsp; V1 = PASS &nbsp;&nbsp; Winner: V1=AWAY V2=PASS V3=PASS</span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Form Trend</span>
+      <span class="fp-value"><span class="trend-neutral">→ Neutral (-1.7%)</span>
+                  &nbsp;<span class="align-neutral">[TREND NEUTRAL]</span>
+                  <div class="trend-detail">
+                    <span>DAL offense ↓ -21.9% (L7 2.71 vs avg 3.48)</span> &nbsp;·&nbsp;
+                    <span>DAL defense ↑ +21.7% allowing (L7 3.29 vs avg 2.70)</span><br>
+                    <span>PHI offense ↑ +20.5% (L7 3.43 vs avg 2.85)</span> &nbsp;·&nbsp;
+                    <span>PHI defense ↓ -27.2% allowing (L7 2.14 vs avg 2.95)</span>
+                  </div></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Historical</span>
+      <span class="fp-value"><strong>DAL</strong> (away): <span style="color:#999">insufficient sample</span></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label"></span>
+      <span class="fp-value"><strong>PHI</strong> (home): <span style="color:#999">insufficient sample</span></span>
+    </div>
+  </div>
+
+  <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 LEAN UNDER Total <span class="bet-detail">+104 · $2.88</span></span></div>
+</div></div>
+<div class="slate-container"><h2>📋 Daily Betting Slate</h2>
+<table class="slate-table"><thead><tr><th>Game</th><th>Bet</th><th>Odds</th><th>Floor</th><th>Risk</th><th>Win</th></tr></thead><tbody>
+<tr><td>NSH@TBL</td><td>TBL Reg Win</td><td>-130</td><td>-175</td><td>$2.90</td><td>$2.23</td></tr>
+<tr><td>BOS@CBJ</td><td>UNDER Total</td><td>-128</td><td>-159</td><td>$2.37</td><td>$1.85</td></tr>
+<tr><td>CHI@NJD</td><td>OVER Total</td><td>-134</td><td>-165</td><td>$2.35</td><td>$1.75</td></tr>
+<tr><td>CHI@NJD</td><td>BET OT</td><td>+290</td><td>any +</td><td>$2.50</td><td>$7.25</td></tr>
+<tr><td>DAL@PHI</td><td>LEAN UNDER Total</td><td>+104</td><td>-137</td><td>$2.88</td><td>$2.99</td></tr>
+</tbody><tfoot>
+<tr class="slate-total"><td colspan="4">Max Exposure</td><td colspan="2">$12.99</td></tr>
+<tr class="slate-total"><td colspan="4">Net Profit if all hit</td><td colspan="2">+$16.07</td></tr>
+</tfoot></table>
+</div>
+</body></html>
