@@ -50,6 +50,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .align-agrees{color:#4ade80;font-weight:600}
 .align-conflicts{color:#f87171;font-weight:600}
 .align-neutral{color:#3d5070}
+.fp-label-group{min-width:86px;flex-shrink:0;padding-top:1px}
+.fp-sublabel{display:block;font-size:.58rem;color:#3d5070;font-style:italic;line-height:1.35;margin-top:2px;font-weight:400}
+.conv-line{display:flex;align-items:center;gap:5px;margin-bottom:4px;flex-wrap:wrap}
+.conv-line:last-child{margin-bottom:0}
+.conv-model-name{font-size:.72rem;color:#5b7499;min-width:76px;flex-shrink:0}
+.pip-on{color:#4ade80}
+.pip-off{color:#253345}
+.conv-count{font-size:.7rem;color:#4e6480}
+.cons-line{display:flex;align-items:center;gap:5px;margin-bottom:5px;flex-wrap:wrap}
+.cons-line:last-child{margin-bottom:0}
+.cons-market-name{font-size:.72rem;color:#5b7499;min-width:46px;flex-shrink:0}
+.badge.mini{padding:2px 5px;font-size:.63rem;border-radius:4px}
+.cons-verdict{font-size:.7rem;margin-left:2px;font-weight:600}
+.cons-agree{color:#4ade80}
+.cons-split{color:#f87171}
 .bets-section{padding:12px 16px;border-top:1px solid #3d2a00;background:#1c1600;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .bets-label{font-weight:700;color:#f59e0b;font-size:.72rem;text-transform:uppercase;flex-shrink:0}
 .bet-chip{background:#1d3461;color:#93c5fd;padding:6px 12px;border-radius:16px;font-size:.82rem;font-weight:600;border:1px solid #2d4f8a}
@@ -118,12 +133,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div class="forecast-panel">
     <div class="fp-title">Forecast Panel</div>
     <div class="fp-row">
-      <span class="fp-label">Conviction</span>
-      <span class="fp-value">V2 → <span class="conv-mixed">MIXED (1/5)</span> &nbsp;&nbsp; V3 → <span class="conv-mixed">MIXED (1/7)</span></span>
+      <div class="fp-label-group">
+        <span class="fp-label">Conviction</span>
+        <span class="fp-sublabel">How many model inputs support the call</span>
+      </div>
+      <span class="fp-value">
+        <div class="conv-line">
+          <span class="conv-model-name">V2 Kelly</span>
+          <span><span class="pip-on">●</span><span class="pip-off">●●●●</span></span>
+          <span class="conv-count">1 of 5 inputs</span>
+          <span class="conv-mixed">MIXED</span>
+        </div>
+        <div class="conv-line">
+          <span class="conv-model-name">V3 Enhanced</span>
+          <span><span class="pip-on">●</span><span class="pip-off">●●●●●●</span></span>
+          <span class="conv-count">1 of 7 inputs</span>
+          <span class="conv-mixed">MIXED</span>
+        </div>
+      </span>
     </div>
     <div class="fp-row">
-      <span class="fp-label">Consensus</span>
-      <span class="fp-value">Totals: ✓ ALL PASS &nbsp;&nbsp; Winner: ✓ ALL PASS</span>
+      <div class="fp-label-group">
+        <span class="fp-label">Consensus</span>
+        <span class="fp-sublabel">Do V1/V2/V3 reach the same call?</span>
+      </div>
+      <span class="fp-value">
+        <div class="cons-line">
+          <span class="cons-market-name">Totals:</span>
+          <span class="badge mini pass">V1 PASS</span>
+          <span class="badge mini pass">V2 PASS</span>
+          <span class="badge mini pass">V3 PASS</span>
+          <span class="cons-verdict cons-agree">✓ All agree</span>
+        </div>
+        <div class="cons-line">
+          <span class="cons-market-name">Winner:</span>
+          <span class="badge mini pass">V1 PASS</span>
+          <span class="badge mini pass">V2 PASS</span>
+          <span class="badge mini pass">V3 PASS</span>
+          <span class="cons-verdict cons-agree">✓ All agree</span>
+        </div>
+      </span>
     </div>
     <div class="fp-row">
       <span class="fp-label">Form Trend</span>
@@ -187,12 +236,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div class="forecast-panel">
     <div class="fp-title">Forecast Panel</div>
     <div class="fp-row">
-      <span class="fp-label">Conviction</span>
-      <span class="fp-value">V2 → <span class="conv-strong">STRONG (3/3)</span> &nbsp;&nbsp; V3 → <span class="conv-strong">STRONG (3/4)</span></span>
+      <div class="fp-label-group">
+        <span class="fp-label">Conviction</span>
+        <span class="fp-sublabel">How many model inputs support the call</span>
+      </div>
+      <span class="fp-value">
+        <div class="conv-line">
+          <span class="conv-model-name">V2 Kelly</span>
+          <span><span class="pip-on">●●●</span></span>
+          <span class="conv-count">3 of 3 inputs</span>
+          <span class="conv-strong">STRONG</span>
+        </div>
+        <div class="conv-line">
+          <span class="conv-model-name">V3 Enhanced</span>
+          <span><span class="pip-on">●●●</span><span class="pip-off">●</span></span>
+          <span class="conv-count">3 of 4 inputs</span>
+          <span class="conv-strong">STRONG</span>
+        </div>
+      </span>
     </div>
     <div class="fp-row">
-      <span class="fp-label">Consensus</span>
-      <span class="fp-value">Totals: ✓ ALL UNDER &nbsp;&nbsp; Winner: ✓ ALL HOME</span>
+      <div class="fp-label-group">
+        <span class="fp-label">Consensus</span>
+        <span class="fp-sublabel">Do V1/V2/V3 reach the same call?</span>
+      </div>
+      <span class="fp-value">
+        <div class="cons-line">
+          <span class="cons-market-name">Totals:</span>
+          <span class="badge mini under">V1 UNDER</span>
+          <span class="badge mini under">V2 UNDER</span>
+          <span class="badge mini under">V3 UNDER</span>
+          <span class="cons-verdict cons-agree">✓ All agree</span>
+        </div>
+        <div class="cons-line">
+          <span class="cons-market-name">Winner:</span>
+          <span class="badge mini home">V1 HOME</span>
+          <span class="badge mini home">V2 HOME</span>
+          <span class="badge mini home">V3 HOME</span>
+          <span class="cons-verdict cons-agree">✓ All agree</span>
+        </div>
+      </span>
     </div>
     <div class="fp-row">
       <span class="fp-label">Form Trend</span>
@@ -256,12 +339,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div class="forecast-panel">
     <div class="fp-title">Forecast Panel</div>
     <div class="fp-row">
-      <span class="fp-label">Conviction</span>
-      <span class="fp-value">V2 → <span class="conv-mixed">MIXED (2/4)</span> &nbsp;&nbsp; V3 → <span class="conv-mixed">MIXED (3/6)</span></span>
+      <div class="fp-label-group">
+        <span class="fp-label">Conviction</span>
+        <span class="fp-sublabel">How many model inputs support the call</span>
+      </div>
+      <span class="fp-value">
+        <div class="conv-line">
+          <span class="conv-model-name">V2 Kelly</span>
+          <span><span class="pip-on">●●</span><span class="pip-off">●●</span></span>
+          <span class="conv-count">2 of 4 inputs</span>
+          <span class="conv-mixed">MIXED</span>
+        </div>
+        <div class="conv-line">
+          <span class="conv-model-name">V3 Enhanced</span>
+          <span><span class="pip-on">●●●</span><span class="pip-off">●●●</span></span>
+          <span class="conv-count">3 of 6 inputs</span>
+          <span class="conv-mixed">MIXED</span>
+        </div>
+      </span>
     </div>
     <div class="fp-row">
-      <span class="fp-label">Consensus</span>
-      <span class="fp-value">Totals: V2+V3 = PASS &nbsp;/&nbsp; V1 = OVER &nbsp;&nbsp; Winner: ✓ ALL HOME</span>
+      <div class="fp-label-group">
+        <span class="fp-label">Consensus</span>
+        <span class="fp-sublabel">Do V1/V2/V3 reach the same call?</span>
+      </div>
+      <span class="fp-value">
+        <div class="cons-line">
+          <span class="cons-market-name">Totals:</span>
+          <span class="badge mini lean-over">V1 LN OVR</span>
+          <span class="badge mini pass">V2 PASS</span>
+          <span class="badge mini pass">V3 PASS</span>
+          <span class="cons-verdict cons-split">⚠ Split</span>
+        </div>
+        <div class="cons-line">
+          <span class="cons-market-name">Winner:</span>
+          <span class="badge mini home">V1 HOME</span>
+          <span class="badge mini home">V2 HOME</span>
+          <span class="badge mini home">V3 HOME</span>
+          <span class="cons-verdict cons-agree">✓ All agree</span>
+        </div>
+      </span>
     </div>
     <div class="fp-row">
       <span class="fp-label">Form Trend</span>
@@ -325,12 +442,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div class="forecast-panel">
     <div class="fp-title">Forecast Panel</div>
     <div class="fp-row">
-      <span class="fp-label">Conviction</span>
-      <span class="fp-value">V2 → <span class="conv-mixed">MIXED (1/4)</span> &nbsp;&nbsp; V3 → <span class="conv-strong">STRONG (4/5)</span></span>
+      <div class="fp-label-group">
+        <span class="fp-label">Conviction</span>
+        <span class="fp-sublabel">How many model inputs support the call</span>
+      </div>
+      <span class="fp-value">
+        <div class="conv-line">
+          <span class="conv-model-name">V2 Kelly</span>
+          <span><span class="pip-on">●</span><span class="pip-off">●●●</span></span>
+          <span class="conv-count">1 of 4 inputs</span>
+          <span class="conv-mixed">MIXED</span>
+        </div>
+        <div class="conv-line">
+          <span class="conv-model-name">V3 Enhanced</span>
+          <span><span class="pip-on">●●●●</span><span class="pip-off">●</span></span>
+          <span class="conv-count">4 of 5 inputs</span>
+          <span class="conv-strong">STRONG</span>
+        </div>
+      </span>
     </div>
     <div class="fp-row">
-      <span class="fp-label">Consensus</span>
-      <span class="fp-value">Totals: V1=PASS V2=PASS V3=OVER &nbsp;&nbsp; Winner: ✓ ALL HOME</span>
+      <div class="fp-label-group">
+        <span class="fp-label">Consensus</span>
+        <span class="fp-sublabel">Do V1/V2/V3 reach the same call?</span>
+      </div>
+      <span class="fp-value">
+        <div class="cons-line">
+          <span class="cons-market-name">Totals:</span>
+          <span class="badge mini pass">V1 PASS</span>
+          <span class="badge mini pass">V2 PASS</span>
+          <span class="badge mini lean-over">V3 LN OVR</span>
+          <span class="cons-verdict cons-split">⚠ Split</span>
+        </div>
+        <div class="cons-line">
+          <span class="cons-market-name">Winner:</span>
+          <span class="badge mini home">V1 HOME</span>
+          <span class="badge mini home">V2 HOME</span>
+          <span class="badge mini home">V3 HOME</span>
+          <span class="cons-verdict cons-agree">✓ All agree</span>
+        </div>
+      </span>
     </div>
     <div class="fp-row">
       <span class="fp-label">Form Trend</span>
@@ -394,12 +545,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div class="forecast-panel">
     <div class="fp-title">Forecast Panel</div>
     <div class="fp-row">
-      <span class="fp-label">Conviction</span>
-      <span class="fp-value">V2 → <span class="conv-mixed">MIXED (2/5)</span> &nbsp;&nbsp; V3 → <span class="conv-mixed">MIXED (3/8)</span></span>
+      <div class="fp-label-group">
+        <span class="fp-label">Conviction</span>
+        <span class="fp-sublabel">How many model inputs support the call</span>
+      </div>
+      <span class="fp-value">
+        <div class="conv-line">
+          <span class="conv-model-name">V2 Kelly</span>
+          <span><span class="pip-on">●●</span><span class="pip-off">●●●</span></span>
+          <span class="conv-count">2 of 5 inputs</span>
+          <span class="conv-mixed">MIXED</span>
+        </div>
+        <div class="conv-line">
+          <span class="conv-model-name">V3 Enhanced</span>
+          <span><span class="pip-on">●●●</span><span class="pip-off">●●●●●</span></span>
+          <span class="conv-count">3 of 8 inputs</span>
+          <span class="conv-mixed">MIXED</span>
+        </div>
+      </span>
     </div>
     <div class="fp-row">
-      <span class="fp-label">Consensus</span>
-      <span class="fp-value">Totals: ✓ ALL OVER &nbsp;&nbsp; Winner: ✓ ALL PASS</span>
+      <div class="fp-label-group">
+        <span class="fp-label">Consensus</span>
+        <span class="fp-sublabel">Do V1/V2/V3 reach the same call?</span>
+      </div>
+      <span class="fp-value">
+        <div class="cons-line">
+          <span class="cons-market-name">Totals:</span>
+          <span class="badge mini lean-over">V1 LN OVR</span>
+          <span class="badge mini over">V2 OVER</span>
+          <span class="badge mini lean-over">V3 LN OVR</span>
+          <span class="cons-verdict cons-agree">✓ All OVER</span>
+        </div>
+        <div class="cons-line">
+          <span class="cons-market-name">Winner:</span>
+          <span class="badge mini pass">V1 PASS</span>
+          <span class="badge mini pass">V2 PASS</span>
+          <span class="badge mini pass">V3 PASS</span>
+          <span class="cons-verdict cons-agree">✓ All agree</span>
+        </div>
+      </span>
     </div>
     <div class="fp-row">
       <span class="fp-label">Form Trend</span>
