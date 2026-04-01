@@ -65,6 +65,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .cons-verdict{font-size:.7rem;margin-left:2px;font-weight:600}
 .cons-agree{color:#4ade80}
 .cons-split{color:#f87171}
+.v4-tracking{padding:8px 14px;border-top:1px solid #26334d;background:#161e30;display:flex;align-items:center;gap:10px;font-size:.8rem}
+.v4-label{color:#5b7499;font-weight:600;white-space:nowrap}
+.v4-note{color:#3d5270;font-style:italic;font-size:.72rem;margin-left:4px}
 .bets-section{padding:12px 16px;border-top:1px solid #3d2a00;background:#1c1600;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .bets-label{font-weight:700;color:#f59e0b;font-size:.72rem;text-transform:uppercase;flex-shrink:0}
 .bet-chip{background:#1d3461;color:#93c5fd;padding:6px 12px;border-radius:16px;font-size:.82rem;font-weight:600;border:1px solid #2d4f8a}
@@ -113,7 +116,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
         <td class="market-label">Total (6.5)</td>
         <td><span class="badge lean-under">LN UNDER</span> <small>39% over</small></td>
         <td><span class="badge lean-under">LN UNDER</span> <small>34% over</small></td>
-        <td><span class="badge under">UNDER</span> <small>37% over</small> </td>
+        <td><span class="badge lean-under">LN UNDER</span> <small>37% over</small> </td>
       </tr>
       <tr>
         <td class="market-label">Winner</td>
@@ -129,6 +132,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
       </tr>
     </tbody>
   </table>
+  <div class="v4-tracking"><span class="v4-label">V4 Proj (tracking):</span> <span class="badge pass">PASS</span> <small>proj=6.28 · edge=-0.22</small> <span class="v4-note">not Kelly-eligible</span></div>
 
   <div class="forecast-panel">
     <div class="fp-title">Forecast Panel</div>
@@ -138,7 +142,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     </div>
     <div class="fp-row">
       <div class="fp-label-group"><span class="fp-label">Consensus</span><span class="fp-sublabel">Do V1/V2/V3 reach the same call?</span></div>
-      <span class="fp-value"><div class="cons-line"><span class="cons-market-name">Totals:</span><span class="badge mini lean-under">V1 LN UND</span><span class="badge mini lean-under">V2 LN UND</span><span class="badge mini under">V3 UNDER</span><span class="cons-verdict cons-agree">✓ All UNDER</span></div><div class="cons-line"><span class="cons-market-name">Winner:</span><span class="badge mini home">V1 HOME</span><span class="badge mini home">V2 HOME</span><span class="badge mini home">V3 HOME</span><span class="cons-verdict cons-agree">✓ All HOME</span></div></span>
+      <span class="fp-value"><div class="cons-line"><span class="cons-market-name">Totals:</span><span class="badge mini lean-under">V1 LN UND</span><span class="badge mini lean-under">V2 LN UND</span><span class="badge mini lean-under">V3 LN UND</span><span class="badge mini pass">V4 PASS</span><span class="cons-verdict cons-agree">✓ All LEAN UNDER</span></div><div class="cons-line"><span class="cons-market-name">Winner:</span><span class="badge mini home">V1 HOME</span><span class="badge mini home">V2 HOME</span><span class="badge mini home">V3 HOME</span><span class="cons-verdict cons-agree">✓ All HOME</span></div></span>
     </div>
     <div class="fp-row">
       <span class="fp-label">Form Trend</span>
@@ -193,11 +197,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
       <tr>
         <td class="market-label">Overtime</td>
         <td><span class="badge lean-ot">LN OT</span> <small>80%</small></td>
-        <td><span class="badge lean-ot">LN OT</span> <small>80%</small></td>
-        <td><span class="badge lean-ot">LN OT</span> <small>80%</small> </td>
+        <td><span class="badge bet-ot">BET OT</span> <small>80%</small></td>
+        <td><span class="badge bet-ot">BET OT</span> <small>80%</small> <span class="diff-warn">⚠</span></td>
       </tr>
     </tbody>
   </table>
+  <div class="v4-tracking"><span class="v4-label">V4 Proj (tracking):</span> <span class="badge pass">PASS</span> <small>proj=5.72 · edge=+0.22</small> <span class="v4-note">not Kelly-eligible</span></div>
 
   <div class="forecast-panel">
     <div class="fp-title">Forecast Panel</div>
@@ -207,7 +212,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     </div>
     <div class="fp-row">
       <div class="fp-label-group"><span class="fp-label">Consensus</span><span class="fp-sublabel">Do V1/V2/V3 reach the same call?</span></div>
-      <span class="fp-value"><div class="cons-line"><span class="cons-market-name">Totals:</span><span class="badge mini under">V1 UNDER</span><span class="badge mini lean-under">V2 LN UND</span><span class="badge mini under">V3 UNDER</span><span class="cons-verdict cons-agree">✓ All UNDER</span></div><div class="cons-line"><span class="cons-market-name">Winner:</span><span class="badge mini pass">V1 PASS</span><span class="badge mini pass">V2 PASS</span><span class="badge mini pass">V3 PASS</span><span class="cons-verdict cons-agree">✓ All PASS</span></div></span>
+      <span class="fp-value"><div class="cons-line"><span class="cons-market-name">Totals:</span><span class="badge mini under">V1 UNDER</span><span class="badge mini lean-under">V2 LN UND</span><span class="badge mini under">V3 UNDER</span><span class="badge mini pass">V4 PASS</span><span class="cons-verdict cons-agree">✓ All UNDER</span></div><div class="cons-line"><span class="cons-market-name">Winner:</span><span class="badge mini pass">V1 PASS</span><span class="badge mini pass">V2 PASS</span><span class="badge mini pass">V3 PASS</span><span class="cons-verdict cons-agree">✓ All PASS</span></div></span>
     </div>
     <div class="fp-row">
       <span class="fp-label">Form Trend</span>
@@ -222,7 +227,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     </div>
     <div class="fp-row">
       <span class="fp-label">Historical</span>
-      <span class="fp-value"><strong>STL</strong> (away): Totals 2W-3L (40%)<sup>*</sup> ⚠</span>
+      <span class="fp-value"><strong>STL</strong> (away): <span style="color:#999">insufficient sample</span></span>
     </div>
     <div class="fp-row">
       <span class="fp-label"></span>
@@ -230,7 +235,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     </div>
   </div>
 
-  <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 LEAN UNDER Total <span class="bet-detail">-108 · $2.30</span></span></div>
+  <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 BET OT <span class="bet-detail">+280 · $2.50</span></span></div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -262,11 +267,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
       <tr>
         <td class="market-label">Overtime</td>
         <td><span class="badge bet-ot">BET OT</span> <small>55%</small></td>
-        <td><span class="badge bet-ot">BET OT</span> <small>55%</small></td>
-        <td><span class="badge bet-ot">BET OT</span> <small>55%</small> </td>
+        <td><span class="badge lean-ot">LN OT</span> <small>55%</small></td>
+        <td><span class="badge lean-ot">LN OT</span> <small>55%</small> <span class="diff-warn">⚠</span></td>
       </tr>
     </tbody>
   </table>
+  <div class="v4-tracking"><span class="v4-label">V4 Proj (tracking):</span> <span class="badge pass">PASS</span> <small>proj=6.62 · edge=+0.12</small> <span class="v4-note">not Kelly-eligible</span></div>
 
   <div class="forecast-panel">
     <div class="fp-title">Forecast Panel</div>
@@ -276,7 +282,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     </div>
     <div class="fp-row">
       <div class="fp-label-group"><span class="fp-label">Consensus</span><span class="fp-sublabel">Do V1/V2/V3 reach the same call?</span></div>
-      <span class="fp-value"><div class="cons-line"><span class="cons-market-name">Totals:</span><span class="badge mini lean-over">V1 LN OVR</span><span class="badge mini lean-over">V2 LN OVR</span><span class="badge mini lean-over">V3 LN OVR</span><span class="cons-verdict cons-agree">✓ All LEAN OVER</span></div><div class="cons-line"><span class="cons-market-name">Winner:</span><span class="badge mini pass">V1 PASS</span><span class="badge mini pass">V2 PASS</span><span class="badge mini pass">V3 PASS</span><span class="cons-verdict cons-agree">✓ All PASS</span></div></span>
+      <span class="fp-value"><div class="cons-line"><span class="cons-market-name">Totals:</span><span class="badge mini lean-over">V1 LN OVR</span><span class="badge mini lean-over">V2 LN OVR</span><span class="badge mini lean-over">V3 LN OVR</span><span class="badge mini pass">V4 PASS</span><span class="cons-verdict cons-agree">✓ All LEAN OVER</span></div><div class="cons-line"><span class="cons-market-name">Winner:</span><span class="badge mini pass">V1 PASS</span><span class="badge mini pass">V2 PASS</span><span class="badge mini pass">V3 PASS</span><span class="cons-verdict cons-agree">✓ All PASS</span></div></span>
     </div>
     <div class="fp-row">
       <span class="fp-label">Form Trend</span>
@@ -291,7 +297,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     </div>
     <div class="fp-row">
       <span class="fp-label">Historical</span>
-      <span class="fp-value"><strong>ANA</strong> (away): Totals 4W-1L (80%)<sup>*</sup> ✓</span>
+      <span class="fp-value"><strong>ANA</strong> (away): <span style="color:#999">insufficient sample</span></span>
     </div>
     <div class="fp-row">
       <span class="fp-label"></span>
@@ -299,15 +305,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     </div>
   </div>
 
-  <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 BET OT <span class="bet-detail">+300 · $2.50</span></span></div>
+  
 </div></div>
 <div class="slate-container"><h2>📋 Daily Betting Slate</h2>
 <table class="slate-table"><thead><tr><th>Game</th><th>Bet</th><th>Odds</th><th>Floor</th><th>Risk</th><th>Win</th></tr></thead><tbody>
-<tr><td>STL@LAK</td><td>LEAN UNDER Total</td><td>-108</td><td>-137</td><td>$2.30</td><td>$2.13</td></tr>
-<tr><td>ANA@SJS</td><td>BET OT</td><td>+300</td><td>+100</td><td>$2.50</td><td>$7.50</td></tr>
+<tr><td>STL@LAK</td><td>BET OT</td><td>+280</td><td>any +</td><td>$2.50</td><td>$7.00</td></tr>
 </tbody><tfoot>
-<tr class="slate-total"><td colspan="4">Max Exposure</td><td colspan="2">$4.80</td></tr>
-<tr class="slate-total"><td colspan="4">Net Profit if all hit</td><td colspan="2">+$9.63</td></tr>
+<tr class="slate-total"><td colspan="4">Max Exposure</td><td colspan="2">$2.50</td></tr>
+<tr class="slate-total"><td colspan="4">Net Profit if all hit</td><td colspan="2">+$7.00</td></tr>
 </tfoot></table>
 </div>
 </body></html>
