@@ -89,6 +89,36 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   .slate-table thead th,.slate-table tbody td{padding:8px 8px;font-size:.78rem}
 }
 </style>
+<style>
+/* ── AI Summary Panel ──────────────────────────────────── */
+.ai-summary-panel{padding:14px 16px;border-top:1px solid #1a3050;background:#0f1720}
+.ai-summary-title{font-size:.65rem;text-transform:uppercase;letter-spacing:.6px;color:#7eb8f7;font-weight:700;margin-bottom:10px}
+.ai-summary-body{font-size:.81rem;color:#9db5cc;line-height:1.7;white-space:pre-wrap;font-family:inherit}
+.ai-summary-body strong{color:#c8d6e8;font-weight:600}
+.ai-summary-meta{font-size:.62rem;color:#253345;margin-top:10px;font-style:italic}
+/* ── Model Intel Section ───────────────────────────────── */
+.intel-container{background:#1c2640;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.4);padding:18px 16px;max-width:1400px;margin:0 auto 24px;border:1px solid #26334d}
+.intel-header{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+.intel-header h2{color:#7eb8f7;font-size:1.1rem}
+.intel-date{font-size:.75rem;color:#3d5070}
+.intel-sub{font-size:.78rem;color:#3d5070;font-style:italic;margin-bottom:14px}
+.intel-panel{border:1px solid #26334d;border-radius:8px;overflow:hidden;margin-bottom:10px}
+.intel-panel:last-child{margin-bottom:0}
+.intel-panel-hdr{background:#131b2e;padding:11px 14px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none;font-size:.85rem;font-weight:600;color:#7eb8f7}
+.intel-panel-hdr:hover{background:#0d1624}
+.intel-arrow{font-size:.65rem;color:#3d5070;transition:transform .2s}
+.intel-panel-body{}
+.intel-pre{font-family:'Cascadia Code','Consolas','SF Mono',monospace;font-size:.71rem;color:#8da8c8;background:#0a1018;padding:14px 16px;overflow-x:auto;white-space:pre;line-height:1.55;margin:0;border-top:1px solid #1a2840}
+</style>
+<script>
+function togglePanel(id){
+  var el=document.getElementById(id);
+  var body=el.querySelector('.intel-panel-body');
+  var arrow=el.querySelector('.intel-arrow');
+  if(body.style.display==='none'){body.style.display='';arrow.style.transform=''}
+  else{body.style.display='none';arrow.style.transform='rotate(-90deg)'}
+}
+</script>
 </head>
 <body>
 <div class="page-header">
@@ -166,6 +196,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>DET @ TBL | Total 6.5 | Kelly: UNDER (V1/V3)</strong>
+
+All three models lean under on this 6.5 line — V1 and V3 both call formal UNDER (score -0.65), while V2 softens to LEAN UNDER. Tampa's team GAA average (2.30) is the best goaltending input on today's slate and the primary driver. TBL's last 7 was only 17 goals for, and the SaveModel projects just 5.18 total goals. Winner signal is solidly HOME (86.9% win probability, score +1.05 across all three models). <strong>Risk flag: both goalies unconfirmed</strong> — end-of-season game, actual starters unknown, model is running off team averages. V1 fires BET OT at 0.50 but V2/V3 demote it to LEAN OT (not Kelly-eligible). The under is the cleanest signal today, but the goalie uncertainty is a real caveat.</div>
+    <div class="ai-summary-meta">Generated 2026-04-13</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -236,6 +274,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>NYR @ FLA | Total 6.5 | Kelly: PASS (all models)</strong>
+
+The models are genuinely split here — V1 leans under (-0.20), V2 is near-flat (+0.05), V3 nudges to a slight over (+0.15 after LSP offset). No model clears any Kelly threshold. The SaveModel at 5.59 points toward the under, but FLA has gone over 6/10 recently and allowed 29 goals in their last 7 (GAA 3.07). Winner leans NYR AWAY at V1 (LEAN AWAY, -0.26) but V2/V3 pass — weak, contradictory signal. <strong>Both goalies unconfirmed.</strong> The model has nothing confident to say on either total or winner in this one; no Kelly-eligible edge.</div>
+    <div class="ai-summary-meta">Generated 2026-04-13</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -306,6 +352,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 CAR ML <span class="bet-detail">-115 · $3.24</span></span></div>
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>CAR @ PHI | Total 6.5 | Kelly: AWAY (all models)</strong>
+
+Carolina is the clearest winner call on today's slate — all three models agree AWAY at -0.64 score (24.1% home win probability). CAR is 7-3 in their last 10, 0-4-1 in H2H at PHI in recent matchups, and averages 3.65 goals/game offensively. On totals, V1 calls UNDER (-0.60) but V2/V3 land at LEAN UNDER (-0.55/-0.45) — directionally consistent but not Kelly-eligible. SaveModel projects 5.83. <strong>Both goalies unconfirmed</strong>, and CAR's season over rate (45/80) works against the under lean. The winner call is the actionable signal; totals are informational only.</div>
+    <div class="ai-summary-meta">Generated 2026-04-13</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -376,6 +430,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>DAL @ TOR | Total 5.5 | Kelly: LEAN OVER (V2/V3) — informational only</strong>
+
+V1 fires a formal OVER (+1.05 score, 82.8% over probability) but V2/V3 pull back to LEAN OVER (+0.90/+1.00) — not Kelly-eligible. The key driver is Toronto's defense: they allow 3.62 goals/game and surrendered 35 goals in their last 7 (5.0/game). The 5.5 line gives the over a lot of structural room. V4 projects 6.54 goals. Winner is AWAY (DAL) across all models at -0.57 score / 26.5% home win probability. <strong>Both goalies unconfirmed</strong>, and Dallas's last 7 goals-for was only 18, meaning their offense may not contribute as much as the line implies. The over case rests on Toronto's defense leaking — which it has been — but a solid Dallas starter changes the math entirely.</div>
+    <div class="ai-summary-meta">Generated 2026-04-13</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -446,6 +508,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 MIN ML <span class="bet-detail">-126 · $2.90</span></span></div>
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>MIN @ STL | Total 6.5 | Kelly: UNDER (V1/V3)</strong>
+
+Strong under consensus — V1 UNDER (-0.50), V2 LEAN UNDER (-0.55), V3 UNDER (-0.65). STL's home offense is 2.64 goals/game, Minnesota's defense has been solid, and STL's season under rate is 43/79 games. SaveModel projects only 4.99 goals. Winner is AWAY (MIN) across all models at -0.66 score / 23.3% home win probability — Minnesota is the -126 ML favorite. <strong>Both goalies unconfirmed.</strong> OT scores are elevated (0.70–0.80) but fall in LEAN OT, not BET OT. Minnesota's season over rate (44/80) is a mild counter-signal. The under is the model's most consistent call today, but late-season unconfirmed starters apply to every game on this slate.</div>
+    <div class="ai-summary-meta">Generated 2026-04-13</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -516,6 +586,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>SJS @ NSH | Total 6.5 | Kelly: LEAN OVER (V2/V3) — informational only</strong>
+
+Both teams carry high unconfirmed GAA averages — SJS 3.60, NSH 3.13 — driving the over lean. V1 calls OVER (+0.75 score, 75.5% over probability), V2/V3 soften to LEAN OVER (+0.95). H2H trend backs the over (6-2 in recent matchups). Winner is HOME (NSH) across all models at +0.76 score / 79.6% win probability. <strong>Both goalies unconfirmed</strong>, and these are two non-playoff teams at season's end — the starting goalie inputs are the most unreliable on the slate. If backup starters take the ice, the actual over/under could shift significantly in either direction.</div>
+    <div class="ai-summary-meta">Generated 2026-04-13</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -586,6 +664,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>BUF @ CHI | Total 6.5 | Kelly: PASS (V2/V3)</strong>
+
+V1 calls UNDER (-0.50) but V2 and V3 both pass — a meaningful split. The V2 goalie weighting and V3's special teams/shot-pace inputs partially offset the under signal, landing near-flat (-0.05 to +0.05 range). SaveModel at 5.01 leans under. Winner is AWAY (BUF) across all models at -0.96 score / 15.0% home win probability — Buffalo is the heavy -205 favorite. <strong>Both goalies unconfirmed.</strong> The winner call (BUF) is the cleaner signal; the totals disagreement between V1 and V2/V3 means no Kelly bet on the total.</div>
+    <div class="ai-summary-meta">Generated 2026-04-13</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -656,6 +742,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>COL @ EDM | Total 6.5 | Kelly: PASS (V3)</strong>
+
+The most contradictory totals game today. V1 and V2 lean under (-0.30/-0.55), but V3 passes (-0.15) once EDM's elite PP% (30.56%) and COL's shot volume (33.7/game) are factored in. The market is essentially a pick'em (-111 COL / -108 EDM), and winner models lean COL AWAY at -0.65 / 23.5% home win probability. <strong>Both goalies unconfirmed</strong>, with a large GAA gap between COL's team average (2.10) and EDM's (3.32) that will be heavily influenced by who actually starts. SaveModel at 6.40 essentially sits on the line. No confident call on total or winner — this game's outcome is more dependent on lineup/goalie confirmation than any other today.</div>
+    <div class="ai-summary-meta">Generated 2026-04-13</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -726,6 +820,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>LAK @ SEA | Total 5.5 | Kelly: LEAN OVER (all models) — informational only</strong>
+
+All three models agree on LEAN OVER against a low 5.5 line (V1: +0.30, V2: +0.45, V3: +0.25). Seattle allowed 28 goals in their last 7 and gives up 3.19/game on the season. V4 projects 6.35 goals. Winner signal is weak — V1 leans AWAY (LAK), V2/V3 pass. Both PK% rates are below average (LAK 74.9%, SEA 71.6%), a factor that typically inflates scoring. <strong>Both goalies unconfirmed.</strong> OT probability is elevated at 0.80 across all models but stays in LEAN OT, not BET OT. No Kelly-eligible call on any market today for this game.</div>
+    <div class="ai-summary-meta">Generated 2026-04-13</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -796,6 +898,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 BET OT <span class="bet-detail">+290 · $2.50</span></span></div>
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>WPG @ VGK | Total 5.5 | Kelly: BET OT (V2/V3)</strong>
+
+The headliner on today's card. V2 and V3 both fire BET OT at 0.80 — this is above the documented 0.65 BET OT ceiling and technically in a zone where confidence historically becomes less reliable, so apply extra caution. Vegas has been hot (6-1-3 last 10, 27 goals for in last 7), and this is a tight divisional matchup on a low 5.5 line. All three models call LEAN OVER on totals (+0.35/+0.35/+0.45) — informational only, not Kelly-eligible. Winner is HOME (VGK) across all models at +0.85 score / 82.2% win probability. <strong>Both goalies unconfirmed.</strong> WPG's road offense averages only 2.62 goals/game away, working against the over lean. The OT call at 0.80 exceeds the BET OT sweet spot ceiling (0.65) — the historical 0.65+ bucket is less reliable, so this should be sized conservatively.</div>
+    <div class="ai-summary-meta">Generated 2026-04-13</div>
+  </div>
 </div></div>
 <div class="slate-container"><h2>📋 Daily Betting Slate</h2>
 <table class="slate-table"><thead><tr><th>Game</th><th>Bet</th><th>Odds</th><th>Floor</th><th>Risk</th><th>Win</th></tr></thead><tbody>
@@ -806,5 +916,324 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <tr class="slate-total"><td colspan="4">Max Exposure</td><td colspan="2">$8.64</td></tr>
 <tr class="slate-total"><td colspan="4">Net Profit if all hit</td><td colspan="2">+$12.37</td></tr>
 </tfoot></table>
+</div>
+
+<div class="intel-container">
+  <div class="intel-header">
+    <h2>📊 Daily Model Intel</h2>
+    <span class="intel-date">2026-04-13</span>
+  </div>
+  <p class="intel-sub">Live stats — backtester, calibrator, and threshold optimizer. Updated each run.</p>
+  
+<div class="intel-panel" id="panel-bt">
+  <div class="intel-panel-hdr" onclick="togglePanel('panel-bt')">
+    <span>📈 Backtester — All-Time Performance</span>
+    <span class="intel-arrow">&#9660;</span>
+  </div>
+  <div class="intel-panel-body">
+    <pre class="intel-pre">================================================================
+  BACKTESTER — Kelly-Eligible Performance
+================================================================
+  Total rows (all time): 180
+  Date range: 2026-03-14 to 2026-04-12
+
+ALL-TIME PERFORMANCE (Kelly-eligible bets only):
+  V1:
+    Totals : 42W 45L 0P  (48% hit, ROI -7.8%, N=87)
+    Winner : 75W 40L 0P  (65% hit, ROI +24.5%, N=115)
+    OT     : 9W 45L 0P  (17% hit, ROI -31.7%, N=54)
+  V2:
+    Totals : 32W 29L 0P  (52% hit, ROI +0.1%, N=61)
+    Winner : 69W 37L 0P  (65% hit, ROI +24.3%, N=106)
+    OT     : 9W 42L 0P  (18% hit, ROI -27.6%, N=51)
+  V3:
+    Totals : 31W 42L 0P  (42% hit, ROI -18.9%, N=73)
+    Winner : 69W 37L 0P  (65% hit, ROI +24.3%, N=106)
+    OT     : 9W 42L 0P  (18% hit, ROI -27.6%, N=51)
+
+LAST 30 DAYS (180 games):
+  V1:
+    Totals : 42W 45L 0P  (48% hit, ROI -7.8%, N=87)
+    Winner : 75W 40L 0P  (65% hit, ROI +24.5%, N=115)
+    OT     : 9W 45L 0P  (17% hit, ROI -31.7%, N=54)
+  V2:
+    Totals : 32W 29L 0P  (52% hit, ROI +0.1%, N=61)
+    Winner : 69W 37L 0P  (65% hit, ROI +24.3%, N=106)
+    OT     : 9W 42L 0P  (18% hit, ROI -27.6%, N=51)
+  V3:
+    Totals : 31W 42L 0P  (42% hit, ROI -18.9%, N=73)
+    Winner : 69W 37L 0P  (65% hit, ROI +24.3%, N=106)
+    OT     : 9W 42L 0P  (18% hit, ROI -27.6%, N=51)
+
+LAST 60 DAYS (180 games):
+  V1:
+    Totals : 42W 45L 0P  (48% hit, ROI -7.8%, N=87)
+    Winner : 75W 40L 0P  (65% hit, ROI +24.5%, N=115)
+    OT     : 9W 45L 0P  (17% hit, ROI -31.7%, N=54)
+  V2:
+    Totals : 32W 29L 0P  (52% hit, ROI +0.1%, N=61)
+    Winner : 69W 37L 0P  (65% hit, ROI +24.3%, N=106)
+    OT     : 9W 42L 0P  (18% hit, ROI -27.6%, N=51)
+  V3:
+    Totals : 31W 42L 0P  (42% hit, ROI -18.9%, N=73)
+    Winner : 69W 37L 0P  (65% hit, ROI +24.3%, N=106)
+    OT     : 9W 42L 0P  (18% hit, ROI -27.6%, N=51)
+
+V3 TOTALS — MONTHLY BREAKDOWN:
+  V3 Totals by month:
+    2026-03: 28W 39L 0P  ROI -20.2%  |++++++++++++++++++++++++++++---------------------------------------|
+    2026-04: 3W 3L 0P  ROI -4.5%  |+++---|
+
+V2/V3 WINNER — MONTHLY BREAKDOWN:
+  V2/V3 Winner by month:
+    2026-03: 61W 35L 0P  ROI +21.3%  |+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------|
+    2026-04: 8W 2L 0P  ROI +52.7%  |++++++++--|
+
+STREAK ANALYSIS:
+  V1 Totals:  Current: 2 W streak | Longest win run: 7 | Longest loss run: 5
+  V1 Winner:  Current: 3 L streak | Longest win run: 14 | Longest loss run: 3
+  V2 Totals:  Current: 4 W streak | Longest win run: 9 | Longest loss run: 6
+  V2 Winner:  Current: 1 L streak | Longest win run: 18 | Longest loss run: 3
+  V3 Totals:  Current: 2 L streak | Longest win run: 5 | Longest loss run: 5
+  V3 Winner:  Current: 1 L streak | Longest win run: 18 | Longest loss run: 3
+
+MODEL COMPARISON (V1 vs V2 vs V3 — Totals):
+  Model     W    L    P   Hit%      ROI     N
+  --------------------------------------------------
+  V1       42   45    0    48%    -7.8%
+  V2       32   29    0    52%    +0.1%
+  V3       31   42    0    42%   -18.9% &lt;
+
+================================================================
+  Run with --model V3 or --window 30 to filter.
+================================================================</pre>
+  </div>
+</div>
+<div class="intel-panel" id="panel-cal">
+  <div class="intel-panel-hdr" onclick="togglePanel('panel-cal')">
+    <span>🎯 Calibrator — Confidence Calibration</span>
+    <span class="intel-arrow">&#9660;</span>
+  </div>
+  <div class="intel-panel-body">
+    <pre class="intel-pre">================================================================
+  CONFIDENCE CALIBRATOR
+  Checks if X% confidence actually wins X% of the time
+================================================================
+  Rows analyzed: 180
+  NOTE: Calibration requires N&gt;=5 per bucket to be meaningful.
+
+  V1 Totals — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     20%    29        25%      48%    +23%  OVERPERFORMING
+     30%    31        35%      39%     +4%  well calibrated
+     40%     7        45%     100%    +55%  OVERPERFORMING
+     50%    14        55%      43%    -12%  UNDERPERFORMING
+     60%     2        65%     100%    +35%  (too few)
+     70%     4        75%      25%    -50%  (too few)
+
+  Brier Score: 0.0596  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  V1 Winner — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     10%     3        15%      67%    +52%  (too few)
+     20%    31        25%      65%    +40%  OVERPERFORMING
+     30%    18        35%      61%    +26%  OVERPERFORMING
+     40%    18        45%      78%    +33%  OVERPERFORMING
+     50%    16        55%      75%    +20%  OVERPERFORMING
+     60%    10        65%      60%     -5%  
+     70%     8        75%      62%    -12%  UNDERPERFORMING
+     80%     5        85%      60%    -25%  UNDERPERFORMING
+     90%     2        95%       0%    -95%  (too few)
+    100%     4       105%      50%    -55%  (too few)
+
+  Brier Score: 0.1123  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  V2 Totals — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     20%    14        25%      57%    +32%  OVERPERFORMING
+     30%    15        35%      47%    +12%  OVERPERFORMING
+     40%    15        45%      47%     +2%  well calibrated
+     50%    14        55%      71%    +16%  OVERPERFORMING
+     70%     2        75%       0%    -75%  (too few)
+     80%     1        85%       0%    -85%  (too few)
+
+  Brier Score: 0.0636  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  V2/V3 Winner — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     10%     3        15%      67%    +52%  (too few)
+     20%    21        25%      57%    +32%  OVERPERFORMING
+     30%    18        35%      61%    +26%  OVERPERFORMING
+     40%    19        45%      84%    +39%  OVERPERFORMING
+     50%    13        55%      69%    +14%  OVERPERFORMING
+     60%    11        65%      82%    +17%  OVERPERFORMING
+     70%     9        75%      44%    -31%  UNDERPERFORMING
+     80%     5        85%      60%    -25%  UNDERPERFORMING
+     90%     3        95%      33%    -62%  (too few)
+    100%     4       105%      50%    -55%  (too few)
+
+  Brier Score: 0.1056  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  V3 Totals — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     10%     4        15%       0%    -15%  (too few)
+     20%    13        25%      46%    +21%  OVERPERFORMING
+     30%    21        35%      48%    +13%  OVERPERFORMING
+     40%    17        45%      41%     -4%  well calibrated
+     50%    17        55%      47%     -8%  
+     70%     1        75%       0%    -75%  (too few)
+
+  Brier Score: 0.0233  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  OT MODEL — Probability Calibration (prob vs actual OT rate):
+   OT Prob     N  Expected%   Actual%     Gap
+  --------------------------------------------------
+      10%     2        15%        0%    -15% (too few)
+      20%     9        25%       33%     +8%
+      30%    17        35%       12%    -23%
+      40%    27        45%       30%    -15%
+      50%    29        55%       21%    -34%
+      60%    34        65%        9%    -56%
+      70%    37        75%       24%    -51%
+      80%    25        85%       44%    -41%
+
+================================================================
+  Interpretation guide:
+  Gap &gt; +10%  : model is too conservative (underestimates win rate)
+  Gap &lt; -10%  : model is overconfident (overestimates win rate)
+  |Gap| &lt; 5%  : well calibrated
+================================================================</pre>
+  </div>
+</div>
+<div class="intel-panel" id="panel-opt">
+  <div class="intel-panel-hdr" onclick="togglePanel('panel-opt')">
+    <span>⚙️ Optimizer — Threshold Analysis</span>
+    <span class="intel-arrow" style="transform:rotate(-90deg)">&#9660;</span>
+  </div>
+  <div class="intel-panel-body" style="display:none">
+    <pre class="intel-pre">Loading CSV...
+Loaded 256 rows with actuals.
+
+==============================================================
+  THRESHOLD OPTIMIZER
+  Kelly-eligible decisions only (OVER/UNDER/HOME/AWAY/BET OT)
+  -110 odds for totals/winner | +310 for OT
+  NOTE: in-sample optimization — treat as directional signal.
+        Trust configs with N&gt;=20 and delta ROI &gt;5pp.
+==============================================================
+
+==============================================================
+  V1 TOTALS
+==============================================================
+  Current: OVER≥0.40 | UNDER≤-0.40
+  Current ROI: -6.6% [-]  N=92  (45W 47L 0P)
+
+  Best:    OVER≥0.80 | UNDER≤-1.10
+  Best ROI: +14.5% [+]  N=20  (12W 8L 0P)
+  --&gt; Δ ROI: +21.2pp | over 0.40→0.80, under -0.40→-1.10
+
+  Top 5 configs by ROI (N≥10):
+    OVER≥0.80 UNDER≤-1.10  ROI=+14.5%  hit=60%  N=20  (12W 8L 0P)
+    OVER≥0.80 UNDER≤-0.80  ROI=+13.1%  hit=59%  N=27  (16W 11L 0P)
+    OVER≥0.80 UNDER≤-0.75  ROI=+9.9%  hit=58%  N=33  (19W 14L 0P)
+    OVER≥0.80 UNDER≤-0.90  ROI=+6.9%  hit=56%  N=25  (14W 11L 0P)
+    OVER≥0.80 UNDER≤-0.35  ROI=+5.7%  hit=55%  N=65  (36W 29L 0P)
+
+==============================================================
+  V2 TOTALS
+==============================================================
+  Current: OVER≥0.40 | UNDER≤-0.55
+  Current ROI: +6.3% [+]  N=79  (44W 35L 0P)
+
+  Best:    OVER≥0.80 | UNDER≤-0.90
+  Best ROI: +22.0% [+]  N=36  (23W 13L 0P)
+  --&gt; Δ ROI: +15.6pp | over 0.40→0.80, under -0.55→-0.90
+
+  Top 5 configs by ROI (N≥10):
+    OVER≥0.80 UNDER≤-0.90  ROI=+22.0%  hit=64%  N=36  (23W 13L 0P)
+    OVER≥0.80 UNDER≤-1.00  ROI=+19.3%  hit=62%  N=32  (20W 12L 0P)
+    OVER≥0.75 UNDER≤-0.90  ROI=+17.5%  hit=62%  N=39  (24W 15L 0P)
+    OVER≥0.70 UNDER≤-0.90  ROI=+17.5%  hit=62%  N=39  (24W 15L 0P)
+    OVER≥0.80 UNDER≤-0.55  ROI=+17.2%  hit=61%  N=57  (35W 22L 0P)
+
+==============================================================
+  V3 TOTALS
+==============================================================
+  Current: OVER≥0.70 | UNDER≤-0.35
+  Current ROI: -2.6% [-]  N=98  (50W 48L 0P)
+
+  Best:    OVER≥0.80 | UNDER≤-1.20
+  Best ROI: +22.7% [+]  N=28  (18W 10L 0P)
+  --&gt; Δ ROI: +25.3pp | over 0.70→0.80, under -0.35→-1.20
+
+  Top 5 configs by ROI (N≥10):
+    OVER≥0.80 UNDER≤-1.20  ROI=+22.7%  hit=64%  N=28  (18W 10L 0P)
+    OVER≥0.75 UNDER≤-1.20  ROI=+20.9%  hit=63%  N=30  (19W 11L 0P)
+    OVER≥0.65 UNDER≤-1.20  ROI=+20.0%  hit=63%  N=35  (22W 13L 0P)
+    OVER≥0.70 UNDER≤-1.20  ROI=+17.9%  hit=62%  N=34  (21W 13L 0P)
+    OVER≥0.80 UNDER≤-1.10  ROI=+15.7%  hit=61%  N=33  (20W 13L 0P)
+
+==============================================================
+  V1 WINNER
+==============================================================
+  Current: HOME≥0.60 | AWAY≤-0.50 | HOME cap&gt;1.40
+  Current ROI: +38.3%  N=69  (50W 19L)
+
+  Best:    HOME≥0.80 | AWAY≤-0.50 | HOME cap&gt;1.20
+  Best ROI: +54.4%  N=47  (38W 9L)
+  --&gt; Δ ROI: +16.0pp
+
+  Top 5 configs by ROI (N≥10):
+    HOME≥0.80 AWAY≤-0.50 cap&gt;1.20  ROI=+54.4%  hit=81%  N=47  (38W 9L)
+    HOME≥0.80 AWAY≤-0.55 cap&gt;1.20  ROI=+54.4%  hit=81%  N=47  (38W 9L)
+    HOME≥0.80 AWAY≤-0.60 cap&gt;1.20  ROI=+50.0%  hit=79%  N=42  (33W 9L)
+    HOME≥0.80 AWAY≤-0.50 cap&gt;1.30  ROI=+49.7%  hit=78%  N=51  (40W 11L)
+    HOME≥0.80 AWAY≤-0.55 cap&gt;1.30  ROI=+49.7%  hit=78%  N=51  (40W 11L)
+
+==============================================================
+  V2/V3 WINNER
+==============================================================
+  Current: HOME≥0.60 | AWAY≤-0.50 | HOME cap&gt;1.40
+  Current ROI: +46.0%  N=68  (52W 16L)
+
+  Best:    HOME≥0.80 | AWAY≤-0.50 | HOME cap&gt;1.20
+  Best ROI: +52.7%  N=45  (36W 9L)
+  --&gt; Δ ROI: +6.7pp
+
+  Top 5 configs by ROI (N≥10):
+    HOME≥0.80 AWAY≤-0.50 cap&gt;1.20  ROI=+52.7%  hit=80%  N=45  (36W 9L)
+    HOME≥0.80 AWAY≤-0.55 cap&gt;1.20  ROI=+52.7%  hit=80%  N=45  (36W 9L)
+    HOME≥0.80 AWAY≤-0.50 cap&gt;1.40  ROI=+52.0%  hit=80%  N=54  (43W 11L)
+    HOME≥0.80 AWAY≤-0.55 cap&gt;1.40  ROI=+52.0%  hit=80%  N=54  (43W 11L)
+    HOME≥0.80 AWAY≤-0.50 cap&gt;1.30  ROI=+51.9%  hit=80%  N=49  (39W 10L)
+
+==============================================================
+  OT MODEL (shared V1/V2/V3)  (+310 odds | break-even: 24.4%)
+==============================================================
+  Current: BET OT [0.50–0.65]
+  Current ROI: -41.4%  N=63  (9W 54L  14% hit rate)
+
+  Best:    BET OT [0.70–1.00]
+  Best ROI: +32.3%  N=62  (20W 42L  32% hit rate)
+  --&gt; Δ ROI: +73.7pp | range [0.50–0.65] → [0.70–1.00]
+
+  Top 5 configs by ROI (N≥5):
+    [0.70–1.00]  ROI=+32.3%  N=62  (20W 42L  32%)
+    [0.70–0.90]  ROI=+32.3%  N=62  (20W 42L  32%)
+    [0.70–0.85]  ROI=+32.3%  N=62  (20W 42L  32%)
+    [0.70–0.80]  ROI=+32.3%  N=62  (20W 42L  32%)
+    [0.65–1.00]  ROI=+17.9%  N=80  (23W 57L  29%)
+
+==============================================================
+  Run with --verbose / -v for top-5 config breakdowns.
+  Run with --buckets / -b for full score bucket tables.
+==============================================================</pre>
+  </div>
+</div>
 </div>
 </body></html>
