@@ -89,6 +89,36 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   .slate-table thead th,.slate-table tbody td{padding:8px 8px;font-size:.78rem}
 }
 </style>
+<style>
+/* ── AI Summary Panel ──────────────────────────────────── */
+.ai-summary-panel{padding:14px 16px;border-top:1px solid #1a3050;background:#0f1720}
+.ai-summary-title{font-size:.65rem;text-transform:uppercase;letter-spacing:.6px;color:#7eb8f7;font-weight:700;margin-bottom:10px}
+.ai-summary-body{font-size:.81rem;color:#9db5cc;line-height:1.7;white-space:pre-wrap;font-family:inherit}
+.ai-summary-body strong{color:#c8d6e8;font-weight:600}
+.ai-summary-meta{font-size:.62rem;color:#253345;margin-top:10px;font-style:italic}
+/* ── Model Intel Section ───────────────────────────────── */
+.intel-container{background:#1c2640;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.4);padding:18px 16px;max-width:1400px;margin:0 auto 24px;border:1px solid #26334d}
+.intel-header{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+.intel-header h2{color:#7eb8f7;font-size:1.1rem}
+.intel-date{font-size:.75rem;color:#3d5070}
+.intel-sub{font-size:.78rem;color:#3d5070;font-style:italic;margin-bottom:14px}
+.intel-panel{border:1px solid #26334d;border-radius:8px;overflow:hidden;margin-bottom:10px}
+.intel-panel:last-child{margin-bottom:0}
+.intel-panel-hdr{background:#131b2e;padding:11px 14px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none;font-size:.85rem;font-weight:600;color:#7eb8f7}
+.intel-panel-hdr:hover{background:#0d1624}
+.intel-arrow{font-size:.65rem;color:#3d5070;transition:transform .2s}
+.intel-panel-body{}
+.intel-pre{font-family:'Cascadia Code','Consolas','SF Mono',monospace;font-size:.71rem;color:#8da8c8;background:#0a1018;padding:14px 16px;overflow-x:auto;white-space:pre;line-height:1.55;margin:0;border-top:1px solid #1a2840}
+</style>
+<script>
+function togglePanel(id){
+  var el=document.getElementById(id);
+  var body=el.querySelector('.intel-panel-body');
+  var arrow=el.querySelector('.intel-arrow');
+  if(body.style.display==='none'){body.style.display='';arrow.style.transform=''}
+  else{body.style.display='none';arrow.style.transform='rotate(-90deg)'}
+}
+</script>
 </head>
 <body>
 <div class="page-header">
@@ -166,6 +196,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 BOS Reg Win <span class="bet-detail">+120 · $5.00</span></span></div>
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>NJD @ BOS | Total 6.5 | Kelly: BOS Reg Win (+120)</strong>
+
+<strong>Line read:</strong> All three models lean under on the 6.5 total — V1 UNDER (-0.50), V2 LEAN UNDER (-0.50), V3 LEAN UNDER (-0.40). The projected goal total of roughly 6.0 sits a half-goal below the line, and the SaveModel projects only 5.93 goals. V3's T9 SV% fires +0.20 (both goalies below league-average SV%), which softens the signal slightly from V1 to a weaker LEAN UNDER, but the direction is consistent. On the winner, all three models are unambiguous: HOME BOS, score +1.34, 92% home win probability.
+
+<strong>Model consensus:</strong> Totals lean under across the board (V1 harder, V3 softer — mild disagreement in magnitude but not direction). Winner is locked: all three call HOME with identical scores. Zero disagreement on BOS.
+
+<strong>Key driver:</strong> Boston's superior goaltending (2.76 GAA vs NJD's 3.07 GAA) and home-ice dominance. H2H shows BOS 4-0-1 at home in this matchup. BOS is 28-11 on the season vs NJD's 21-19. The winner call is not subtle.
+
+<strong>Risk flags:</strong> Both goalies confirmed — that's a clean input. NJD went 7-2 OVER in their last 10 (the counter-signal on totals). BOS offense is cold in their last 7 (only 18 goals for, -24.7% below their season average), which is actually consistent with the under lean. BOS defense has been holding (last 7 at 20 goals against, essentially flat vs season avg). End-of-season note: goalie confirmation is noted, but late-season lineup management can still affect line rushes.
+
+<strong>Verdict:</strong> The BOS regulation win is the clear actionable bet here (+120, model fair value -447, +23.6 pt edge on the reg-win market). The under direction is consistent but sits at LEAN UNDER in V2/V3 — not Kelly-eligible on totals. No OT edge (PASS across all three models at 20% probability). This is a clean, low-noise game.</div>
+    <div class="ai-summary-meta">Generated 2026-04-14</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -236,6 +282,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>CAR @ NYI | Total 6.5 | Kelly: CAR Reg Win (+170)</strong>
+
+<strong>Line read:</strong> All three models pass on the total — V1/V2/V3 score between -0.15 and -0.25, right in the no-man's land between LEAN UNDER and PASS. The projected total sits around 5.7–5.8 goals, but the OT model complicates things: OT probability is 0.60 across V2/V3, elevated but in LEAN OT territory (not Kelly-eligible). On the winner, all three models agree AWAY CAR: V1 at -0.72 score (21% home win probability), V2/V3 at -0.52 (28% home win). The regulation-win market shows CAR at +170 with a model fair value of +139 — +8.1 pt edge.
+
+<strong>Model consensus:</strong> Clean agreement on AWAY. Total is a genuine PASS — models neither confident enough to call under nor close to an over. V1 fires BET OT at 0.50 exactly, but V2/V3 upgrade to LEAN OT at 0.60 (informational only). The OT disagreement between V1 and V2/V3 is meaningful: V1 says it's a bet, V2/V3 say informational only at the 0.60 level.
+
+<strong>Key driver:</strong> CAR's form is the driver — 7-2-1 last 10, offense averaging 4.43 goals/game in the last 7 (vs 3.48 season avg, +27.3%). NYI, meanwhile, is 3-7 last 10 and has allowed 4.29 goals/game in their last 7 (vs 2.98 avg, +44.1% bleed). NYI offense is cold at only 2.29 goals/game last 7.
+
+<strong>Risk flags:</strong> CAR goalie is unconfirmed — this is the biggest caveat. The model blends the 2.50 confirmed GAA with the 2.89 team average to get 2.70. If a backup starts, the model's goalie input is off. CAR is also on a back-to-back, which is a fatigue flag. NYI defense has been historically strong H2H (3-1 home wins), which is a mild counter to the CAR momentum signal.
+
+<strong>Verdict:</strong> CAR AWAY is a legitimate edge at +170 with a +8.1 pt reg-win edge. Not a large edge, but the direction is clean. The back-to-back and unconfirmed goalie are real concerns — this bet is conditional on acceptable goalie news from CAR. Totals have no actionable edge.</div>
+    <div class="ai-summary-meta">Generated 2026-04-14</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -306,6 +368,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>MTL @ PHI | Total 6.5 | Kelly: No Kelly bet (MTL ML too juicy)</strong>
+
+<strong>Line read:</strong> Under pressure is heavy here — V1 UNDER (-0.75, 24.5% over probability), V2 LEAN UNDER (-0.95, 19.4% over), V3 PASS (-1.25, 13.3% over). That V3 PASS is notable: V3's score actually reaches -1.25 which is a strong under signal, but V3 uses PASS for the under market in extreme score territory (the UNDER threshold is only -0.35 so it clearly qualifies). SaveModel projects only 4.96 goals — 1.54 goals below the 6.5 line, the largest gap on today's slate. On the winner, all three models agree AWAY MTL: V1 LEAN AWAY (-0.32), V2/V3 AWAY (-0.52). MTL is -200 favorite.
+
+<strong>Model consensus:</strong> Strong agreement on the under direction across all models, with V3 being the deepest. Clean agreement on MTL AWAY for winner. The one catch: MTL ML at -200 exceeds the Kelly threshold value calculation (-200 needs 7 pt edge but model only shows -3.6 pts), so no straight Kelly bet. Model flags it as parlay-only.
+
+<strong>Key driver:</strong> Both goalies confirmed (MTL 2.75 GAA, PHI unconfirmed blended to 2.65 GAA) — among the best goaltending inputs today. Both defenses are low-scoring offensively: PHI home offense is 2.67 goals/game at home, MTL road offense 3.60/game. V3 T10 shot pace fires -0.20 (combined shots 51.8, below the 54-shot threshold — very low volume game expected). V3 T8 PP/PK fires -0.10 (PHI's PP is weak at 15.7%). Both signals push deeper under.
+
+<strong>Risk flags:</strong> PHI goalie unconfirmed — the model blends 2.42 confirmed GAA with 2.88 team average to get 2.65. If PHI's actual starter is their usual starter, inputs may be slightly conservative. PHI is on a back-to-back. OT model at 0.65 (LEAN OT) is borderline but informational only. MTL's last 7 offense is cold (only 19 goals for, -23.2% below average) — actually supports the under.
+
+<strong>Verdict:</strong> The strongest under lean on today's slate by total projection gap (5.0 SaveModel, 4.96 shots-based). The under direction is unambiguous across all models, but no Kelly bet fires because it requires a totals bet and the market odds (-130) do not clear Kelly sizing. MTL winner is clear but the -200 ML is not Kelly-eligible straight — would need to be parlayed. A genuinely compelling game analytically with no clean bet entry point.</div>
+    <div class="ai-summary-meta">Generated 2026-04-14</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -376,6 +454,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>WSH @ CBJ | Total 6.5 | Kelly: No Kelly bet</strong>
+
+<strong>Line read:</strong> Totals are split across models — V1 LEAN UNDER (-0.35), V2 PASS (-0.25), V3 LEAN UNDER (-0.35). Neither V1 nor V3 clear the Kelly UNDER threshold; V2 doesn't even reach LEAN UNDER. SaveModel projects 5.18 goals, a full 1.32 below the line — one of the bigger gaps today. On the winner, all three models PASS — score of -0.02, essentially a coin flip at 49.3% home win probability.
+
+<strong>Model consensus:</strong> Totals disagreement between V2 (PASS) and V1/V3 (LEAN UNDER) is the defining feature. Winner is completely washed out — the model sees no edge in either direction. OT sits at 0.75 across all models, but this is LEAN OT (above the 0.65 BET OT ceiling, not Kelly-eligible).
+
+<strong>Key driver:</strong> Both confirmed goalies are strong performers relative to their team averages — WSH 2.44 GAA vs 3.18 team average (0.74 below), CBJ 2.61 GAA vs 3.10 average (0.49 below). V3 T8 PP/PK fires -0.10 (both PP units below average). H2H is 3-6 UNDER in this matchup, a meaningful under signal. But WSH's last 10 is 7-3 OVER — contradicting the H2H trend. WSH offense has been on fire last 7 (29 goals for, +32.1% above average).
+
+<strong>Risk flags:</strong> Both goalies confirmed — clean inputs. CBJ is in a brutal stretch: 2-7 last 10, giving up 3.57 goals/game in their last 7 (vs 3.10 avg, +15.2% bleed). WSH's offense is hot. These two facts fight the under lean. The winner model can't separate these teams (model win probability essentially 50/50). OT at 0.75 is elevated but not bettable under current thresholds.
+
+<strong>Verdict:</strong> Genuinely inconclusive game. The under direction is tentative and split across models. Winner is a coin flip. The only clean story here is the OT lean (0.75) but that's above the BET OT ceiling. Nothing Kelly-eligible. Pass on all markets.</div>
+    <div class="ai-summary-meta">Generated 2026-04-14</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -446,6 +540,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 MIN Reg Win <span class="bet-detail">+155 · $3.08</span></span></div>
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>ANA @ MIN | Total 6.5 | Kelly: MIN Reg Win (+155)</strong>
+
+<strong>Line read:</strong> Totals are split and mild — V1 PASS (+0.15), V2 PASS (+0.20), V3 LEAN OVER (+0.40). V3 reaches the LEAN OVER threshold but does not clear the +0.70 Kelly OVER threshold — informational only. SaveModel projects 6.19 goals, just 0.31 below the line. V4 projects 6.64 goals with a +0.14 edge — the one tracking signal pointing over. On the winner, V1 calls HOME outright (+0.69 score), V2/V3 dial back to LEAN HOME (+0.59 score, 74.5% home win probability). Regulation win market: MIN at +155, model fair value -132, +15.0 pt edge.
+
+<strong>Model consensus:</strong> Totals split — only V3 reaches a lean, and it's a weak lean. V1/V2 pass. Winner is directionally consistent (all HOME/LEAN HOME) but V1 clears Kelly and V2/V3 do not. The Kelly bet is on the regulation-win market specifically.
+
+<strong>Key driver:</strong> MIN's superior goaltending (2.69 GAA, blended to 2.79 with team avg due to unconfirmed starter) vs ANA's 3.10 GAA. H2H strongly favors MIN: 4-1 home wins in recent matchups. MIN season record 22-10. ANA defense has been extremely leaky last 7 — allowing 4.29 goals/game (+21.6% above average), which creates the over case. V3 T9 fires +0.20 (both goalies below league SV%).
+
+<strong>Risk flags:</strong> MIN goalie unconfirmed — model blends 2.69 to 2.79. This is the main input uncertainty. MIN is on a back-to-back. ANA allowed 30 goals last 7, and H2H over history is 4-6 (slight under tilt). ANA's recent offense is flat last 7 (21 goals for, -6.7% below season avg). OT at 0.35 is low — low OT risk.
+
+<strong>Verdict:</strong> The regulation win on MIN at +155 is the Kelly-eligible call — the model sees 57% reg-win probability with a +15.0 pt edge. The totals lean is too weak across V1/V2 to act on. The unconfirmed MIN goalie is the main caveat; if a backup starts, the defensive inputs soften. The bet is on MIN, not on a total.</div>
+    <div class="ai-summary-meta">Generated 2026-04-14</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -516,6 +626,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 UTA Reg Win <span class="bet-detail">-105 · $3.28</span></span></div>
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>WPG @ UTA | Total 6.5 | Kelly: UTA Reg Win (-105)</strong>
+
+<strong>Line read:</strong> All three models agree on the under — V1 UNDER (-0.50), V2/V3 LEAN UNDER (-0.50). SaveModel projects 5.60 goals, 0.90 below the line. On the winner, all three models call HOME UTA: V1 at +0.83 (81.6% home win), V2/V3 at +1.13 (88.4% home win). Regulation win market: UTA at -105, model fair value -275, +12.8 pt edge.
+
+<strong>Model consensus:</strong> Clean agreement across all three on both under direction and HOME winner. V2/V3 conviction is MIXED (4/7 signals) — not a slam dunk, but consistent directional calls. Form trend shows OVER momentum (+11.3%) that conflicts with the under call — an honest red flag flagged by the model itself.
+
+<strong>Key driver:</strong> WPG is on a back-to-back with an unconfirmed goalie (blended from 2.86 to 3.01 GAA). UTA has been dominant at home in this matchup (3-0 H2H). UTA offense on a hot streak — last 7 averaged 4.43 goals/game (+35.0% above their 3.28 season avg). V3 T9 fires +0.20 (both goalies below league SV%) which partially fights the under, but V3 T10 fires -0.10 (combined shots 54.1) and T8 fires -0.10 (both PPs below average). Net V3 effect is neutral, keeping the LEAN UNDER.
+
+<strong>Risk flags:</strong> WPG goalie unconfirmed — and WPG is on a B2B. These are the two biggest risk factors. UTA offense is actually very hot (4.43 goals/game last 7), which works against the under. WPG has gone 5-5 last 10 and is the more neutral team. Historical note: WPG's winner model is 5W-1L in this matchup historically (limited sample).
+
+<strong>Verdict:</strong> UTA regulation win at -105 is the Kelly-eligible call with solid +12.8 pt edge — the model strongly favors UTA to win in regulation. The under lean is consistent but not Kelly-eligible (LEAN UNDER only). The conflict between the form trend (OVER momentum) and the structural under call is the main caveat. WPG's B2B and unconfirmed goalie support UTA's advantage.</div>
+    <div class="ai-summary-meta">Generated 2026-04-14</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -586,6 +712,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>COL @ CGY | Total 6.5 | Kelly: COL winner edge too thin (no Kelly bet)</strong>
+
+<strong>Line read:</strong> Strong under lean — V1 UNDER (-1.05, 17.2% over probability), V2 LEAN UNDER (-1.00, 18.2% over), V3 UNDER (-1.00, 18.2% over). All three clearly aligned. SaveModel projects 5.69 goals. On the winner, all three models call AWAY COL: V1 at -0.85 score (17.8% home win), V2/V3 at -0.65 (23.7% home win). Model fairly values COL at +116 vs book +105 — but the -1.0 pt edge means no Kelly bet fires.
+
+<strong>Model consensus:</strong> Strong consensus on both under and AWAY COL — V2/V3 conviction rated STRONG (3/3 signals each). No disagreement in direction anywhere. The only issue is COL's ML value is paper-thin.
+
+<strong>Key driver:</strong> The goalie matchup is extreme. COL's GAA is 2.07 (blended to 2.25 due to unconfirmed starter) — the best goaltending input on today's slate. CGY's GAA is 3.03, a full goal worse. COL defense has been elite last 7 (only 17 goals against, -0.3% vs avg — nearly identical to season). CGY defense has collapsed last 7 (30 goals against, +47.0% above their 2.92 avg). H2H is brutal for CGY: 0-4-0 at home vs COL in recent matchups. Season records: COL 28-7, CGY 22-12.
+
+<strong>Risk flags:</strong> COL goalie unconfirmed — blended from 2.07 to 2.25. This is the key caveat. COL is also on a back-to-back, which introduces fatigue risk. COL's last 7 offense is cold (only 20 goals for, -21.3% below their 3.63 season average). If COL's offense continues to underperform, this becomes more of a low-scoring grinder than the model implies — but that would still likely be an under.
+
+<strong>Verdict:</strong> The under signal is one of the clearest on today's slate, supported by two of the better goalies, CGY's defensive collapse, and COL's cold offense. However, the COL winner value is virtually priced in at book (+105 vs fair +116), so no Kelly bet triggers. The under direction is analytically compelling but LEAN UNDER in V2 means it's not directly Kelly-eligible on totals. Arguably the most analytically clean game today with no actionable entry point.</div>
+    <div class="ai-summary-meta">Generated 2026-04-14</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -656,6 +798,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 BET OT <span class="bet-detail">+310 · $2.50</span></span></div>
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>PIT @ STL | Total 6.5 | Kelly: BET OT (+310)</strong>
+
+<strong>Line read:</strong> Totals are split — V1 PASS (-0.20), V2 PASS (-0.20), V3 LEAN UNDER (-0.30). The under lean is mild and only V3 reaches the LEAN UNDER threshold. SaveModel projects 5.36 goals, well below the line, but V1/V2 both pass on the total despite the SaveModel gap. On the winner, all three models lean AWAY PIT: V1 LEAN AWAY (-0.27, 38.3% home), V2/V3 LEAN AWAY (-0.47, 30.2% home) — no model clears the Kelly AWAY threshold (-0.50). The OT model is the standout: V1 LEAN OT at 0.80, V2/V3 BET OT at 0.80.
+
+<strong>Model consensus:</strong> V1 and V2 agree on totals (PASS), V3 adds a mild under lean — split but leaning under directionally. Winner leans PIT AWAY consistently but below Kelly threshold. OT is the cleanest signal: V2 and V3 both fire BET OT at 0.80.
+
+<strong>Key driver:</strong> The OT model fires heavily on this game for multiple reinforcing reasons: team parity (similar records, close win percentages), goalie matchup with STL unconfirmed goalie (blended 2.84 GAA), STL's home OT history (0.18 OT rate), PIT's away OT history (0.20 OT rate), and both teams' balanced seasonal records. V3 also adds a modest low-shot-pace signal (-0.20 on T10, combined 53.8 shots) that pushes under. The OT probability of 0.80 is in the BET OT window in V2/V3 (confirmed 0.50–0.65 sweet spot, with 0.65–0.80 also BET OT eligible but noted as historically less reliable at extremes).
+
+<strong>Risk flags:</strong> OT at 0.80 is at the upper end of the BET OT range — the 0.65–0.80 zone has shown declining hit rates vs the 0.50–0.65 core window. Note this context when sizing. STL goalie unconfirmed. PIT's offense has been hot last 7 (30 goals for, +22.3% above avg) — which partially conflicts with the under lean on totals. STL's offense has also been trending up (24 goals last 7, +25.4% above avg) while their defense has tightened (2.57 goals against last 7, -16.2% vs avg). Competing signals on totals.
+
+<strong>Verdict:</strong> The actionable call is BET OT at +310. The totals and winner signals are weak and contradictory — pass on both. The OT case is clear and supported by parity, goalie factors, and historical OT tendencies for both teams. Size conservatively given the 0.80 OT score is near the upper boundary of historical reliability.</div>
+    <div class="ai-summary-meta">Generated 2026-04-14</div>
+  </div>
 </div>
 <div class="game-card">
   <div class="game-header">
@@ -726,6 +884,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   </div>
 
   <div class="bets-section"><span class="bets-label">Kelly Bets:</span> <span class="bet-chip">💰 LAK Reg Win <span class="bet-detail">+110 · $3.64</span></span></div>
+
+  <div class="ai-summary-panel">
+    <div class="ai-summary-title">🤖 AI Analysis</div>
+    <div class="ai-summary-body"><strong>LAK @ VAN | Total 6.5 | Kelly: LAK Reg Win (+110)</strong>
+
+<strong>Line read:</strong> All three models lean under — V1 UNDER (-0.40, 35.4% over), V2 LEAN UNDER (-0.45, 33.7% over), V3 UNDER (-0.65, 27.4% over). V3 is the most assertive, driven by T8 firing -0.20 (both PK units poor — LAK 74.9%, VAN 71.8%) and T10 firing -0.20 (combined shots 54.0, below the 54-shot threshold). SaveModel projects 6.27 goals, only 0.23 below the line — the smallest gap of any under lean on the slate. On the winner, all three models are emphatic: AWAY LAK, V1 at -1.52 score (6.1% home win probability), V2/V3 at -1.32 (8.6% home win). LAK is a massive favorite. Regulation win: LAK at +110, model fair -250, +15.2 pt edge.
+
+<strong>Model consensus:</strong> Strong conviction on LAK AWAY — V2 STRONG (4/5 signals), V3 STRONG (6/8 signals). Under direction consistent but V4 tracking model actually shows +0.12 edge (PASS), which is the lone counter-signal on totals. The totals under call rests primarily on structural factors, not projected goal totals.
+
+<strong>Key driver:</strong> Vancouver is simply one of the worst teams in the league this season: 8-27 record, 3.67 GAA, lost 7 of last 10, and is 0-4-0 at home vs LAK in recent H2H. LAK is 20-9, 7-1-2 last 10, offense scoring 3.71 goals/game in their last 7 (vs 2.83 season avg, +31.2% surge). This is a mismatch game. LAK goalie is unconfirmed but blended from 2.76 to 2.85 — even the blended figure is far better than VAN's 3.67 confirmed GAA.
+
+<strong>Risk flags:</strong> LAK goalie unconfirmed and LAK is on a back-to-back. Both are real. VAN has been scoring: 3.43 goals/game in their last 7 (+35.5% above their weak 2.53 season avg) and form trend shows strong OVER momentum (+16.2%, flagged as conflicting with the under call). Historical data shows VAN is 6W-1L at home vs LAK — but this season context makes that historical record questionable. SaveModel at 6.27 is closer to the line than the under lean suggests.
+
+<strong>Verdict:</strong> LAK reg win at +110 is the cleanest bet on today's slate by model edge (+15.2 pts). VAN's situation is dire by every structural measure. The back-to-back and unconfirmed LAK goalie are genuine risks, but the mismatch is too large to fully override. Totals have some under lean but the SaveModel near-line projection and VAN's recent hot offense make the under less reliable — pass on totals, take the LAK winner.</div>
+    <div class="ai-summary-meta">Generated 2026-04-14</div>
+  </div>
 </div></div>
 <div class="slate-container"><h2>📋 Daily Betting Slate</h2>
 <table class="slate-table"><thead><tr><th>Game</th><th>Bet</th><th>Odds</th><th>Floor</th><th>Risk</th><th>Win</th></tr></thead><tbody>
@@ -738,5 +912,324 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <tr class="slate-total"><td colspan="4">Max Exposure</td><td colspan="2">$17.49</td></tr>
 <tr class="slate-total"><td colspan="4">Net Profit if all hit</td><td colspan="2">+$25.64</td></tr>
 </tfoot></table>
+</div>
+
+<div class="intel-container">
+  <div class="intel-header">
+    <h2>📊 Daily Model Intel</h2>
+    <span class="intel-date">2026-04-14</span>
+  </div>
+  <p class="intel-sub">Live stats — backtester, calibrator, and threshold optimizer. Updated each run.</p>
+  
+<div class="intel-panel" id="panel-bt">
+  <div class="intel-panel-hdr" onclick="togglePanel('panel-bt')">
+    <span>📈 Backtester — All-Time Performance</span>
+    <span class="intel-arrow">&#9660;</span>
+  </div>
+  <div class="intel-panel-body">
+    <pre class="intel-pre">================================================================
+  BACKTESTER — Kelly-Eligible Performance
+================================================================
+  Total rows (all time): 190
+  Date range: 2026-03-14 to 2026-04-13
+
+ALL-TIME PERFORMANCE (Kelly-eligible bets only):
+  V1:
+    Totals : 45W 48L 0P  (48% hit, ROI -7.6%, N=93)
+    Winner : 80W 43L 0P  (65% hit, ROI +24.2%, N=123)
+    OT     : 11W 45L 0P  (20% hit, ROI -19.5%, N=56)
+  V2:
+    Totals : 32W 29L 0P  (52% hit, ROI +0.1%, N=61)
+    Winner : 74W 40L 0P  (65% hit, ROI +23.9%, N=114)
+    OT     : 9W 43L 0P  (17% hit, ROI -29.0%, N=52)
+  V3:
+    Totals : 31W 44L 0P  (41% hit, ROI -21.1%, N=75)
+    Winner : 74W 40L 0P  (65% hit, ROI +23.9%, N=114)
+    OT     : 9W 43L 0P  (17% hit, ROI -29.0%, N=52)
+
+LAST 30 DAYS (176 games):
+  V1:
+    Totals : 40W 42L 0P  (49% hit, ROI -6.9%, N=82)
+    Winner : 74W 39L 0P  (65% hit, ROI +25.0%, N=113)
+    OT     : 10W 42L 0P  (19% hit, ROI -21.2%, N=52)
+  V2:
+    Totals : 29W 25L 0P  (54% hit, ROI +2.5%, N=54)
+    Winner : 68W 36L 0P  (65% hit, ROI +24.8%, N=104)
+    OT     : 8W 40L 0P  (17% hit, ROI -31.7%, N=48)
+  V3:
+    Totals : 29W 39L 0P  (43% hit, ROI -18.6%, N=68)
+    Winner : 68W 36L 0P  (65% hit, ROI +24.8%, N=104)
+    OT     : 8W 40L 0P  (17% hit, ROI -31.7%, N=48)
+
+LAST 60 DAYS (190 games):
+  V1:
+    Totals : 45W 48L 0P  (48% hit, ROI -7.6%, N=93)
+    Winner : 80W 43L 0P  (65% hit, ROI +24.2%, N=123)
+    OT     : 11W 45L 0P  (20% hit, ROI -19.5%, N=56)
+  V2:
+    Totals : 32W 29L 0P  (52% hit, ROI +0.1%, N=61)
+    Winner : 74W 40L 0P  (65% hit, ROI +23.9%, N=114)
+    OT     : 9W 43L 0P  (17% hit, ROI -29.0%, N=52)
+  V3:
+    Totals : 31W 44L 0P  (41% hit, ROI -21.1%, N=75)
+    Winner : 74W 40L 0P  (65% hit, ROI +23.9%, N=114)
+    OT     : 9W 43L 0P  (17% hit, ROI -29.0%, N=52)
+
+V3 TOTALS — MONTHLY BREAKDOWN:
+  V3 Totals by month:
+    2026-03: 28W 39L 0P  ROI -20.2%  |++++++++++++++++++++++++++++---------------------------------------|
+    2026-04: 3W 5L 0P  ROI -28.4%  |+++-----|
+
+V2/V3 WINNER — MONTHLY BREAKDOWN:
+  V2/V3 Winner by month:
+    2026-03: 61W 35L 0P  ROI +21.3%  |+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------|
+    2026-04: 13W 5L 0P  ROI +37.9%  |+++++++++++++-----|
+
+STREAK ANALYSIS:
+  V1 Totals:  Current: 1 W streak | Longest win run: 7 | Longest loss run: 5
+  V1 Winner:  Current: 3 W streak | Longest win run: 14 | Longest loss run: 3
+  V2 Totals:  Current: 4 W streak | Longest win run: 9 | Longest loss run: 6
+  V2 Winner:  Current: 3 W streak | Longest win run: 18 | Longest loss run: 3
+  V3 Totals:  Current: 4 L streak | Longest win run: 5 | Longest loss run: 5
+  V3 Winner:  Current: 3 W streak | Longest win run: 18 | Longest loss run: 3
+
+MODEL COMPARISON (V1 vs V2 vs V3 — Totals):
+  Model     W    L    P   Hit%      ROI     N
+  --------------------------------------------------
+  V1       45   48    0    48%    -7.6%
+  V2       32   29    0    52%    +0.1%
+  V3       31   44    0    41%   -21.1% &lt;
+
+================================================================
+  Run with --model V3 or --window 30 to filter.
+================================================================</pre>
+  </div>
+</div>
+<div class="intel-panel" id="panel-cal">
+  <div class="intel-panel-hdr" onclick="togglePanel('panel-cal')">
+    <span>🎯 Calibrator — Confidence Calibration</span>
+    <span class="intel-arrow">&#9660;</span>
+  </div>
+  <div class="intel-panel-body">
+    <pre class="intel-pre">================================================================
+  CONFIDENCE CALIBRATOR
+  Checks if X% confidence actually wins X% of the time
+================================================================
+  Rows analyzed: 190
+  NOTE: Calibration requires N&gt;=5 per bucket to be meaningful.
+
+  V1 Totals — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     20%    31        25%      48%    +23%  OVERPERFORMING
+     30%    34        35%      38%     +3%  well calibrated
+     40%     7        45%     100%    +55%  OVERPERFORMING
+     50%    15        55%      47%     -8%  
+     60%     2        65%     100%    +35%  (too few)
+     70%     4        75%      25%    -50%  (too few)
+
+  Brier Score: 0.0559  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  V1 Winner — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     10%     3        15%      67%    +52%  (too few)
+     20%    32        25%      66%    +41%  OVERPERFORMING
+     30%    22        35%      55%    +20%  OVERPERFORMING
+     40%    20        45%      80%    +35%  OVERPERFORMING
+     50%    17        55%      76%    +21%  OVERPERFORMING
+     60%    10        65%      60%     -5%  
+     70%     8        75%      62%    -12%  UNDERPERFORMING
+     80%     5        85%      60%    -25%  UNDERPERFORMING
+     90%     2        95%       0%    -95%  (too few)
+    100%     4       105%      50%    -55%  (too few)
+
+  Brier Score: 0.1108  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  V2 Totals — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     20%    14        25%      57%    +32%  OVERPERFORMING
+     30%    15        35%      47%    +12%  OVERPERFORMING
+     40%    15        45%      47%     +2%  well calibrated
+     50%    14        55%      71%    +16%  OVERPERFORMING
+     70%     2        75%       0%    -75%  (too few)
+     80%     1        85%       0%    -85%  (too few)
+
+  Brier Score: 0.0636  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  V2/V3 Winner — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     10%     3        15%      67%    +52%  (too few)
+     20%    22        25%      59%    +34%  OVERPERFORMING
+     30%    22        35%      55%    +20%  OVERPERFORMING
+     40%    21        45%      86%    +41%  OVERPERFORMING
+     50%    14        55%      71%    +16%  OVERPERFORMING
+     60%    11        65%      82%    +17%  OVERPERFORMING
+     70%     9        75%      44%    -31%  UNDERPERFORMING
+     80%     5        85%      60%    -25%  UNDERPERFORMING
+     90%     3        95%      33%    -62%  (too few)
+    100%     4       105%      50%    -55%  (too few)
+
+  Brier Score: 0.1041  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  V3 Totals — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     10%     4        15%       0%    -15%  (too few)
+     20%    13        25%      46%    +21%  OVERPERFORMING
+     30%    23        35%      43%     +8%  
+     40%    17        45%      41%     -4%  well calibrated
+     50%    17        55%      47%     -8%  
+     70%     1        75%       0%    -75%  (too few)
+
+  Brier Score: 0.0204  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  OT MODEL — Probability Calibration (prob vs actual OT rate):
+   OT Prob     N  Expected%   Actual%     Gap
+  --------------------------------------------------
+      10%     2        15%        0%    -15% (too few)
+      20%     9        25%       33%     +8%
+      30%    17        35%       12%    -23%
+      40%    31        45%       29%    -16%
+      50%    30        55%       23%    -32%
+      60%    36        65%       11%    -54%
+      70%    37        75%       24%    -51%
+      80%    28        85%       39%    -46%
+
+================================================================
+  Interpretation guide:
+  Gap &gt; +10%  : model is too conservative (underestimates win rate)
+  Gap &lt; -10%  : model is overconfident (overestimates win rate)
+  |Gap| &lt; 5%  : well calibrated
+================================================================</pre>
+  </div>
+</div>
+<div class="intel-panel" id="panel-opt">
+  <div class="intel-panel-hdr" onclick="togglePanel('panel-opt')">
+    <span>⚙️ Optimizer — Threshold Analysis</span>
+    <span class="intel-arrow" style="transform:rotate(-90deg)">&#9660;</span>
+  </div>
+  <div class="intel-panel-body" style="display:none">
+    <pre class="intel-pre">Loading CSV...
+Loaded 266 rows with actuals.
+
+==============================================================
+  THRESHOLD OPTIMIZER
+  Kelly-eligible decisions only (OVER/UNDER/HOME/AWAY/BET OT)
+  -110 odds for totals/winner | +310 for OT
+  NOTE: in-sample optimization — treat as directional signal.
+        Trust configs with N&gt;=20 and delta ROI &gt;5pp.
+==============================================================
+
+==============================================================
+  V1 TOTALS
+==============================================================
+  Current: OVER≥0.40 | UNDER≤-0.40
+  Current ROI: -6.5% [-]  N=98  (48W 50L 0P)
+
+  Best:    OVER≥0.80 | UNDER≤-1.10
+  Best ROI: +18.2% [+]  N=21  (13W 8L 0P)
+  --&gt; Δ ROI: +24.7pp | over 0.40→0.80, under -0.40→-1.10
+
+  Top 5 configs by ROI (N≥10):
+    OVER≥0.80 UNDER≤-1.10  ROI=+18.2%  hit=62%  N=21  (13W 8L 0P)
+    OVER≥0.80 UNDER≤-0.80  ROI=+15.9%  hit=61%  N=28  (17W 11L 0P)
+    OVER≥0.80 UNDER≤-0.75  ROI=+12.3%  hit=59%  N=34  (20W 14L 0P)
+    OVER≥0.80 UNDER≤-0.90  ROI=+10.1%  hit=58%  N=26  (15W 11L 0P)
+    OVER≥0.80 UNDER≤-1.20  ROI=+7.4%  hit=56%  N=16  (9W 7L 0P)
+
+==============================================================
+  V2 TOTALS
+==============================================================
+  Current: OVER≥0.40 | UNDER≤-0.55
+  Current ROI: +6.6% [+]  N=86  (48W 38L 0P)
+
+  Best:    OVER≥0.80 | UNDER≤-0.90
+  Best ROI: +20.6% [+]  N=38  (24W 14L 0P)
+  --&gt; Δ ROI: +14.0pp | over 0.40→0.80, under -0.55→-0.90
+
+  Top 5 configs by ROI (N≥10):
+    OVER≥0.80 UNDER≤-0.90  ROI=+20.6%  hit=63%  N=38  (24W 14L 0P)
+    OVER≥0.80 UNDER≤-1.00  ROI=+17.9%  hit=62%  N=34  (21W 13L 0P)
+    OVER≥0.75 UNDER≤-0.90  ROI=+16.4%  hit=61%  N=41  (25W 16L 0P)
+    OVER≥0.70 UNDER≤-0.90  ROI=+16.4%  hit=61%  N=41  (25W 16L 0P)
+    OVER≥0.80 UNDER≤-0.55  ROI=+15.2%  hit=60%  N=63  (38W 25L 0P)
+
+==============================================================
+  V3 TOTALS
+==============================================================
+  Current: OVER≥0.70 | UNDER≤-0.35
+  Current ROI: -3.6% [-]  N=103  (52W 51L 0P)
+
+  Best:    OVER≥0.80 | UNDER≤-1.20
+  Best ROI: +20.9% [+]  N=30  (19W 11L 0P)
+  --&gt; Δ ROI: +24.5pp | over 0.70→0.80, under -0.35→-1.20
+
+  Top 5 configs by ROI (N≥10):
+    OVER≥0.80 UNDER≤-1.20  ROI=+20.9%  hit=63%  N=30  (19W 11L 0P)
+    OVER≥0.75 UNDER≤-1.20  ROI=+19.3%  hit=62%  N=32  (20W 12L 0P)
+    OVER≥0.65 UNDER≤-1.20  ROI=+18.7%  hit=62%  N=37  (23W 14L 0P)
+    OVER≥0.70 UNDER≤-1.20  ROI=+16.7%  hit=61%  N=36  (22W 14L 0P)
+    OVER≥0.50 UNDER≤-1.20  ROI=+14.5%  hit=60%  N=45  (27W 18L 0P)
+
+==============================================================
+  V1 WINNER
+==============================================================
+  Current: HOME≥0.60 | AWAY≤-0.50 | HOME cap&gt;1.40
+  Current ROI: +36.4%  N=77  (55W 22L)
+
+  Best:    HOME≥0.80 | AWAY≤-0.50 | HOME cap&gt;1.20
+  Best ROI: +52.0%  N=54  (43W 11L)
+  --&gt; Δ ROI: +15.7pp
+
+  Top 5 configs by ROI (N≥10):
+    HOME≥0.80 AWAY≤-0.50 cap&gt;1.20  ROI=+52.0%  hit=80%  N=54  (43W 11L)
+    HOME≥0.80 AWAY≤-0.55 cap&gt;1.20  ROI=+52.0%  hit=80%  N=54  (43W 11L)
+    HOME≥0.80 AWAY≤-0.70 cap&gt;1.20  ROI=+51.9%  hit=80%  N=44  (35W 9L)
+    HOME≥0.80 AWAY≤-0.65 cap&gt;1.20  ROI=+49.4%  hit=78%  N=46  (36W 10L)
+    HOME≥0.80 AWAY≤-0.50 cap&gt;1.30  ROI=+48.1%  hit=78%  N=58  (45W 13L)
+
+==============================================================
+  V2/V3 WINNER
+==============================================================
+  Current: HOME≥0.60 | AWAY≤-0.50 | HOME cap&gt;1.40
+  Current ROI: +43.2%  N=76  (57W 19L)
+
+  Best:    HOME≥0.80 | AWAY≤-0.70 | HOME cap&gt;1.20
+  Best ROI: +54.5%  N=42  (34W 8L)
+  --&gt; Δ ROI: +11.4pp
+
+  Top 5 configs by ROI (N≥10):
+    HOME≥0.80 AWAY≤-0.70 cap&gt;1.20  ROI=+54.5%  hit=81%  N=42  (34W 8L)
+    HOME≥0.80 AWAY≤-0.70 cap&gt;1.30  ROI=+53.6%  hit=80%  N=46  (37W 9L)
+    HOME≥0.80 AWAY≤-0.70 cap&gt;1.40  ROI=+53.5%  hit=80%  N=51  (41W 10L)
+    HOME≥0.80 AWAY≤-0.50 cap&gt;1.20  ROI=+50.5%  hit=79%  N=52  (41W 11L)
+    HOME≥0.80 AWAY≤-0.55 cap&gt;1.20  ROI=+50.5%  hit=79%  N=52  (41W 11L)
+
+==============================================================
+  OT MODEL (shared V1/V2/V3)  (+310 odds | break-even: 24.4%)
+==============================================================
+  Current: BET OT [0.50–0.65]
+  Current ROI: -31.7%  N=66  (11W 55L  17% hit rate)
+
+  Best:    BET OT [0.70–1.00]
+  Best ROI: +26.2%  N=65  (20W 45L  31% hit rate)
+  --&gt; Δ ROI: +57.8pp | range [0.50–0.65] → [0.70–1.00]
+
+  Top 5 configs by ROI (N≥5):
+    [0.70–1.00]  ROI=+26.2%  N=65  (20W 45L  31%)
+    [0.70–0.90]  ROI=+26.2%  N=65  (20W 45L  31%)
+    [0.70–0.85]  ROI=+26.2%  N=65  (20W 45L  31%)
+    [0.70–0.80]  ROI=+26.2%  N=65  (20W 45L  31%)
+    [0.40–0.50]  ROI=+23.0%  N=40  (12W 28L  30%)
+
+==============================================================
+  Run with --verbose / -v for top-5 config breakdowns.
+  Run with --buckets / -b for full score bucket tables.
+==============================================================</pre>
+  </div>
+</div>
 </div>
 </body></html>
