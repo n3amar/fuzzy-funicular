@@ -92,6 +92,36 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .playoff-header{background:linear-gradient(135deg,#1a1200,#3b2800)!important;border-bottom:1px solid rgba(245,158,11,.2)}
 .playoff-context{font-size:.72rem;color:rgba(255,220,100,.6);margin-top:3px;letter-spacing:.3px}
 </style>
+<style>
+/* ── AI Summary Panel ──────────────────────────────────── */
+.ai-summary-panel{padding:14px 16px;border-top:1px solid #1a3050;background:#0f1720}
+.ai-summary-title{font-size:.65rem;text-transform:uppercase;letter-spacing:.6px;color:#7eb8f7;font-weight:700;margin-bottom:10px}
+.ai-summary-body{font-size:.81rem;color:#9db5cc;line-height:1.7;white-space:pre-wrap;font-family:inherit}
+.ai-summary-body strong{color:#c8d6e8;font-weight:600}
+.ai-summary-meta{font-size:.62rem;color:#253345;margin-top:10px;font-style:italic}
+/* ── Model Intel Section ───────────────────────────────── */
+.intel-container{background:#1c2640;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.4);padding:18px 16px;max-width:1400px;margin:0 auto 24px;border:1px solid #26334d}
+.intel-header{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+.intel-header h2{color:#7eb8f7;font-size:1.1rem}
+.intel-date{font-size:.75rem;color:#3d5070}
+.intel-sub{font-size:.78rem;color:#3d5070;font-style:italic;margin-bottom:14px}
+.intel-panel{border:1px solid #26334d;border-radius:8px;overflow:hidden;margin-bottom:10px}
+.intel-panel:last-child{margin-bottom:0}
+.intel-panel-hdr{background:#131b2e;padding:11px 14px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none;font-size:.85rem;font-weight:600;color:#7eb8f7}
+.intel-panel-hdr:hover{background:#0d1624}
+.intel-arrow{font-size:.65rem;color:#3d5070;transition:transform .2s}
+.intel-panel-body{}
+.intel-pre{font-family:'Cascadia Code','Consolas','SF Mono',monospace;font-size:.71rem;color:#8da8c8;background:#0a1018;padding:14px 16px;overflow-x:auto;white-space:pre;line-height:1.55;margin:0;border-top:1px solid #1a2840}
+</style>
+<script>
+function togglePanel(id){
+  var el=document.getElementById(id);
+  var body=el.querySelector('.intel-panel-body');
+  var arrow=el.querySelector('.intel-arrow');
+  if(body.style.display==='none'){body.style.display='';arrow.style.transform=''}
+  else{body.style.display='none';arrow.style.transform='rotate(-90deg)'}
+}
+</script>
 </head>
 <body>
 <div class="page-header">
@@ -321,5 +351,324 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 </div></div>
 <div class="slate-container"><h2>📋 Playoff Betting Slate</h2>
 <p class="no-bets">No actionable bets today — all markets below edge threshold.</p>
+</div>
+
+<div class="intel-container">
+  <div class="intel-header">
+    <h2>📊 Daily Model Intel</h2>
+    <span class="intel-date">2026-04-25</span>
+  </div>
+  <p class="intel-sub">Live stats — backtester, calibrator, and threshold optimizer. Updated each run.</p>
+  
+<div class="intel-panel" id="panel-bt">
+  <div class="intel-panel-hdr" onclick="togglePanel('panel-bt')">
+    <span>📈 Backtester — All-Time Performance</span>
+    <span class="intel-arrow">&#9660;</span>
+  </div>
+  <div class="intel-panel-body">
+    <pre class="intel-pre">================================================================
+  BACKTESTER — Kelly-Eligible Performance
+================================================================
+  Total rows (all time): 219
+  Date range: 2026-03-14 to 2026-04-24
+
+ALL-TIME PERFORMANCE (Kelly-eligible bets only):
+  V1:
+    Totals : 55W 55L 1P  (50% hit, ROI -4.5%, N=111)
+    Winner : 90W 47L 0P  (66% hit, ROI +25.4%, N=137)
+    OT     : 13W 53L 0P  (20% hit, ROI -19.2%, N=66)
+  V2:
+    Totals : 32W 29L 0P  (52% hit, ROI +0.1%, N=61)
+    Winner : 82W 43L 0P  (66% hit, ROI +25.2%, N=125)
+    OT     : 9W 44L 0P  (17% hit, ROI -30.4%, N=53)
+  V3:
+    Totals : 35W 48L 0P  (42% hit, ROI -19.5%, N=83)
+    Winner : 82W 43L 0P  (66% hit, ROI +25.2%, N=125)
+    OT     : 9W 44L 0P  (17% hit, ROI -30.4%, N=53)
+
+LAST 30 DAYS (113 games):
+  V1:
+    Totals : 28W 28L 1P  (49% hit, ROI -4.5%, N=57)
+    Winner : 45W 23L 0P  (66% hit, ROI +26.3%, N=68)
+    OT     : 6W 23L 0P  (21% hit, ROI -15.2%, N=29)
+  V2:
+    Totals : 8W 9L 0P  (47% hit, ROI -10.2%, N=17)
+    Winner : 40W 20L 0P  (67% hit, ROI +27.3%, N=60)
+    OT     : 1W 13L 0P  (7% hit, ROI -70.7%, N=14)
+  V3:
+    Totals : 16W 19L 0P  (46% hit, ROI -12.7%, N=35)
+    Winner : 40W 20L 0P  (67% hit, ROI +27.3%, N=60)
+    OT     : 1W 13L 0P  (7% hit, ROI -70.7%, N=14)
+
+LAST 60 DAYS (219 games):
+  V1:
+    Totals : 55W 55L 1P  (50% hit, ROI -4.5%, N=111)
+    Winner : 90W 47L 0P  (66% hit, ROI +25.4%, N=137)
+    OT     : 13W 53L 0P  (20% hit, ROI -19.2%, N=66)
+  V2:
+    Totals : 32W 29L 0P  (52% hit, ROI +0.1%, N=61)
+    Winner : 82W 43L 0P  (66% hit, ROI +25.2%, N=125)
+    OT     : 9W 44L 0P  (17% hit, ROI -30.4%, N=53)
+  V3:
+    Totals : 35W 48L 0P  (42% hit, ROI -19.5%, N=83)
+    Winner : 82W 43L 0P  (66% hit, ROI +25.2%, N=125)
+    OT     : 9W 44L 0P  (17% hit, ROI -30.4%, N=53)
+
+V3 TOTALS — MONTHLY BREAKDOWN:
+  V3 Totals by month:
+    2026-03: 28W 39L 0P  ROI -20.2%  |++++++++++++++++++++++++++++---------------------------------------|
+    2026-04: 7W 9L 0P  ROI -16.5%  |+++++++---------|
+
+V2/V3 WINNER — MONTHLY BREAKDOWN:
+  V2/V3 Winner by month:
+    2026-03: 61W 35L 0P  ROI +21.3%  |+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------|
+    2026-04: 21W 8L 0P  ROI +38.2%  |+++++++++++++++++++++--------|
+
+STREAK ANALYSIS:
+  V1 Totals:  Current: 1 W streak | Longest win run: 7 | Longest loss run: 5
+  V1 Winner:  Current: 2 W streak | Longest win run: 14 | Longest loss run: 3
+  V2 Totals:  Current: 4 W streak | Longest win run: 9 | Longest loss run: 6
+  V2 Winner:  Current: 3 W streak | Longest win run: 18 | Longest loss run: 3
+  V3 Totals:  Current: 1 W streak | Longest win run: 5 | Longest loss run: 5
+  V3 Winner:  Current: 3 W streak | Longest win run: 18 | Longest loss run: 3
+
+MODEL COMPARISON (V1 vs V2 vs V3 — Totals):
+  Model     W    L    P   Hit%      ROI     N
+  --------------------------------------------------
+  V1       55   55    1    50%    -4.5%
+  V2       32   29    0    52%    +0.1%
+  V3       35   48    0    42%   -19.5% &lt;
+
+================================================================
+  Run with --model V3 or --window 30 to filter.
+================================================================</pre>
+  </div>
+</div>
+<div class="intel-panel" id="panel-cal">
+  <div class="intel-panel-hdr" onclick="togglePanel('panel-cal')">
+    <span>🎯 Calibrator — Confidence Calibration</span>
+    <span class="intel-arrow">&#9660;</span>
+  </div>
+  <div class="intel-panel-body">
+    <pre class="intel-pre">================================================================
+  CONFIDENCE CALIBRATOR
+  Checks if X% confidence actually wins X% of the time
+================================================================
+  Rows analyzed: 219
+  NOTE: Calibration requires N&gt;=5 per bucket to be meaningful.
+
+  V1 Totals — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     20%    38        25%      45%    +20%  OVERPERFORMING
+     30%    38        35%      42%     +7%  
+     40%     7        45%     100%    +55%  OVERPERFORMING
+     50%    18        55%      50%     -5%  
+     60%     2        65%     100%    +35%  (too few)
+     70%     8        75%      50%    -25%  UNDERPERFORMING
+
+  Brier Score: 0.0413  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  V1 Winner — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     10%     3        15%      67%    +52%  (too few)
+     20%    35        25%      63%    +38%  OVERPERFORMING
+     30%    25        35%      60%    +25%  OVERPERFORMING
+     40%    25        45%      80%    +35%  OVERPERFORMING
+     50%    18        55%      78%    +23%  OVERPERFORMING
+     60%    11        65%      64%     -1%  well calibrated
+     70%     9        75%      56%    -19%  UNDERPERFORMING
+     80%     5        85%      60%    -25%  UNDERPERFORMING
+     90%     2        95%       0%    -95%  (too few)
+    100%     4       105%      50%    -55%  (too few)
+
+  Brier Score: 0.1098  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  V2 Totals — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     20%    14        25%      57%    +32%  OVERPERFORMING
+     30%    15        35%      47%    +12%  OVERPERFORMING
+     40%    15        45%      47%     +2%  well calibrated
+     50%    14        55%      71%    +16%  OVERPERFORMING
+     70%     2        75%       0%    -75%  (too few)
+     80%     1        85%       0%    -85%  (too few)
+
+  Brier Score: 0.0636  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  V2/V3 Winner — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     10%     3        15%      67%    +52%  (too few)
+     20%    24        25%      58%    +33%  OVERPERFORMING
+     30%    24        35%      58%    +23%  OVERPERFORMING
+     40%    24        45%      83%    +38%  OVERPERFORMING
+     50%    16        55%      75%    +20%  OVERPERFORMING
+     60%    13        65%      77%    +12%  OVERPERFORMING
+     70%     9        75%      44%    -31%  UNDERPERFORMING
+     80%     5        85%      60%    -25%  UNDERPERFORMING
+     90%     3        95%      33%    -62%  (too few)
+    100%     4       105%      50%    -55%  (too few)
+
+  Brier Score: 0.1010  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  V3 Totals — Calibration (expected% vs actual%):
+   Conf%     N   Expected   Actual     Gap  Status
+  ------------------------------------------------------------
+     10%     4        15%       0%    -15%  (too few)
+     20%    13        25%      46%    +21%  OVERPERFORMING
+     30%    28        35%      43%     +8%  
+     40%    17        45%      41%     -4%  well calibrated
+     50%    20        55%      50%     -5%  
+     70%     1        75%       0%    -75%  (too few)
+
+  Brier Score: 0.0179  (lower = better; 0.25 = random, 0.00 = perfect)
+
+  OT MODEL — Probability Calibration (prob vs actual OT rate):
+   OT Prob     N  Expected%   Actual%     Gap
+  --------------------------------------------------
+      10%     2        15%        0%    -15% (too few)
+      20%    11        25%       27%     +2%
+      30%    20        35%       15%    -20%
+      40%    34        45%       29%    -16%
+      50%    36        55%       25%    -30%
+      60%    41        65%       10%    -55%
+      70%    43        75%       23%    -52%
+      80%    32        85%       38%    -48%
+
+================================================================
+  Interpretation guide:
+  Gap &gt; +10%  : model is too conservative (underestimates win rate)
+  Gap &lt; -10%  : model is overconfident (overestimates win rate)
+  |Gap| &lt; 5%  : well calibrated
+================================================================</pre>
+  </div>
+</div>
+<div class="intel-panel" id="panel-opt">
+  <div class="intel-panel-hdr" onclick="togglePanel('panel-opt')">
+    <span>⚙️ Optimizer — Threshold Analysis</span>
+    <span class="intel-arrow" style="transform:rotate(-90deg)">&#9660;</span>
+  </div>
+  <div class="intel-panel-body" style="display:none">
+    <pre class="intel-pre">Loading CSV...
+Loaded 295 rows with actuals.
+
+==============================================================
+  THRESHOLD OPTIMIZER
+  Kelly-eligible decisions only (OVER/UNDER/HOME/AWAY/BET OT)
+  -110 odds for totals/winner | +310 for OT
+  NOTE: in-sample optimization — treat as directional signal.
+        Trust configs with N&gt;=20 and delta ROI &gt;5pp.
+==============================================================
+
+==============================================================
+  V1 TOTALS
+==============================================================
+  Current: OVER≥0.40 | UNDER≤-0.40
+  Current ROI: -3.7% [-]  N=116  (58W 57L 1P)
+
+  Best:    OVER≥0.80 | UNDER≤-1.10
+  Best ROI: +23.9% [+]  N=27  (17W 9L 1P)
+  --&gt; Δ ROI: +27.6pp | over 0.40→0.80, under -0.40→-1.10
+
+  Top 5 configs by ROI (N≥10):
+    OVER≥0.80 UNDER≤-1.10  ROI=+23.9%  hit=63%  N=27  (17W 9L 1P)
+    OVER≥0.80 UNDER≤-0.80  ROI=+22.9%  hit=63%  N=35  (22W 12L 1P)
+    OVER≥0.80 UNDER≤-0.75  ROI=+20.6%  hit=62%  N=42  (26W 15L 1P)
+    OVER≥0.80 UNDER≤-0.90  ROI=+18.7%  hit=61%  N=33  (20W 12L 1P)
+    OVER≥0.80 UNDER≤-1.00  ROI=+16.5%  hit=59%  N=32  (19W 12L 1P)
+
+==============================================================
+  V2 TOTALS
+==============================================================
+  Current: OVER≥0.40 | UNDER≤-0.55
+  Current ROI: +10.1% [+]  N=98  (56W 41L 1P)
+
+  Best:    OVER≥0.80 | UNDER≤-0.90
+  Best ROI: +26.7% [+]  N=46  (30W 15L 1P)
+  --&gt; Δ ROI: +16.6pp | over 0.40→0.80, under -0.55→-0.90
+
+  Top 5 configs by ROI (N≥10):
+    OVER≥0.80 UNDER≤-0.90  ROI=+26.7%  hit=65%  N=46  (30W 15L 1P)
+    OVER≥0.80 UNDER≤-1.00  ROI=+23.5%  hit=63%  N=41  (26W 14L 1P)
+    OVER≥0.75 UNDER≤-0.90  ROI=+22.8%  hit=63%  N=49  (31W 17L 1P)
+    OVER≥0.70 UNDER≤-0.90  ROI=+22.8%  hit=63%  N=49  (31W 17L 1P)
+    OVER≥0.60 UNDER≤-0.90  ROI=+20.8%  hit=62%  N=53  (33W 19L 1P)
+
+==============================================================
+  V3 TOTALS
+==============================================================
+  Current: OVER≥0.70 | UNDER≤-0.35
+  Current ROI: -2.1% [-]  N=118  (60W 57L 1P)
+
+  Best:    OVER≥0.80 | UNDER≤-1.20
+  Best ROI: +24.7% [+]  N=36  (23W 12L 1P)
+  --&gt; Δ ROI: +26.8pp | over 0.70→0.80, under -0.35→-1.20
+
+  Top 5 configs by ROI (N≥10):
+    OVER≥0.80 UNDER≤-1.20  ROI=+24.7%  hit=64%  N=36  (23W 12L 1P)
+    OVER≥0.65 UNDER≤-1.20  ROI=+23.8%  hit=64%  N=44  (28W 15L 1P)
+    OVER≥0.75 UNDER≤-1.20  ROI=+23.2%  hit=63%  N=38  (24W 13L 1P)
+    OVER≥0.50 UNDER≤-1.20  ROI=+20.8%  hit=62%  N=53  (33W 19L 1P)
+    OVER≥0.80 UNDER≤-1.10  ROI=+20.6%  hit=62%  N=42  (26W 15L 1P)
+
+==============================================================
+  V1 WINNER
+==============================================================
+  Current: HOME≥0.60 | AWAY≤-0.50 | HOME cap&gt;1.40
+  Current ROI: +38.8%  N=88  (64W 24L)
+
+  Best:    HOME≥0.80 | AWAY≤-0.50 | HOME cap&gt;1.20
+  Best ROI: +51.5%  N=63  (50W 13L)
+  --&gt; Δ ROI: +12.7pp
+
+  Top 5 configs by ROI (N≥10):
+    HOME≥0.80 AWAY≤-0.50 cap&gt;1.20  ROI=+51.5%  hit=79%  N=63  (50W 13L)
+    HOME≥0.80 AWAY≤-0.55 cap&gt;1.20  ROI=+51.5%  hit=79%  N=63  (50W 13L)
+    HOME≥0.80 AWAY≤-0.70 cap&gt;1.20  ROI=+51.3%  hit=79%  N=53  (42W 11L)
+    HOME≥0.80 AWAY≤-0.65 cap&gt;1.20  ROI=+49.3%  hit=78%  N=55  (43W 12L)
+    HOME≥0.80 AWAY≤-0.50 cap&gt;1.30  ROI=+48.2%  hit=78%  N=67  (52W 15L)
+
+==============================================================
+  V2/V3 WINNER
+==============================================================
+  Current: HOME≥0.60 | AWAY≤-0.50 | HOME cap&gt;1.40
+  Current ROI: +42.6%  N=87  (65W 22L)
+
+  Best:    HOME≥0.80 | AWAY≤-0.70 | HOME cap&gt;1.40
+  Best ROI: +52.1%  N=59  (47W 12L)
+  --&gt; Δ ROI: +9.4pp
+
+  Top 5 configs by ROI (N≥10):
+    HOME≥0.80 AWAY≤-0.70 cap&gt;1.40  ROI=+52.1%  hit=80%  N=59  (47W 12L)
+    HOME≥0.80 AWAY≤-0.70 cap&gt;1.20  ROI=+51.9%  hit=80%  N=49  (39W 10L)
+    HOME≥0.80 AWAY≤-0.70 cap&gt;1.30  ROI=+51.3%  hit=79%  N=53  (42W 11L)
+    HOME≥0.80 AWAY≤-0.55 cap&gt;1.40  ROI=+50.0%  hit=79%  N=70  (55W 15L)
+    HOME≥0.80 AWAY≤-0.55 cap&gt;1.20  ROI=+49.5%  hit=78%  N=60  (47W 13L)
+
+==============================================================
+  OT MODEL (shared V1/V2/V3)  (+310 odds | break-even: 24.4%)
+==============================================================
+  Current: BET OT [0.50–0.65]
+  Current ROI: -30.8%  N=77  (13W 64L  17% hit rate)
+
+  Best:    BET OT [0.40–0.50]
+  Best ROI: +28.1%  N=48  (15W 33L  31% hit rate)
+  --&gt; Δ ROI: +58.9pp | range [0.50–0.65] → [0.40–0.50]
+
+  Top 5 configs by ROI (N≥5):
+    [0.40–0.50]  ROI=+28.1%  N=48  (15W 33L  31%)
+    [0.70–1.00]  ROI=+20.3%  N=75  (22W 53L  29%)
+    [0.70–0.90]  ROI=+20.3%  N=75  (22W 53L  29%)
+    [0.70–0.85]  ROI=+20.3%  N=75  (22W 53L  29%)
+    [0.70–0.80]  ROI=+20.3%  N=75  (22W 53L  29%)
+
+==============================================================
+  Run with --verbose / -v for top-5 config breakdowns.
+  Run with --buckets / -b for full score bucket tables.
+==============================================================</pre>
+  </div>
+</div>
 </div>
 </body></html>
