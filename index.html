@@ -166,20 +166,19 @@ a { color: inherit; text-decoration: none; }
     gap: 8px;
     padding: 7px 10px;
     border-radius: 5px;
-    border-left: 2px solid transparent;
     color: var(--chalk-dim);
     font-size: 13.5px;
     font-weight: 500;
     cursor: pointer;
-    transition: color .16s ease, background .16s ease, border-color .16s ease;
+    transition: color .16s ease, background .16s ease;
 }
 
 .nav__item:hover { color: var(--chalk); background: var(--panel); }
 
+/* Selected reads by the wash and the brighter text alone — no left accent bar. */
 .nav__item--on {
     color: var(--chalk);
     background: var(--signal-wash);
-    border-left-color: var(--signal);
 }
 
 .nav__count { font-family: var(--mono); font-size: 11.5px; color: var(--chalk-mute); }
@@ -576,16 +575,6 @@ a { color: inherit; text-decoration: none; }
 
 .game:hover { border-color: var(--rule); transform: translateY(-1px); }
 
-/* Confidence bleeds in from the left edge — readable at a glance across the board. */
-.game::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 2px;
-    background: var(--signal);
-    opacity: var(--conf, 0.2);
-}
-
 @keyframes rise {
     from { opacity: 0; transform: translateY(7px); }
     to   { opacity: 1; transform: none; }
@@ -688,7 +677,7 @@ a { color: inherit; text-decoration: none; }
    stray tags. */
 .game__plays {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     flex-wrap: wrap;
     gap: 6px;
     margin-top: 9px;
@@ -735,19 +724,47 @@ a { color: inherit; text-decoration: none; }
     color: var(--chalk-mute);
 }
 
-.play-chip--strong {
-    color: var(--signal);
-    border-color: var(--signal-dim);
-    background: var(--signal-wash);
+/* The foot reads "Troy by 10.7 | Total 50.6" on line one and "74% to win" on line two.
+   The break is a zero-height full-width flex item, so the tags and chevron stay on line
+   one however long the team name is. */
+.foot__sep { color: var(--rule); }
+.foot__break { flex-basis: 100%; height: 0; }
+.foot__win { margin-top: -4px; }
+
+/* Plays as plain aligned rows rather than bordered chips: selection, chance, tier. One
+   grid across both rows (each .pick is display:contents) so the columns line up. The
+   selection column may wrap on a phone; the other two never do. */
+/* Named .picks/.pick, not .plays/.play: those are edge mode's sizing block further down,
+   and sharing them gridded both layouts into overlapping columns. */
+.picks {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: start;
+    column-gap: 14px;
+    row-gap: 3px;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 11.5px;
 }
 
-.play-chip--strong .play-chip__tier { color: var(--signal); }
+.pick { display: contents; }
+.pick__sel { color: var(--chalk); }
+.pick__p { color: var(--chalk-mute); white-space: nowrap; }
 
-.play-chip--lean { border-color: var(--rule); }
+.pick__tier {
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
 
-/* A coin flip is shown rather than hidden — the rail drops it, but a card that has a line
-   and says nothing about it reads as broken. Faded is the honest rendering. */
-.play-chip--flip { color: var(--chalk-mute); border-color: var(--rule-soft); }
+/* Three steps, from the tier cutoffs (cover) or 75/60 (win). Colour never carries the
+   meaning alone — the tier word or "to win" is always beside it. */
+.prob--hi  { color: var(--signal); font-weight: 600; }
+.prob--mid { color: var(--signal-dim); font-weight: 500; }
+.prob--lo  { color: var(--chalk-mute); }
 
 /* A line exists and the model is withholding. Dashed, like .tag--hint, because the
    distinction that matters is "no opinion yet" against "a weak opinion". */
@@ -769,20 +786,6 @@ a { color: inherit; text-decoration: none; }
 
 .tag--key  { color: var(--signal); border-color: var(--signal-dim); background: var(--signal-wash); }
 .tag--thin { color: var(--chalk-mute); border-color: var(--rule); }
-
-.meter {
-    height: 3px;
-    background: var(--rule-soft);
-    border-radius: 2px;
-    overflow: hidden;
-    margin-top: 9px;
-}
-
-.meter__fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--signal-dim), var(--signal));
-    transition: width .5s cubic-bezier(.2, .7, .3, 1);
-}
 
 /* ── Expandable breakdown ────────────────────────────────────────────────── */
 
@@ -2684,7 +2687,7 @@ a { color: inherit; text-decoration: none; }
                 <p class="facets__record" data-facet-record="spread" hidden>Spread picks have never been measured for the NHL. A tier is the model&#x27;s conviction, not edge.</p>
                 <p class="facets__record" data-facet-record="total" hidden>Totals picks have never been measured for the NHL. A tier is the model&#x27;s conviction, not edge.</p>
                 <p class="facets__record" data-facet-record="ml" hidden>The moneyline has never been measured for the NHL. A price band narrows what you are reading, and is not evidence of anything on its own.</p>
-                <p class="facets__record" data-facet-record="sc" hidden>Scoring watch is a raw rank comparison of season-to-date points, with no minimum games, and has never been measured against a total. It says what the numbers so far look like, not which side of a total to take.</p></div><div class="board" data-stats="core"><article class="game " data-game="Carolina Hurricanes@Montr&#xE9;al Canadiens" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="--conf:0.31; animation-delay:0ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 16:00</span>
+                <p class="facets__record" data-facet-record="sc" hidden>Scoring watch is a raw rank comparison of season-to-date points, with no minimum games, and has never been measured against a total. It says what the numbers so far look like, not which side of a total to take.</p></div><div class="board" data-stats="core"><article class="game " data-game="Carolina Hurricanes@Montr&#xE9;al Canadiens" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="animation-delay:0ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 16:00</span>
                                 <span>Centre Bell</span></div>
 
                             <div class="side "><span class="side__id"><img class="mark-logo" src="logos/nhl/26.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Carolina Hurricanes</span></span>
@@ -2693,11 +2696,11 @@ a { color: inherit; text-decoration: none; }
                             <div class="side side--fav"><span class="side__id"><img class="mark-logo" src="logos/nhl/1.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Montr&#xE9;al Canadiens</span></span>
                                 <span class="side__score">3.2</span></div>
 
-                            <div class="meter"><div class="meter__fill" style="width:57.817372451313844%"></div></div>
-
                             <div class="game__foot"><span class="spread">Montr&#xE9;al Canadiens by 0.6</span>
-                                <span>58%
-                                    · O/U 5.7</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span></div><div class="mkt mkt--none">
+                                <span class="foot__sep">|</span>
+                                <span>Total 5.7</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span>
+                                <span class="foot__break"></span>
+                                <span class="foot__win" title="Chance Montr&#xE9;al Canadiens wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--lo">58%</span> to win</span></div><div class="mkt mkt--none">
                                     No market captured — this game cannot be evaluated against a price.
                                 </div></div><div class="dig"><div class="dig__label">Ratings — points against an average team</div>
                                 <table class="grid"><thead><tr><th></th><th>Att</th><th>Def</th><th>Net</th><th>SoS</th><th>Gm</th></tr></thead>
@@ -2834,7 +2837,7 @@ a { color: inherit; text-decoration: none; }
                                             are comparable between a team that has played contenders and
                                             one that has not.
                                                                             No injuries, weather or market prices are included.
-                                </div></div></article><article class="game " data-game="Minnesota Wild@Buffalo Sabres" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="--conf:0.27; animation-delay:22ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 16:00</span>
+                                </div></div></article><article class="game " data-game="Minnesota Wild@Buffalo Sabres" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="animation-delay:22ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 16:00</span>
                                 <span>KeyBank Center</span></div>
 
                             <div class="side side--fav"><span class="side__id"><img class="mark-logo" src="logos/nhl/37.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Minnesota Wild</span></span>
@@ -2843,11 +2846,11 @@ a { color: inherit; text-decoration: none; }
                             <div class="side "><span class="side__id"><img class="mark-logo" src="logos/nhl/19.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Buffalo Sabres</span></span>
                                 <span class="side__score">2.9</span></div>
 
-                            <div class="meter"><div class="meter__fill" style="width:55.68976908978882%"></div></div>
-
                             <div class="game__foot"><span class="spread">Minnesota Wild by 0.4</span>
-                                <span>56%
-                                    · O/U 6.2</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span></div><div class="mkt mkt--none">
+                                <span class="foot__sep">|</span>
+                                <span>Total 6.2</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span>
+                                <span class="foot__break"></span>
+                                <span class="foot__win" title="Chance Minnesota Wild wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--lo">56%</span> to win</span></div><div class="mkt mkt--none">
                                     No market captured — this game cannot be evaluated against a price.
                                 </div></div><div class="dig"><div class="dig__label">Ratings — points against an average team</div>
                                 <table class="grid"><thead><tr><th></th><th>Att</th><th>Def</th><th>Net</th><th>SoS</th><th>Gm</th></tr></thead>
@@ -2984,7 +2987,7 @@ a { color: inherit; text-decoration: none; }
                                             are comparable between a team that has played contenders and
                                             one that has not.
                                                                             No injuries, weather or market prices are included.
-                                </div></div></article><article class="game " data-game="Utah Mammoth@New Jersey Devils" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="--conf:0.48; animation-delay:44ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 16:00</span>
+                                </div></div></article><article class="game " data-game="Utah Mammoth@New Jersey Devils" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="animation-delay:44ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 16:00</span>
                                 <span>Prudential Center</span></div>
 
                             <div class="side side--fav"><span class="side__id"><img class="mark-logo" src="logos/nhl/40.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Utah Mammoth</span></span>
@@ -2993,11 +2996,11 @@ a { color: inherit; text-decoration: none; }
                             <div class="side "><span class="side__id"><img class="mark-logo" src="logos/nhl/23.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">New Jersey Devils</span></span>
                                 <span class="side__score">2.1</span></div>
 
-                            <div class="meter"><div class="meter__fill" style="width:68.13022583299579%"></div></div>
-
                             <div class="game__foot"><span class="spread">Utah Mammoth by 1.4</span>
-                                <span>68%
-                                    · O/U 5.6</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span></div><div class="mkt mkt--none">
+                                <span class="foot__sep">|</span>
+                                <span>Total 5.6</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span>
+                                <span class="foot__break"></span>
+                                <span class="foot__win" title="Chance Utah Mammoth wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--mid">68%</span> to win</span></div><div class="mkt mkt--none">
                                     No market captured — this game cannot be evaluated against a price.
                                 </div></div><div class="dig"><div class="dig__label">Ratings — points against an average team</div>
                                 <table class="grid"><thead><tr><th></th><th>Att</th><th>Def</th><th>Net</th><th>SoS</th><th>Gm</th></tr></thead>
@@ -3134,7 +3137,7 @@ a { color: inherit; text-decoration: none; }
                                             are comparable between a team that has played contenders and
                                             one that has not.
                                                                             No injuries, weather or market prices are included.
-                                </div></div></article><article class="game " data-game="Ottawa Senators@Detroit Red Wings" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="--conf:0.37; animation-delay:66ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 16:00</span>
+                                </div></div></article><article class="game " data-game="Ottawa Senators@Detroit Red Wings" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="animation-delay:66ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 16:00</span>
                                 <span>Little Caesars Arena</span></div>
 
                             <div class="side side--fav"><span class="side__id"><img class="mark-logo" src="logos/nhl/30.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Ottawa Senators</span></span>
@@ -3143,11 +3146,11 @@ a { color: inherit; text-decoration: none; }
                             <div class="side "><span class="side__id"><img class="mark-logo" src="logos/nhl/12.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Detroit Red Wings</span></span>
                                 <span class="side__score">2.2</span></div>
 
-                            <div class="meter"><div class="meter__fill" style="width:61.509214780551446%"></div></div>
-
                             <div class="game__foot"><span class="spread">Ottawa Senators by 0.8</span>
-                                <span>62%
-                                    · O/U 5.3</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span></div><div class="mkt mkt--none">
+                                <span class="foot__sep">|</span>
+                                <span>Total 5.3</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span>
+                                <span class="foot__break"></span>
+                                <span class="foot__win" title="Chance Ottawa Senators wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--mid">62%</span> to win</span></div><div class="mkt mkt--none">
                                     No market captured — this game cannot be evaluated against a price.
                                 </div></div><div class="dig"><div class="dig__label">Ratings — points against an average team</div>
                                 <table class="grid"><thead><tr><th></th><th>Att</th><th>Def</th><th>Net</th><th>SoS</th><th>Gm</th></tr></thead>
@@ -3284,7 +3287,7 @@ a { color: inherit; text-decoration: none; }
                                             are comparable between a team that has played contenders and
                                             one that has not.
                                                                             No injuries, weather or market prices are included.
-                                </div></div></article><article class="game " data-game="Nashville Predators@Toronto Maple Leafs" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="--conf:0.22; animation-delay:88ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 16:00</span>
+                                </div></div></article><article class="game " data-game="Nashville Predators@Toronto Maple Leafs" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="animation-delay:88ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 16:00</span>
                                 <span>Scotiabank Arena</span></div>
 
                             <div class="side "><span class="side__id"><img class="mark-logo" src="logos/nhl/34.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Nashville Predators</span></span>
@@ -3293,11 +3296,11 @@ a { color: inherit; text-decoration: none; }
                             <div class="side side--fav"><span class="side__id"><img class="mark-logo" src="logos/nhl/5.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Toronto Maple Leafs</span></span>
                                 <span class="side__score">2.8</span></div>
 
-                            <div class="meter"><div class="meter__fill" style="width:52.50778492934316%"></div></div>
-
                             <div class="game__foot"><span class="spread">Toronto Maple Leafs by 0.2</span>
-                                <span>53%
-                                    · O/U 5.4</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span></div><div class="mkt mkt--none">
+                                <span class="foot__sep">|</span>
+                                <span>Total 5.4</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span>
+                                <span class="foot__break"></span>
+                                <span class="foot__win" title="Chance Toronto Maple Leafs wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--lo">53%</span> to win</span></div><div class="mkt mkt--none">
                                     No market captured — this game cannot be evaluated against a price.
                                 </div></div><div class="dig"><div class="dig__label">Ratings — points against an average team</div>
                                 <table class="grid"><thead><tr><th></th><th>Att</th><th>Def</th><th>Net</th><th>SoS</th><th>Gm</th></tr></thead>
@@ -3434,7 +3437,7 @@ a { color: inherit; text-decoration: none; }
                                             are comparable between a team that has played contenders and
                                             one that has not.
                                                                             No injuries, weather or market prices are included.
-                                </div></div></article><article class="game " data-game="New York Islanders@New York Rangers" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="--conf:0.27; animation-delay:110ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 16:30</span>
+                                </div></div></article><article class="game " data-game="New York Islanders@New York Rangers" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="animation-delay:110ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 16:30</span>
                                 <span>Madison Square Garden</span></div>
 
                             <div class="side "><span class="side__id"><img class="mark-logo" src="logos/nhl/22.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">New York Islanders</span></span>
@@ -3443,11 +3446,11 @@ a { color: inherit; text-decoration: none; }
                             <div class="side side--fav"><span class="side__id"><img class="mark-logo" src="logos/nhl/10.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">New York Rangers</span></span>
                                 <span class="side__score">2.6</span></div>
 
-                            <div class="meter"><div class="meter__fill" style="width:55.392474779863086%"></div></div>
-
                             <div class="game__foot"><span class="spread">New York Rangers by 0.4</span>
-                                <span>55%
-                                    · O/U 4.7</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span></div><div class="mkt mkt--none">
+                                <span class="foot__sep">|</span>
+                                <span>Total 4.7</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span>
+                                <span class="foot__break"></span>
+                                <span class="foot__win" title="Chance New York Rangers wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--lo">55%</span> to win</span></div><div class="mkt mkt--none">
                                     No market captured — this game cannot be evaluated against a price.
                                 </div></div><div class="dig"><div class="dig__label">Ratings — points against an average team</div>
                                 <table class="grid"><thead><tr><th></th><th>Att</th><th>Def</th><th>Net</th><th>SoS</th><th>Gm</th></tr></thead>
@@ -3584,7 +3587,7 @@ a { color: inherit; text-decoration: none; }
                                             are comparable between a team that has played contenders and
                                             one that has not.
                                                                             No injuries, weather or market prices are included.
-                                </div></div></article><article class="game " data-game="St. Louis Blues@Chicago Blackhawks" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="--conf:0.37; animation-delay:132ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 17:00</span>
+                                </div></div></article><article class="game " data-game="St. Louis Blues@Chicago Blackhawks" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="animation-delay:132ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 17:00</span>
                                 <span>United Center</span></div>
 
                             <div class="side side--fav"><span class="side__id"><img class="mark-logo" src="logos/nhl/18.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">St. Louis Blues</span></span>
@@ -3593,11 +3596,11 @@ a { color: inherit; text-decoration: none; }
                             <div class="side "><span class="side__id"><img class="mark-logo" src="logos/nhl/11.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Chicago Blackhawks</span></span>
                                 <span class="side__score">2.4</span></div>
 
-                            <div class="meter"><div class="meter__fill" style="width:61.43151542592135%"></div></div>
-
                             <div class="game__foot"><span class="spread">St. Louis Blues by 0.8</span>
-                                <span>61%
-                                    · O/U 5.6</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span></div><div class="mkt mkt--none">
+                                <span class="foot__sep">|</span>
+                                <span>Total 5.6</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span>
+                                <span class="foot__break"></span>
+                                <span class="foot__win" title="Chance St. Louis Blues wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--mid">61%</span> to win</span></div><div class="mkt mkt--none">
                                     No market captured — this game cannot be evaluated against a price.
                                 </div></div><div class="dig"><div class="dig__label">Ratings — points against an average team</div>
                                 <table class="grid"><thead><tr><th></th><th>Att</th><th>Def</th><th>Net</th><th>SoS</th><th>Gm</th></tr></thead>
@@ -3734,7 +3737,7 @@ a { color: inherit; text-decoration: none; }
                                             are comparable between a team that has played contenders and
                                             one that has not.
                                                                             No injuries, weather or market prices are included.
-                                </div></div></article><article class="game " data-game="Vegas Golden Knights@Seattle Kraken" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="--conf:0.23; animation-delay:154ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 18:40</span>
+                                </div></div></article><article class="game " data-game="Vegas Golden Knights@Seattle Kraken" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="animation-delay:154ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 18:40</span>
                                 <span>Climate Pledge Arena</span></div>
 
                             <div class="side "><span class="side__id"><img class="mark-logo" src="logos/nhl/38.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Vegas Golden Knights</span></span>
@@ -3743,11 +3746,11 @@ a { color: inherit; text-decoration: none; }
                             <div class="side side--fav"><span class="side__id"><img class="mark-logo" src="logos/nhl/39.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Seattle Kraken</span></span>
                                 <span class="side__score">2.9</span></div>
 
-                            <div class="meter"><div class="meter__fill" style="width:52.95084340907873%"></div></div>
-
                             <div class="game__foot"><span class="spread">Seattle Kraken by 0.2</span>
-                                <span>53%
-                                    · O/U 5.6</span><span class="chev">&#x2B;</span></div><div class="mkt mkt--none">
+                                <span class="foot__sep">|</span>
+                                <span>Total 5.6</span><span class="chev">&#x2B;</span>
+                                <span class="foot__break"></span>
+                                <span class="foot__win" title="Chance Seattle Kraken wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--lo">53%</span> to win</span></div><div class="mkt mkt--none">
                                     No market captured — this game cannot be evaluated against a price.
                                 </div></div><div class="dig"><div class="dig__label">Ratings — points against an average team</div>
                                 <table class="grid"><thead><tr><th></th><th>Att</th><th>Def</th><th>Net</th><th>SoS</th><th>Gm</th></tr></thead>
@@ -3884,7 +3887,7 @@ a { color: inherit; text-decoration: none; }
                                             are comparable between a team that has played contenders and
                                             one that has not.
                                                                             No injuries, weather or market prices are included.
-                                </div></div></article><article class="game " data-game="Florida Panthers@Los Angeles Kings" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="--conf:0.18; animation-delay:176ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 19:00</span>
+                                </div></div></article><article class="game " data-game="Florida Panthers@Los Angeles Kings" data-f-mkt="0" data-f-day="tue" data-f-slot="night" style="animation-delay:176ms"><div class="game__hit" data-toggle><div class="game__when"><span>Tue 6 Oct &#xB7; 19:00</span>
                                 <span>Crypto.com Arena</span></div>
 
                             <div class="side side--fav"><span class="side__id"><img class="mark-logo" src="logos/nhl/33.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Florida Panthers</span></span>
@@ -3893,11 +3896,11 @@ a { color: inherit; text-decoration: none; }
                             <div class="side "><span class="side__id"><img class="mark-logo" src="logos/nhl/14.svg" alt="" width="32" height="32" loading="lazy" /><span class="side__team">Los Angeles Kings</span></span>
                                 <span class="side__score">2.8</span></div>
 
-                            <div class="meter"><div class="meter__fill" style="width:50.20230111375685%"></div></div>
-
                             <div class="game__foot"><span class="spread">Florida Panthers by 0.0</span>
-                                <span>50%
-                                    · O/U 5.6</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span></div><div class="mkt mkt--none">
+                                <span class="foot__sep">|</span>
+                                <span>Total 5.6</span><span class="tag tag--thin">thin</span><span class="chev">&#x2B;</span>
+                                <span class="foot__break"></span>
+                                <span class="foot__win" title="Chance Florida Panthers wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--lo">50%</span> to win</span></div><div class="mkt mkt--none">
                                     No market captured — this game cannot be evaluated against a price.
                                 </div></div><div class="dig"><div class="dig__label">Ratings — points against an average team</div>
                                 <table class="grid"><thead><tr><th></th><th>Att</th><th>Def</th><th>Net</th><th>SoS</th><th>Gm</th></tr></thead>
