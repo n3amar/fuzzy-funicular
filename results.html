@@ -1480,6 +1480,63 @@ a { color: inherit; text-decoration: none; }
 .tdtop__pos, .tdtop__match { color: var(--chalk-mute); }
 .tdtop__p { color: var(--signal); font-weight: 600; }
 
+/* ── Tonight's top 5 (NHL) ────────────────────────────────────────────────────
+   Five short lists side by side, wrapping to one column on a phone. No toggle and no
+   script: every row is always shown, so the export needs nothing. */
+.ntop {
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    background: var(--panel);
+    border: 1px solid var(--rule-soft);
+    border-radius: 7px;
+}
+
+.ntop__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 12px;
+    margin-bottom: 8px;
+}
+
+.ntop__title, .ntop__k {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--chalk);
+}
+
+.ntop__k { font-size: 10px; color: var(--chalk-dim); margin-bottom: 2px; }
+.ntop__meta, .ntop__note { font-family: var(--mono); font-size: 10.5px; color: var(--chalk-mute); }
+.ntop__note { margin-top: 8px; }
+
+.ntop__cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px 18px;
+}
+
+.ntop__list { list-style: none; margin: 0; padding: 0; }
+
+.ntop__link {
+    display: grid;
+    grid-template-columns: 22px 1fr auto auto;
+    align-items: baseline;
+    gap: 8px;
+    padding: 4px 2px;
+    border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--chalk-dim);
+    text-decoration: none;
+}
+
+.ntop__link:hover { color: var(--chalk); }
+.ntop__n, .ntop__sub { color: var(--chalk-mute); }
+.ntop__who { color: var(--chalk); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ntop__p { color: var(--signal); font-weight: 600; }
+
 .facets__open {
     font-family: var(--mono);
     font-size: 11px;

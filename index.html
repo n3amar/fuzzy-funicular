@@ -1480,6 +1480,63 @@ a { color: inherit; text-decoration: none; }
 .tdtop__pos, .tdtop__match { color: var(--chalk-mute); }
 .tdtop__p { color: var(--signal); font-weight: 600; }
 
+/* ── Tonight's top 5 (NHL) ────────────────────────────────────────────────────
+   Five short lists side by side, wrapping to one column on a phone. No toggle and no
+   script: every row is always shown, so the export needs nothing. */
+.ntop {
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    background: var(--panel);
+    border: 1px solid var(--rule-soft);
+    border-radius: 7px;
+}
+
+.ntop__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 12px;
+    margin-bottom: 8px;
+}
+
+.ntop__title, .ntop__k {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--chalk);
+}
+
+.ntop__k { font-size: 10px; color: var(--chalk-dim); margin-bottom: 2px; }
+.ntop__meta, .ntop__note { font-family: var(--mono); font-size: 10.5px; color: var(--chalk-mute); }
+.ntop__note { margin-top: 8px; }
+
+.ntop__cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px 18px;
+}
+
+.ntop__list { list-style: none; margin: 0; padding: 0; }
+
+.ntop__link {
+    display: grid;
+    grid-template-columns: 22px 1fr auto auto;
+    align-items: baseline;
+    gap: 8px;
+    padding: 4px 2px;
+    border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--chalk-dim);
+    text-decoration: none;
+}
+
+.ntop__link:hover { color: var(--chalk); }
+.ntop__n, .ntop__sub { color: var(--chalk-mute); }
+.ntop__who { color: var(--chalk); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ntop__p { color: var(--signal); font-weight: 600; }
+
 .facets__open {
     font-family: var(--mono);
     font-size: 11px;
@@ -2838,7 +2895,89 @@ a { color: inherit; text-decoration: none; }
                         it is most sure about, shown beside how sure it has earned the right to be.
                         <strong>This is not a list of bets.</strong>Ratings from <strong>89 games played, primed with 2025 ratings carried at 85%, goals blended with shots</strong>. Click a game for the numbers behind it.</p></header><div class="filter" data-filter-bar hidden><span class="filter__what"></span>
                     <span class="filter__count"></span>
-                    <button class="filter__clear" data-filter-clear>Show all</button></div><div class="facets" data-facets><details class="facets__panel"><summary class="facets__open">Filter the board</summary>
+                    <button class="filter__clear" data-filter-clear>Show all</button></div><section class="ntop"><div class="ntop__head"><span class="ntop__title">Tonight&#x27;s top 5</span>
+                        <span class="ntop__meta">ranked from the cards below · a ranking, not sized plays · player markets unpriced</span></div>
+                    <div class="ntop__cols"><div class="ntop__col"><div class="ntop__k" title="Projected shots on goal, with the chance of 2+ and 3+">Shots on goal</div>
+                                <ol class="ntop__list"><li><a class="ntop__link" href="#g-colorado-avalanche-dallas-stars" data-open-card="g-colorado-avalanche-dallas-stars" title="Nathan MacKinnon, Colorado Avalanche vs Dallas Stars: 5 game(s) this season. Opens the game."><span class="ntop__n">1.</span>
+                                                <span class="ntop__who">Nathan MacKinnon <span class="ntop__sub">Colorado Avalanche</span></span>
+                                                <span class="ntop__sub">2&#x2B; 89% · 3+ 75%</span>
+                                                <span class="ntop__p">4.5</span></a></li><li><a class="ntop__link" href="#g-minnesota-wild-winnipeg-jets" data-open-card="g-minnesota-wild-winnipeg-jets" title="Kyle Connor, Winnipeg Jets vs Minnesota Wild: 5 game(s) this season. Opens the game."><span class="ntop__n">2.</span>
+                                                <span class="ntop__who">Kyle Connor <span class="ntop__sub">Winnipeg Jets</span></span>
+                                                <span class="ntop__sub">2&#x2B; 86% · 3+ 70%</span>
+                                                <span class="ntop__p">4.0</span></a></li><li><a class="ntop__link" href="#g-buffalo-sabres-montr&#xE9;al-canadiens" data-open-card="g-buffalo-sabres-montr&#xE9;al-canadiens" title="Tage Thompson, Buffalo Sabres vs Montr&#xE9;al Canadiens: 6 game(s) this season. Opens the game."><span class="ntop__n">3.</span>
+                                                <span class="ntop__who">Tage Thompson <span class="ntop__sub">Buffalo Sabres</span></span>
+                                                <span class="ntop__sub">2&#x2B; 85% · 3+ 70%</span>
+                                                <span class="ntop__p">4.0</span></a></li><li><a class="ntop__link" href="#g-new-jersey-devils-detroit-red-wings" data-open-card="g-new-jersey-devils-detroit-red-wings" title="Timo Meier, New Jersey Devils vs Detroit Red Wings: 5 game(s) this season. Opens the game."><span class="ntop__n">4.</span>
+                                                <span class="ntop__who">Timo Meier <span class="ntop__sub">New Jersey Devils</span></span>
+                                                <span class="ntop__sub">2&#x2B; 85% · 3+ 68%</span>
+                                                <span class="ntop__p">3.9</span></a></li><li><a class="ntop__link" href="#g-tampa-bay-lightning-new-york-rangers" data-open-card="g-tampa-bay-lightning-new-york-rangers" title="Brandon Hagel, Tampa Bay Lightning vs New York Rangers: 5 game(s) this season. Opens the game."><span class="ntop__n">5.</span>
+                                                <span class="ntop__who">Brandon Hagel <span class="ntop__sub">Tampa Bay Lightning</span></span>
+                                                <span class="ntop__sub">2&#x2B; 84% · 3+ 67%</span>
+                                                <span class="ntop__p">3.7</span></a></li></ol></div><div class="ntop__col"><div class="ntop__k">Goal</div>
+                                <ol class="ntop__list"><li><a class="ntop__link" href="#g-colorado-avalanche-dallas-stars" data-open-card="g-colorado-avalanche-dallas-stars" title="Nathan MacKinnon, Colorado Avalanche vs Dallas Stars: 5 game(s) this season. Opens the game."><span class="ntop__n">1.</span>
+                                                <span class="ntop__who">Nathan MacKinnon</span>
+                                                <span class="ntop__sub">Colorado Avalanche</span>
+                                                <span class="ntop__p">50%</span></a></li><li><a class="ntop__link" href="#g-minnesota-wild-winnipeg-jets" data-open-card="g-minnesota-wild-winnipeg-jets" title="Kirill Kaprizov, Minnesota Wild vs Winnipeg Jets: 6 game(s) this season. Opens the game."><span class="ntop__n">2.</span>
+                                                <span class="ntop__who">Kirill Kaprizov</span>
+                                                <span class="ntop__sub">Minnesota Wild</span>
+                                                <span class="ntop__p">47%</span></a></li><li><a class="ntop__link" href="#g-buffalo-sabres-montr&#xE9;al-canadiens" data-open-card="g-buffalo-sabres-montr&#xE9;al-canadiens" title="Cole Caufield, Montr&#xE9;al Canadiens vs Buffalo Sabres: 5 game(s) this season. Opens the game."><span class="ntop__n">3.</span>
+                                                <span class="ntop__who">Cole Caufield</span>
+                                                <span class="ntop__sub">Montr&#xE9;al Canadiens</span>
+                                                <span class="ntop__p">45%</span></a></li><li><a class="ntop__link" href="#g-edmonton-oilers-los-angeles-kings" data-open-card="g-edmonton-oilers-los-angeles-kings" title="Connor McDavid, Edmonton Oilers vs Los Angeles Kings: 5 game(s) this season. Opens the game."><span class="ntop__n">4.</span>
+                                                <span class="ntop__who">Connor McDavid</span>
+                                                <span class="ntop__sub">Edmonton Oilers</span>
+                                                <span class="ntop__p">44%</span></a></li><li><a class="ntop__link" href="#g-minnesota-wild-winnipeg-jets" data-open-card="g-minnesota-wild-winnipeg-jets" title="Kyle Connor, Winnipeg Jets vs Minnesota Wild: 5 game(s) this season. Opens the game."><span class="ntop__n">5.</span>
+                                                <span class="ntop__who">Kyle Connor</span>
+                                                <span class="ntop__sub">Winnipeg Jets</span>
+                                                <span class="ntop__p">43%</span></a></li></ol></div><div class="ntop__col"><div class="ntop__k">Point</div>
+                                <ol class="ntop__list"><li><a class="ntop__link" href="#g-edmonton-oilers-los-angeles-kings" data-open-card="g-edmonton-oilers-los-angeles-kings" title="Connor McDavid, Edmonton Oilers vs Los Angeles Kings: 5 game(s) this season. Opens the game."><span class="ntop__n">1.</span>
+                                                <span class="ntop__who">Connor McDavid</span>
+                                                <span class="ntop__sub">Edmonton Oilers</span>
+                                                <span class="ntop__p">85%</span></a></li><li><a class="ntop__link" href="#g-colorado-avalanche-dallas-stars" data-open-card="g-colorado-avalanche-dallas-stars" title="Nathan MacKinnon, Colorado Avalanche vs Dallas Stars: 5 game(s) this season. Opens the game."><span class="ntop__n">2.</span>
+                                                <span class="ntop__who">Nathan MacKinnon</span>
+                                                <span class="ntop__sub">Colorado Avalanche</span>
+                                                <span class="ntop__p">82%</span></a></li><li><a class="ntop__link" href="#g-tampa-bay-lightning-new-york-rangers" data-open-card="g-tampa-bay-lightning-new-york-rangers" title="Nikita Kucherov, Tampa Bay Lightning vs New York Rangers: 5 game(s) this season. Opens the game."><span class="ntop__n">3.</span>
+                                                <span class="ntop__who">Nikita Kucherov</span>
+                                                <span class="ntop__sub">Tampa Bay Lightning</span>
+                                                <span class="ntop__p">81%</span></a></li><li><a class="ntop__link" href="#g-edmonton-oilers-los-angeles-kings" data-open-card="g-edmonton-oilers-los-angeles-kings" title="Leon Draisaitl, Edmonton Oilers vs Los Angeles Kings: 5 game(s) this season. Opens the game."><span class="ntop__n">4.</span>
+                                                <span class="ntop__who">Leon Draisaitl</span>
+                                                <span class="ntop__sub">Edmonton Oilers</span>
+                                                <span class="ntop__p">79%</span></a></li><li><a class="ntop__link" href="#g-boston-bruins-san-jose-sharks" data-open-card="g-boston-bruins-san-jose-sharks" title="Macklin Celebrini, San Jose Sharks vs Boston Bruins: 3 game(s) this season. Opens the game."><span class="ntop__n">5.</span>
+                                                <span class="ntop__who">Macklin Celebrini</span>
+                                                <span class="ntop__sub">San Jose Sharks</span>
+                                                <span class="ntop__p">78%</span></a></li></ol></div><div class="ntop__col"><div class="ntop__k" title="The total read on each card, firmest first, either side">Totals</div>
+                                <ol class="ntop__list"><li><a class="ntop__link" href="#g-minnesota-wild-winnipeg-jets" data-open-card="g-minnesota-wild-winnipeg-jets" title="Minnesota Wild at Winnipeg Jets: model total 5.93. Opens the game."><span class="ntop__n">1.</span>
+                                                <span class="ntop__who">Under 6.5 <span class="ntop__sub">Minnesota Wild at Winnipeg Jets</span></span>
+                                                <span class="ntop__sub">model 5.9</span>
+                                                <span class="ntop__p">60%</span></a></li><li><a class="ntop__link" href="#g-new-jersey-devils-detroit-red-wings" data-open-card="g-new-jersey-devils-detroit-red-wings" title="New Jersey Devils at Detroit Red Wings: model total 6.42. Opens the game."><span class="ntop__n">2.</span>
+                                                <span class="ntop__who">Over 6.0 <span class="ntop__sub">New Jersey Devils at Detroit Red Wings</span></span>
+                                                <span class="ntop__sub">model 6.4</span>
+                                                <span class="ntop__p">58%</span></a></li><li><a class="ntop__link" href="#g-tampa-bay-lightning-new-york-rangers" data-open-card="g-tampa-bay-lightning-new-york-rangers" title="Tampa Bay Lightning at New York Rangers: model total 5.59. Opens the game."><span class="ntop__n">3.</span>
+                                                <span class="ntop__who">Under 6.0 <span class="ntop__sub">Tampa Bay Lightning at New York Rangers</span></span>
+                                                <span class="ntop__sub">model 5.6</span>
+                                                <span class="ntop__p">58%</span></a></li><li><a class="ntop__link" href="#g-buffalo-sabres-montr&#xE9;al-canadiens" data-open-card="g-buffalo-sabres-montr&#xE9;al-canadiens" title="Buffalo Sabres at Montr&#xE9;al Canadiens: model total 6.11. Opens the game."><span class="ntop__n">4.</span>
+                                                <span class="ntop__who">Under 6.5 <span class="ntop__sub">Buffalo Sabres at Montr&#xE9;al Canadiens</span></span>
+                                                <span class="ntop__sub">model 6.1</span>
+                                                <span class="ntop__p">57%</span></a></li><li><a class="ntop__link" href="#g-vancouver-canucks-new-york-islanders" data-open-card="g-vancouver-canucks-new-york-islanders" title="Vancouver Canucks at New York Islanders: model total 6.32. Opens the game."><span class="ntop__n">5.</span>
+                                                <span class="ntop__who">Over 6.0 <span class="ntop__sub">Vancouver Canucks at New York Islanders</span></span>
+                                                <span class="ntop__sub">model 6.3</span>
+                                                <span class="ntop__p">56%</span></a></li></ol></div><div class="ntop__col"><div class="ntop__k" title="The model's most likely winners, with the captured moneyline on that side">Moneyline</div>
+                                <ol class="ntop__list"><li><a class="ntop__link" href="#g-toronto-maple-leafs-utah-mammoth" data-open-card="g-toronto-maple-leafs-utah-mammoth" title="Toronto Maple Leafs at Utah Mammoth. Win probability, not an edge against the price. Opens the game."><span class="ntop__n">1.</span>
+                                                <span class="ntop__who">Utah Mammoth</span>
+                                                <span class="ntop__sub">-160</span>
+                                                <span class="ntop__p">65%</span></a></li><li><a class="ntop__link" href="#g-calgary-flames-anaheim-ducks" data-open-card="g-calgary-flames-anaheim-ducks" title="Calgary Flames at Anaheim Ducks. Win probability, not an edge against the price. Opens the game."><span class="ntop__n">2.</span>
+                                                <span class="ntop__who">Anaheim Ducks</span>
+                                                <span class="ntop__sub">-175</span>
+                                                <span class="ntop__p">65%</span></a></li><li><a class="ntop__link" href="#g-vancouver-canucks-new-york-islanders" data-open-card="g-vancouver-canucks-new-york-islanders" title="Vancouver Canucks at New York Islanders. Win probability, not an edge against the price. Opens the game."><span class="ntop__n">3.</span>
+                                                <span class="ntop__who">New York Islanders</span>
+                                                <span class="ntop__sub">-215</span>
+                                                <span class="ntop__p">63%</span></a></li><li><a class="ntop__link" href="#g-washington-capitals-carolina-hurricanes" data-open-card="g-washington-capitals-carolina-hurricanes" title="Washington Capitals at Carolina Hurricanes. Win probability, not an edge against the price. Opens the game."><span class="ntop__n">4.</span>
+                                                <span class="ntop__who">Carolina Hurricanes</span>
+                                                <span class="ntop__sub">-155</span>
+                                                <span class="ntop__p">60%</span></a></li><li><a class="ntop__link" href="#g-pittsburgh-penguins-chicago-blackhawks" data-open-card="g-pittsburgh-penguins-chicago-blackhawks" title="Pittsburgh Penguins at Chicago Blackhawks. Win probability, not an edge against the price. Opens the game."><span class="ntop__n">5.</span>
+                                                <span class="ntop__who">Pittsburgh Penguins</span>
+                                                <span class="ntop__sub">-160</span>
+                                                <span class="ntop__p">59%</span></a></li></ol></div></div></section><div class="facets" data-facets><details class="facets__panel"><summary class="facets__open">Filter the board</summary>
 
                     <div class="facets__group"><span class="facets__k">Spread tier</span><button type="button" class="chip" data-facet="st" data-value="strong">Strong &#x2265;60%</button><button type="button" class="chip" data-facet="st" data-value="lean">Lean 55&#x2013;59%</button><button type="button" class="chip" data-facet="st" data-value="flip">Coin flip</button></div>
 
