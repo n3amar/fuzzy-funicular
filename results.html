@@ -13,7 +13,7 @@
    speaking, cool cyan is always the MARKET. Nothing else gets to use them.
    ========================================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Sofia+Sans+Extra+Condensed:wght@600;700&display=swap');
 
 :root {
     --ink:        #0a0b0d;
@@ -25,38 +25,44 @@
     --chalk-dim:  #9c968a;
     --chalk-mute: #6b665d;
 
-    /* The model's voice. Green, replacing the original burnt orange.
+    /* The model's voice. A blue-leaning emerald as of 2026-10-12; it was forest green
+       (#2fa82f / #228b22) before that and burnt orange originally.
 
-       Two steps of one hue rather than one, because a single value cannot do both
-       jobs. #228B22 is the requested colour and it is what fills, borders and washes
-       use, where WCAG only asks 3:1. It cannot carry text: against the ink it
-       measures 4.49:1 and against the panel 4.10:1, both under the 4.5:1 floor for
-       normal-size type — and most of what wears this colour is 10-12px mono.
-
-       --signal lifts the same hue to 6.34:1 on ink and 5.79:1 on panel, which is
-       where the old orange sat (5.82 / 5.32), so nothing got harder to read. */
-    --signal:      #2fa82f;   /* text, values, active states */
-    --signal-dim:  #228b22;   /* fills, borders, meters */
-    --signal-wash: rgba(34, 139, 34, 0.10);
+       Two steps of one hue rather than one, because one value cannot be both a text
+       colour and a fill. --signal carries text: 10.89:1 on the ink and 9.94:1 on the
+       panel, against a 4.5:1 floor (the green it replaced sat at 6.34 / 5.79).
+       --signal-dim is for fills, borders and washes: 5.86:1 on the panel against the
+       3:1 WCAG asks of those — and, unlike the old #228b22 at 4.10, it now clears the
+       text floor too, though nothing relies on that. */
+    --signal:      #2ed8b6;   /* text, values, active states */
+    --signal-dim:  #0ea68a;   /* fills, borders, meters */
+    --signal-wash: rgba(14, 166, 138, 0.10);
 
     /* The market's voice. Chosen by running the palette validator against the dark
        chart surface rather than by eye: the original #6fb6c9 failed both the
        lightness band and the chroma floor, meaning it read as grey rather than as a
        colour.
 
-       Re-validated against the green after the swap, since the number recorded here
-       was measured against the orange it replaced. Still passes all five checks:
-       deltaE 20.0 from --signal under deuteranopia and 21.5 under normal vision,
-       against a target of 8. Tritan separation is the one figure that got worse,
-       4.2 against the orange's 33.7 — tritanopia is ~1 in 10,000 and not sex-linked,
-       and every place these two colours meet is also separated by position and
-       label, but it is the cost of moving the signal hue this close to cyan. */
+       Separation from --signal, re-measured 2026-10-12 when the signal moved to a
+       blue-leaning emerald and so TOWARD this cyan: CIE76 deltaE in Lab, Machado
+       simulation at full severity — 51.1 normal vision, 42.4 protan, 39.7 deutan,
+       20.3 tritan. The forest green measured 90.2 / 88.9 / 80.4 / 12.7 the same way, so
+       red-green separation roughly halved and is still far past the point of confusion,
+       while tritan improved. (Earlier figures recorded here — 20.0 / 21.5 / 4.2 — came
+       from a different validator and are not comparable with these.) Every place the
+       two colours meet is also separated by position and label. Going bluer than this
+       is where it starts to cost: plain teal #2dd4bf measures 33.7 deutan. */
     --market:      #1f9ec9;
     --market-wash: rgba(31, 158, 201, 0.10);
 
     --serif: 'Instrument Serif', Georgia, serif;
     --sans:  'Archivo', 'Helvetica Neue', sans-serif;
     --mono:  'IBM Plex Mono', ui-monospace, monospace;
+
+    /* The card's scoreline, on its own tokens so its type can change without moving the
+       rest of the desk. */
+    --scoreline-name:  'Sofia Sans Extra Condensed', 'Archivo Narrow', 'Arial Narrow', sans-serif;
+    --scoreline-score: 'Sofia Sans Extra Condensed', 'Archivo Narrow', 'Arial Narrow', sans-serif;
 
     --rail-left:  clamp(180px, 15vw, 236px);
     --rail-right: clamp(280px, 24vw, 364px);
@@ -85,7 +91,7 @@ body::before {
     z-index: 0;
     opacity: 0.5;
     background-image:
-        radial-gradient(circle at 18% 8%, rgba(34, 139, 34, 0.06), transparent 44%),
+        radial-gradient(circle at 18% 8%, rgba(14, 166, 138, 0.06), transparent 44%),
         radial-gradient(circle at 88% 72%, rgba(31, 158, 201, 0.045), transparent 40%);
 }
 
@@ -592,27 +598,57 @@ a { color: inherit; text-decoration: none; }
     gap: 8px;
 }
 
+/* The scoreline is the card's focal point: away team, score | score, home team, on one
+   line. Three columns so the divider sits dead centre whatever the two names weigh. */
+.scoreline {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0 12px;
+}
+
+.scoreline__sep {
+    width: 1px;
+    align-self: stretch;
+    min-height: 34px;
+    background: var(--rule);
+}
+
 .side {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    padding: 4px 0;
+    min-width: 0;
 }
 
+/* The home side is the away side mirrored: score nearest the divider, logo at the edge. */
+.side--home,
+.side--home .side__id { flex-direction: row-reverse; }
+.side--home .side__team { text-align: right; }
+
+/* Two lines, then an ellipsis. One line was the brief, but at two cards to a row
+   "Colorado Avalanche" came out as "Colorado A…" on most of a hockey board, and a name
+   you cannot read defeats a scoreline. */
 .side__team {
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.005em;
+    font-family: var(--scoreline-name);
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     color: var(--chalk-dim);
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
 }
 
-.side--fav .side__team { color: var(--chalk); font-weight: 600; }
+.side--fav .side__team { color: var(--chalk); font-weight: 700; }
 
-/* Logo + name. min-width: 0 so a long name still ellipsises beside the mark rather than
+/* Logo + name. min-width: 0 so a long name still clamps beside the mark rather than
    pushing the score off the card. */
 .side__id {
     display: flex;
@@ -629,7 +665,7 @@ a { color: inherit; text-decoration: none; }
     object-fit: contain;
 }
 
-/* No logo: the same footprint, so both rows of a card keep their names aligned. */
+/* No logo: the same footprint, so both sides of a card keep their names aligned. */
 .mark-logo--init {
     display: inline-flex;
     align-items: center;
@@ -644,10 +680,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 .side__score {
-    font-family: var(--mono);
-    font-size: 16px;
+    flex: none;
+    font-family: var(--scoreline-score);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
     font-variant-numeric: tabular-nums;
-    color: var(--chalk-mute);
+    color: var(--chalk-dim);
 }
 
 .side--fav .side__score { color: var(--signal); }
