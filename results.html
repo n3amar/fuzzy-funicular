@@ -657,11 +657,13 @@ a { color: inherit; text-decoration: none; }
     min-width: 0;
 }
 
-/* Drawn at 32px from a 64px file, so it stays sharp on a high-density screen. */
+/* Drawn at 48px. Football marks are 64px files, so on a 2x screen they are stretched
+   from 64 to 96 device pixels and look soft; re-fetch them larger before going past
+   this. Hockey marks are SVG and do not care. */
 .mark-logo {
     flex: none;
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
 }
 
@@ -675,7 +677,7 @@ a { color: inherit; text-decoration: none; }
     background: var(--rule-soft);
     color: var(--chalk-mute);
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 14px;
     letter-spacing: 0.04em;
 }
 
@@ -690,6 +692,21 @@ a { color: inherit; text-decoration: none; }
 }
 
 .side--fav .side__score { color: var(--signal); }
+
+/* A card at its narrowest (330px, or a phone) has about 134px a side. At full size the
+   logo and the score would leave the name a dozen pixels, so all three step down
+   together. The header is the container, so this follows the CARD's width — an open
+   card on a small screen and a closed one on a wide screen each get the right size. */
+.game__hit { container-type: inline-size; }
+
+@container (max-width: 400px) {
+    .scoreline { gap: 10px; }
+    .side, .side__id { gap: 7px; }
+    .mark-logo { width: 34px; height: 34px; }
+    .mark-logo--init { font-size: 11px; }
+    .side__team { font-size: 18px; }
+    .side__score { font-size: 30px; }
+}
 
 /* Wraps so a long favourite ("Middle Tennessee State by 24.5") drops cleanly instead of
    crowding the chevron. The chevron's margin-left:auto absorbs the free space before
