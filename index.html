@@ -787,6 +787,17 @@ a { color: inherit; text-decoration: none; }
 .foot__break { flex-basis: 100%; height: 0; }
 .foot__win { margin-top: -4px; }
 
+/* Hockey's 1st-period read on the win line, pushed to the right edge. Muted: it measured no
+   better than the league rate, so it must not read as loud as the win chance beside it. */
+.foot__fp {
+    margin-top: -4px;
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--chalk-mute);
+    white-space: nowrap;
+}
+
 /* Plays as plain aligned rows rather than bordered chips: selection, chance, tier. One
    grid across both rows (each .pick is display:contents) so the columns line up. The
    selection column may wrap on a phone; the other two never do. */
@@ -3061,7 +3072,7 @@ a.chip--on:hover { color: var(--ink); }
                                 <span>Total 5.6</span><span class="chev">&#x2B;</span>
                                 <span class="foot__break"></span>
                                 <span class="foot__win" title="Chance New York Rangers wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--lo">55%</span> to win
-                                    </span></div><div class="game__plays"><span class="game__plays-k">Play</span>
+                                    </span><span class="foot__fp" title="1st period: over 1.5 goals, and both teams scoring. Measured no better than the league&#x27;s flat rate (about 53% and 35%) &#x2014; open the card for each team&#x27;s record.">1P o1.5 47% · BTTS 29%</span></div><div class="game__plays"><span class="game__plays-k">Play</span>
                                     <div class="picks"><div class="pick" title="Anaheim Ducks &#x2B;1.5 &#x2014; the model is 1.1 past the line, 64% chance to cover, strong. This market has never been measured for the NHL. Read this as conviction, never as edge."><span class="pick__sel">Anaheim Ducks &#x2B;1.5</span>
                                                 <span class="pick__p"><span class="prob prob--hi">64%</span> chance to cover</span>
                                                 <span class="pick__tier prob--hi">strong</span>
@@ -3275,7 +3286,7 @@ a.chip--on:hover { color: var(--ink); }
                                 <span>Total 6.2</span><span class="chev">&#x2B;</span>
                                 <span class="foot__break"></span>
                                 <span class="foot__win" title="Chance Colorado Avalanche wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--mid">68%</span> to win
-                                    </span></div><div class="game__plays"><span class="game__plays-k">Play</span>
+                                    </span><span class="foot__fp" title="1st period: over 1.5 goals, and both teams scoring. Measured no better than the league&#x27;s flat rate (about 53% and 35%) &#x2014; open the card for each team&#x27;s record.">1P o1.5 52% · BTTS 33%</span></div><div class="game__plays"><span class="game__plays-k">Play</span>
                                     <div class="picks"><div class="pick" title="Philadelphia Flyers &#x2B;1.5 &#x2014; the model is 0.2 past the line, 50% chance to cover, coin flip. This market has never been measured for the NHL. Read this as conviction, never as edge."><span class="pick__sel">Philadelphia Flyers &#x2B;1.5</span>
                                                 <span class="pick__p"><span class="prob prob--lo">50%</span> chance to cover</span>
                                                 <span class="pick__tier prob--lo">coin flip</span>
@@ -3489,7 +3500,7 @@ a.chip--on:hover { color: var(--ink); }
                                 <span>Total 6.7</span><span class="chev">&#x2B;</span>
                                 <span class="foot__break"></span>
                                 <span class="foot__win" title="Chance Toronto Maple Leafs wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--lo">55%</span> to win
-                                    </span></div><div class="game__plays"><span class="game__plays-k">Play</span>
+                                    </span><span class="foot__fp" title="1st period: over 1.5 goals, and both teams scoring. Measured no better than the league&#x27;s flat rate (about 53% and 35%) &#x2014; open the card for each team&#x27;s record.">1P o1.5 57% · BTTS 37%</span></div><div class="game__plays"><span class="game__plays-k">Play</span>
                                     <div class="picks"><div class="pick" title="San Jose Sharks &#x2B;1.5 &#x2014; the model is 1.1 past the line, 63% chance to cover, strong. This market has never been measured for the NHL. Read this as conviction, never as edge."><span class="pick__sel">San Jose Sharks &#x2B;1.5</span>
                                                 <span class="pick__p"><span class="prob prob--hi">63%</span> chance to cover</span>
                                                 <span class="pick__tier prob--hi">strong</span>
@@ -3703,7 +3714,7 @@ a.chip--on:hover { color: var(--ink); }
                                 <span>Total 6.5</span><span class="chev">&#x2B;</span>
                                 <span class="foot__break"></span>
                                 <span class="foot__win" title="Chance Utah Mammoth wins the game outright. Not the chance of covering a spread &#x2014; the plays below answer that."><span class="prob prob--mid">60%</span> to win
-                                    </span></div><div class="game__plays"><span class="game__plays-k">Play</span>
+                                    </span><span class="foot__fp" title="1st period: over 1.5 goals, and both teams scoring. Measured no better than the league&#x27;s flat rate (about 53% and 35%) &#x2014; open the card for each team&#x27;s record.">1P o1.5 55% · BTTS 36%</span></div><div class="game__plays"><span class="game__plays-k">Play</span>
                                     <div class="picks"><div class="pick" title="Pittsburgh Penguins &#x2B;1.5 &#x2014; the model is 0.8 past the line, 59% chance to cover, lean. This market has never been measured for the NHL. Read this as conviction, never as edge."><span class="pick__sel">Pittsburgh Penguins &#x2B;1.5</span>
                                                 <span class="pick__p"><span class="prob prob--mid">59%</span> chance to cover</span>
                                                 <span class="pick__tier prob--mid">lean</span>

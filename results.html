@@ -787,6 +787,17 @@ a { color: inherit; text-decoration: none; }
 .foot__break { flex-basis: 100%; height: 0; }
 .foot__win { margin-top: -4px; }
 
+/* Hockey's 1st-period read on the win line, pushed to the right edge. Muted: it measured no
+   better than the league rate, so it must not read as loud as the win chance beside it. */
+.foot__fp {
+    margin-top: -4px;
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--chalk-mute);
+    white-space: nowrap;
+}
+
 /* Plays as plain aligned rows rather than bordered chips: selection, chance, tier. One
    grid across both rows (each .pick is display:contents) so the columns line up. The
    selection column may wrap on a phone; the other two never do. */
