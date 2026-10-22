@@ -1107,6 +1107,13 @@ a { color: inherit; text-decoration: none; }
 .pwatch__opp { color: var(--chalk-dim); }
 .pwatch__opp--up { color: #4ade80; }
 .pwatch__opp--down { color: #f87171; }
+/* Goals tab "Last 5" (2026-10-21): the glyph carries the result, the fill repeats it, so it
+   stays readable for red-green colour blindness. Same green / red as the opponent factor. */
+.form5 { display: inline-flex; gap: 3px; vertical-align: middle; }
+.form5__sq { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 3px; font-size: 11px; font-weight: 700; line-height: 1; color: #14171b; }
+.form5__sq--yes { background: #4ade80; }
+.form5__sq--no { background: #f87171; }
+.form5__sq--dnp { background: transparent; border: 1px solid var(--chalk-mute); color: var(--chalk-dim); }
 /* Matchup fit (2026-10-14): the wash marks the row, the cell that qualified carries the
    signal color, and the tag says it in words so it does not rest on colour alone. */
 .pwatch__fit > td { background: var(--signal-wash); }
@@ -2427,6 +2434,11 @@ a.chip--on:hover { color: var(--ink); }
 .band__res--miss { color: var(--warn, #c8552b); }
 .band__res--push { color: var(--chalk-mute); }
 
+/* Shots tab "Last 5" (2026-10-22): a raw count, so no result colour. Filled in chalk with
+   ink text (~16:1) — the first outlined version, grey border on the panel, was too faint
+   to read (the user, 2026-10-22). */
+.form5__sq--count { width: auto; min-width: 18px; height: 18px; padding: 0 3px; background: var(--chalk); color: var(--ink); font-size: 12px; font-variant-numeric: tabular-nums; }
+
 /* /Components/Layout/MainLayout.razor.rz.scp.css */
 #blazor-error-ui[b-yok0k17bsi] {
     color-scheme: light only;
@@ -2966,27 +2978,27 @@ a.chip--on:hover { color: var(--ink); }
                 said. Walk-forward, so each week was projected from the weeks before it and
                 nothing here has seen the result it is being judged on.
             </p></header><div class="stats stats--wide" b-dkv3jdcz3w><div class="stat" b-dkv3jdcz3w><div class="stat__k" b-dkv3jdcz3w>Games graded</div>
-                    <div class="stat__v" b-dkv3jdcz3w>151</div></div>
+                    <div class="stat__v" b-dkv3jdcz3w>153</div></div>
                 <div class="stat" b-dkv3jdcz3w><div class="stat__k" b-dkv3jdcz3w>Margin error</div>
-                    <div class="stat__v stat__v--signal" b-dkv3jdcz3w>2.13</div>
-                    <div class="stat__sub" b-dkv3jdcz3w><span class="cool" b-dkv3jdcz3w>market 2.10</span></div></div>
+                    <div class="stat__v stat__v--signal" b-dkv3jdcz3w>2.15</div>
+                    <div class="stat__sub" b-dkv3jdcz3w><span class="cool" b-dkv3jdcz3w>market 2.13</span></div></div>
                 <div class="stat" b-dkv3jdcz3w><div class="stat__k" b-dkv3jdcz3w>Straight up</div>
-                    <div class="stat__v stat__v--signal" b-dkv3jdcz3w>91-60</div>
-                    <div class="stat__sub" b-dkv3jdcz3w>60.3%<span class="cool" b-dkv3jdcz3w> · market 80-44</span></div></div>
+                    <div class="stat__v stat__v--signal" b-dkv3jdcz3w>91-62</div>
+                    <div class="stat__sub" b-dkv3jdcz3w>59.5%<span class="cool" b-dkv3jdcz3w> · market 80-46</span></div></div>
                 <div class="stat" b-dkv3jdcz3w><div class="stat__k" b-dkv3jdcz3w>Against the spread</div>
-                    <div class="stat__v" b-dkv3jdcz3w>77-47</div>
-                    <div class="stat__sub" b-dkv3jdcz3w>62.1%<span b-dkv3jdcz3w> · break-even 52.4%</span></div></div></div><div class="warn" b-dkv3jdcz3w><strong b-dkv3jdcz3w>Read the ATS column as variance, not as edge.</strong><span b-dkv3jdcz3w>
+                    <div class="stat__v" b-dkv3jdcz3w>79-47</div>
+                    <div class="stat__sub" b-dkv3jdcz3w>62.7%<span b-dkv3jdcz3w> · break-even 52.4%</span></div></div></div><div class="warn" b-dkv3jdcz3w><strong b-dkv3jdcz3w>Read the ATS column as variance, not as edge.</strong><span b-dkv3jdcz3w>
                             This market has never been measured for the NHL, which is not
                             the same as no edge having been found.
                         </span><span b-dkv3jdcz3w>
-                        A season is 151 games. It takes several hundred
+                        A season is 153 games. It takes several hundred
                         before a spread record separates from a coin flip at all.
                     </span></div><div class="tiers" b-dkv3jdcz3w><div class="tiers__k" b-dkv3jdcz3w>Spread record by the model's own conviction</div>
                     <div class="tiers__grid" b-dkv3jdcz3w><div class="tier" b-dkv3jdcz3w><div class="tier__k" b-dkv3jdcz3w>Strong</div>
-                                <div class="tier__v" b-dkv3jdcz3w>52-27</div>
-                                <div class="tier__sub" b-dkv3jdcz3w>65.8%</div></div><div class="tier" b-dkv3jdcz3w><div class="tier__k" b-dkv3jdcz3w>Lean</div>
-                                <div class="tier__v" b-dkv3jdcz3w>12-10</div>
-                                <div class="tier__sub" b-dkv3jdcz3w>54.5%</div></div><div class="tier" b-dkv3jdcz3w><div class="tier__k" b-dkv3jdcz3w>Coinflip</div>
+                                <div class="tier__v" b-dkv3jdcz3w>53-27</div>
+                                <div class="tier__sub" b-dkv3jdcz3w>66.2%</div></div><div class="tier" b-dkv3jdcz3w><div class="tier__k" b-dkv3jdcz3w>Lean</div>
+                                <div class="tier__v" b-dkv3jdcz3w>13-10</div>
+                                <div class="tier__sub" b-dkv3jdcz3w>56.5%</div></div><div class="tier" b-dkv3jdcz3w><div class="tier__k" b-dkv3jdcz3w>Coinflip</div>
                                 <div class="tier__v" b-dkv3jdcz3w>13-10</div>
                                 <div class="tier__sub" b-dkv3jdcz3w>56.5%</div></div></div>
                     <p class="tiers__note" b-dkv3jdcz3w>
@@ -3001,11 +3013,11 @@ a.chip--on:hover { color: var(--ink); }
                 The same treatment for the total: how far off the model and the market ran,
                 and — where a line was captured — whether the model's Over/Under call beat it.
             </p><div class="stats stats--wide" b-dkv3jdcz3w><div class="stat" b-dkv3jdcz3w><div class="stat__k" b-dkv3jdcz3w>Total error</div>
-                    <div class="stat__v stat__v--signal" b-dkv3jdcz3w>1.75</div>
-                    <div class="stat__sub" b-dkv3jdcz3w><span class="cool" b-dkv3jdcz3w>market 1.70</span></div></div>
+                    <div class="stat__v stat__v--signal" b-dkv3jdcz3w>1.74</div>
+                    <div class="stat__sub" b-dkv3jdcz3w><span class="cool" b-dkv3jdcz3w>market 1.69</span></div></div>
                 <div class="stat" b-dkv3jdcz3w><div class="stat__k" b-dkv3jdcz3w>Over/Under</div>
-                    <div class="stat__v" b-dkv3jdcz3w>53-65-6</div>
-                    <div class="stat__sub" b-dkv3jdcz3w>44.9%<span b-dkv3jdcz3w> · break-even 52.4%</span></div></div></div><div class="warn" b-dkv3jdcz3w><strong b-dkv3jdcz3w>This is the weakest column on the page — read it as such.</strong><span b-dkv3jdcz3w>
+                    <div class="stat__v" b-dkv3jdcz3w>55-65-6</div>
+                    <div class="stat__sub" b-dkv3jdcz3w>45.8%<span b-dkv3jdcz3w> · break-even 52.4%</span></div></div></div><div class="warn" b-dkv3jdcz3w><strong b-dkv3jdcz3w>This is the weakest column on the page — read it as such.</strong><span b-dkv3jdcz3w>
                             This market has never been measured for the NHL, which is not
                             the same as no edge having been found.
                         </span></div><div class="grid grid--totals" b-dkv3jdcz3w><div class="grid__head" b-dkv3jdcz3w><span b-dkv3jdcz3w>Month</span>
@@ -3019,11 +3031,11 @@ a.chip--on:hover { color: var(--ink); }
                         <span class="num cool" b-dkv3jdcz3w>3.10</span>
                         <span class="num " b-dkv3jdcz3w>-0.03</span>
                         <span class="num" b-dkv3jdcz3w>2-3</span></button><button class="grid__row grid__row--on" b-dkv3jdcz3w><span class="grid__wk" b-dkv3jdcz3w>Oct 2026</span>
-                        <span class="num" b-dkv3jdcz3w>143</span>
-                        <span class="num hot" b-dkv3jdcz3w>1.66</span>
+                        <span class="num" b-dkv3jdcz3w>145</span>
+                        <span class="num hot" b-dkv3jdcz3w>1.65</span>
                         <span class="num cool" b-dkv3jdcz3w>1.64</span>
                         <span class="num " b-dkv3jdcz3w>-0.07</span>
-                        <span class="num" b-dkv3jdcz3w>51-62-6</span></button></div><h2 class="section" b-dkv3jdcz3w>Month by month</h2>
+                        <span class="num" b-dkv3jdcz3w>53-62-6</span></button></div><h2 class="section" b-dkv3jdcz3w>Month by month</h2>
             <p class="section__note" b-dkv3jdcz3w>
                 Margin, the totals table above, and every per-game detail all open from
                 whichever row you click below. Each game carries three verdicts:
@@ -3045,12 +3057,12 @@ a.chip--on:hover { color: var(--ink); }
                         <span class="num hot" b-dkv3jdcz3w>&#x2B;0.24</span>
                         <span class="num" b-dkv3jdcz3w>4-4</span>
                         <span class="num" b-dkv3jdcz3w>3-2</span></button><button class="grid__row grid__row--on" b-dkv3jdcz3w><span class="grid__wk" b-dkv3jdcz3w>Oct 2026</span>
-                        <span class="num" b-dkv3jdcz3w>143</span>
-                        <span class="num hot" b-dkv3jdcz3w>2.10</span>
-                        <span class="num cool" b-dkv3jdcz3w>2.10</span>
-                        <span class="num hot" b-dkv3jdcz3w>&#x2B;0.02</span>
-                        <span class="num" b-dkv3jdcz3w>87-56</span>
-                        <span class="num" b-dkv3jdcz3w>74-45</span></button><div class="detail" b-dkv3jdcz3w><div class="row" b-dkv3jdcz3w><div class="row__head" b-dkv3jdcz3w><span class="row__match" b-dkv3jdcz3w>Philadelphia Flyers @ New Jersey Devils</span>
+                        <span class="num" b-dkv3jdcz3w>145</span>
+                        <span class="num hot" b-dkv3jdcz3w>2.12</span>
+                        <span class="num cool" b-dkv3jdcz3w>2.14</span>
+                        <span class="num hot" b-dkv3jdcz3w>&#x2B;0.04</span>
+                        <span class="num" b-dkv3jdcz3w>87-58</span>
+                        <span class="num" b-dkv3jdcz3w>76-45</span></button><div class="detail" b-dkv3jdcz3w><div class="row" b-dkv3jdcz3w><div class="row__head" b-dkv3jdcz3w><span class="row__match" b-dkv3jdcz3w>Philadelphia Flyers @ New Jersey Devils</span>
                                         <span class="row__final" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>final</span>
                                             <span class="row__score" b-dkv3jdcz3w>2–3</span></span></div>
 
@@ -5910,7 +5922,47 @@ a.chip--on:hover { color: var(--ink); }
                                             <span class="row__marked" b-dkv3jdcz3w><span class="row__v mark2 mark2--win" b-dkv3jdcz3w>&#x2713; hit</span><span class="row__pick" b-dkv3jdcz3w>Tampa Bay Lightning &#x2B;1.5 &#xB7; Strong</span></span></span>
 
                                         <span class="row__cell row__cell--mark" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>O/U</span>
-                                            <span class="row__v mark2 mark2--loss" b-dkv3jdcz3w>&#x2717; miss</span></span></div></div></div></div><div class="caveats" b-dkv3jdcz3w><h2 class="read__head" b-dkv3jdcz3w>How to read these</h2>
+                                            <span class="row__v mark2 mark2--loss" b-dkv3jdcz3w>&#x2717; miss</span></span></div></div><div class="row" b-dkv3jdcz3w><div class="row__head" b-dkv3jdcz3w><span class="row__match" b-dkv3jdcz3w>Philadelphia Flyers @ Buffalo Sabres</span>
+                                        <span class="row__final" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>final</span>
+                                            <span class="row__score" b-dkv3jdcz3w>3–1</span></span></div>
+
+                                    <div class="row__band row__band--nums" b-dkv3jdcz3w><span class="row__cell" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>model</span>
+                                            <span class="row__v hot" b-dkv3jdcz3w>Buffalo Sabres 0.9</span></span>
+
+                                        <span class="row__cell" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>market</span>
+                                            <span class="row__v cool" b-dkv3jdcz3w>Buffalo Sabres 1.5</span></span>
+
+                                        <span class="row__cell" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>total</span>
+                                            <span class="row__v" b-dkv3jdcz3w><span class="hot" b-dkv3jdcz3w>5.7</span><span class="cool" b-dkv3jdcz3w> / 6.0</span><span b-dkv3jdcz3w> → 4</span></span></span></div>
+
+                                    <div class="row__band row__band--marks" b-dkv3jdcz3w><span class="row__cell row__cell--mark" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>winner</span>
+                                            <span class="row__v mark2 mark2--loss" b-dkv3jdcz3w>&#x2717; miss</span></span>
+
+                                        <span class="row__cell row__cell--mark row__cell--spread" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>vs spread</span>
+                                            <span class="row__marked" b-dkv3jdcz3w><span class="row__v mark2 mark2--win" b-dkv3jdcz3w>&#x2713; hit</span><span class="row__pick" b-dkv3jdcz3w>Philadelphia Flyers &#x2B;1.5 &#xB7; Lean</span></span></span>
+
+                                        <span class="row__cell row__cell--mark" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>O/U</span>
+                                            <span class="row__v mark2 mark2--win" b-dkv3jdcz3w>&#x2713; hit</span></span></div></div><div class="row" b-dkv3jdcz3w><div class="row__head" b-dkv3jdcz3w><span class="row__match" b-dkv3jdcz3w>Florida Panthers @ Ottawa Senators</span>
+                                        <span class="row__final" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>final</span>
+                                            <span class="row__score" b-dkv3jdcz3w>1–5</span></span></div>
+
+                                    <div class="row__band row__band--nums" b-dkv3jdcz3w><span class="row__cell" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>model</span>
+                                            <span class="row__v hot" b-dkv3jdcz3w>Florida Panthers 0.2</span></span>
+
+                                        <span class="row__cell" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>market</span>
+                                            <span class="row__v cool" b-dkv3jdcz3w>Florida Panthers 1.5</span></span>
+
+                                        <span class="row__cell" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>total</span>
+                                            <span class="row__v" b-dkv3jdcz3w><span class="hot" b-dkv3jdcz3w>5.6</span><span class="cool" b-dkv3jdcz3w> / 5.5</span><span b-dkv3jdcz3w> → 6</span></span></span></div>
+
+                                    <div class="row__band row__band--marks" b-dkv3jdcz3w><span class="row__cell row__cell--mark" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>winner</span>
+                                            <span class="row__v mark2 mark2--loss" b-dkv3jdcz3w>&#x2717; miss</span></span>
+
+                                        <span class="row__cell row__cell--mark row__cell--spread" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>vs spread</span>
+                                            <span class="row__marked" b-dkv3jdcz3w><span class="row__v mark2 mark2--win" b-dkv3jdcz3w>&#x2713; hit</span><span class="row__pick" b-dkv3jdcz3w>Ottawa Senators &#x2B;1.5 &#xB7; Strong</span></span></span>
+
+                                        <span class="row__cell row__cell--mark" b-dkv3jdcz3w><span class="row__k" b-dkv3jdcz3w>O/U</span>
+                                            <span class="row__v mark2 mark2--win" b-dkv3jdcz3w>&#x2713; hit</span></span></div></div></div></div><div class="caveats" b-dkv3jdcz3w><h2 class="read__head" b-dkv3jdcz3w>How to read these</h2>
                 <ul class="caveats__list" b-dkv3jdcz3w><li b-dkv3jdcz3w><strong b-dkv3jdcz3w>Straight up is the honest headline.</strong> It needs no price,
                         grades every game, and answers the question the model was built for:
                         who wins. A tie is a push, never a loss.
@@ -5923,9 +5975,9 @@ a.chip--on:hover { color: var(--ink); }
                     </li>
                     <li b-dkv3jdcz3w><strong b-dkv3jdcz3w>Model and market errors are measured on the same games.</strong>
                         Where a game carried no price, it counts toward the model's error but
-                        not the comparison — 124 of
-                        151 games are directly comparable on margin,
-                        124 on the total.
+                        not the comparison — 126 of
+                        153 games are directly comparable on margin,
+                        126 on the total.
                     </li>
                     <li b-dkv3jdcz3w><strong b-dkv3jdcz3w>Early weeks are rated on priors.</strong> Weeks 1–3 are included
                         because the board really did show those projections, but the ratings
@@ -5934,7 +5986,7 @@ a.chip--on:hover { color: var(--ink); }
                         backtests exclude them; this page does not.
                     </li>
                     <li b-dkv3jdcz3w>
-                        Market numbers: captured consensus, 126 of 1,344 fixtures (0 closing, 126 pre-kickoff). Ratings: 140 games played, primed with 2025 ratings carried at 85%, goals blended with shots.
+                        Market numbers: captured consensus, 138 of 1,344 fixtures (0 closing, 138 pre-kickoff). Ratings: 151 games played, primed with 2025 ratings carried at 85%, goals blended with shots.
                     </li></ul></div></main></div>
 </body>
 </html>
